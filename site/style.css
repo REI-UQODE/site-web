@@ -1,0 +1,82 @@
+body
+{
+	margin: 0px;
+}
+
+.menuPrincipal
+{
+	background-color: #7C2AC6;
+	padding: 20px 50px;
+	display: flex;
+	align-items: center;
+}
+
+.boutonMenuPrincipal
+{
+	background-color: #4A1A99;
+	border-radius: 10px;
+	padding: 10px 15px;
+	margin: 0px 10px;
+	
+	font-size: 18px;
+	color: white;
+	text-decoration: none;
+}
+
+.boutonMenuPrincipal:hover
+{
+	background-color: black;
+}
+
+.contenu
+{
+	margin: 40px 100px 40px 100px; /*haut, droite, bas, gauche*/
+	background-color: darkblue;
+	color: white;
+}
+
+.footer
+{
+	padding: 20px 50px 30px 50px;
+	background-color: black;
+	display: flex;
+	justify-content: space-evenly;
+	color: white;
+	
+	/*Rapetisse les logos pour ne pas qu'ils soient trop énormes sur les grands écrans:*/
+	@media (min-width: 1250px)
+	{padding: 20px 5% 30px 5%;}
+	
+	@media (min-width: 1500px)
+	{padding: 20px 10% 30px 10%;}
+}
+
+.colonneFooter
+{
+	width: 30%;
+	margin: 3%;
+	text-align: center;
+}
+
+.titreFooter
+{
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.lienFooter
+{
+	color: white;
+	text-decoration: none;
+}
+
+.copyright
+{
+	background-color: #323F44;
+	padding: 20px 0px;
+	text-align: center;
+	
+	color: #A4A4A4;
+	font-size: 14px;
+}
