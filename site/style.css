@@ -1,0 +1,39 @@
+body
+{
+	margin: 0px;
+}
+
+.menuPrincipal
+{
+	background-color: #7C2AC6;
+	padding: 20px 50px;
+}
+
+.boutonMenuPrincipal
+{
+	background-color: #4A1A99;
+	border-radius: 10px;
+	padding: 10px 15px;
+	font-size: 18px;
+	color: white;
+	text-decoration: none;
+}
+
+.boutonMenuPrincipal:hover
+{
+	background-color: black;
+}
+
+.contenu
+{
+	margin: 40px 100px 40px 100px; /*haut, droite, bas, gauche*/
+	background-color: darkblue;
+	color: white;
+}
+
+.footer
+{
+	padding: 20px 50px 40px 50px;
+	background-color: black;
+	color: white;
+}
