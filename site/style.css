@@ -1,21 +1,41 @@
 body
 {
 	margin: 0px;
+	background-color: #EBEBEB;
+	font-family: Helvetica, sans-serif, Arial;
 }
+
+h1
+{
+	font-size: 60px;
+	text-align: center;
+}
+
+h2
+{
+	text-align: center;
+	color: #9D079C;
+}
+
+.gap
+{
+	height: 40px;
+}
+
 
 .menuPrincipal
 {
-	background-color: #7C2AC6;
-	padding: 20px 50px;
+	background-color: #9D079C;
+	padding: 20px 3%;
 	display: flex;
 	align-items: center;
 }
 
 .boutonMenuPrincipal
 {
-	background-color: #4A1A99;
+	/*background-color: aucune?*/
 	border-radius: 10px;
-	padding: 10px 15px;
+	padding: 10px 1%;
 	margin: 0px 10px;
 	
 	font-size: 18px;
@@ -25,8 +45,9 @@ body
 
 .boutonMenuPrincipal:hover
 {
-	background-color: black;
+	background-color: #80057F;
 }
+
 
 .contenu
 {
@@ -35,9 +56,35 @@ body
 	color: white;
 }
 
+
+.header
+{
+	background-image: url('images/photoGroupe.jpg');
+	background-size: cover;
+	background-color: rgba(0, 0, 0, 0.5); /*Ajuster le alpha pour une image + ou - sombre.*/
+	background-blend-mode: darken;
+	background-position: center;
+	background-attachment: local;
+	padding: 200px; /*taille de la bannière*/
+	
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+.separateur
+{
+	color: #9D079C;
+	border-top: 5px solid;
+	margin: 0px 45%;
+}
+
+
 .footer
 {
-	padding: 20px 50px 30px 50px;
+	padding: 20px 50px 10px 50px;
 	background-color: black;
 	display: flex;
 	justify-content: space-evenly;
@@ -80,3 +127,5 @@ body
 	color: #A4A4A4;
 	font-size: 14px;
 }
+
+/* Couleur principale: #9D079C */
