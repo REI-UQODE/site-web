@@ -9,17 +9,56 @@ h1
 {
 	font-size: 60px;
 	text-align: center;
+	margin: 0px;
 }
 
 h2
 {
 	text-align: center;
 	color: #9D079C;
+	margin: 0px;
+}
+
+h3
+{
+	margin: 0px;
+}
+
+p
+{
+	color: #707070;
+	margin: 10px 0px;
 }
 
 .gap
 {
 	height: 40px;
+}
+
+.separateur
+{
+	color: #9D079C;
+	border-top: 5px solid;
+	margin: 15px 45% 30px 45%;
+}
+
+.centreur
+{
+	padding: 10px 0px;
+	text-align: center;
+}
+
+.flex
+{
+	display: flex;
+	margin: 0px 10px;
+	
+	@media (max-width: 768px)
+	{flex-direction: column;}
+	@media (min-width: 1250px)
+	{margin: 0px 10%;}
+	@media (min-width: 1500px)
+	{margin: 0px 20%;}
 }
 
 
@@ -49,14 +88,6 @@ h2
 }
 
 
-.contenu
-{
-	margin: 40px 100px 40px 100px; /*haut, droite, bas, gauche*/
-	background-color: darkblue;
-	color: white;
-}
-
-
 .header
 {
 	background-image: url('images/photoGroupe.jpg');
@@ -65,8 +96,11 @@ h2
 	background-blend-mode: darken;
 	background-position: center;
 	background-attachment: local;
-	padding: 200px; /*taille de la bannière*/
+	height: 500px;
+	display: flex;
 	
+	flex-direction: column;
+	justify-content: center;
 	text-align: center;
 	color: white;
 	font-size: 20px;
@@ -74,34 +108,102 @@ h2
 }
 
 
-.separateur
+.cellule-tableau
 {
-	color: #9D079C;
-	border-top: 5px solid;
-	margin: 0px 45%;
+	background-color: white;
+	flex: 1;
+	margin: 5px 10px;	
+	padding: 30px 20px;
+	
+	color: black;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+}
+.cellule-tableau:hover
+{
+	background-color: #9D079C;
+	color: white;
+}
+
+
+.icone-tableau
+{
+	width: 15%;
+	object-fit: contain;
+	padding: 0px 5% 0px 0px;
+}
+.cellule-tableau:hover .icone-tableau /*hover sur la cellule, mais modification de l'icone!*/
+{
+	filter: brightness(0) invert(1);
+}
+
+
+.texte-tableau
+{
+	width: 80%;
+}
+
+
+.bouton
+{
+	background-color: #9D079C;
+	padding: 10px 20px;
+	border-radius: 6px;
+	display: inline-block;
+	
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+}
+.bouton:hover
+{
+	background-color: #80057F;
+}
+
+
+.boite
+{
+	background-color: #EDE5F0;
+	border: 5px solid #9D079C;
+	margin: 10px;
+	padding: 20px;
+	text-align: center;
+}
+
+
+img.arrondi
+{
+	width: 100%;
+	border-radius: 15px;
+	box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.2);
 }
 
 
 .footer
 {
-	padding: 20px 50px 10px 50px;
+	padding: 30px 50px 25px 50px;
 	background-color: black;
 	display: flex;
 	justify-content: space-evenly;
 	color: white;
+	height: 100%;
+	gap: 3%;
 	
 	/*Rapetisse les logos pour ne pas qu'ils soient trop énormes sur les grands écrans:*/
 	@media (min-width: 1250px)
 	{padding: 20px 5% 30px 5%;}
-	
 	@media (min-width: 1500px)
 	{padding: 20px 10% 30px 10%;}
+	
+	/*Met ça en une seule colonne sur les petits écrans*/
+	@media (max-width: 768px)
+	{flex-direction: column; gap: 50px;}
 }
 
 .colonneFooter
 {
-	width: 30%;
-	margin: 3%;
+	flex: 1;
 	text-align: center;
 }
 
