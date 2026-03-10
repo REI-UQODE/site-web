@@ -6,7 +6,7 @@
 
 .fond-modale
 {
-	display: none;
+	display: none; /*setté à flex par javascript*/
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -29,7 +29,6 @@
 .controles-modale
 {
 	color: #AAAAAA;
-	margin-left: auto;
 	margin-bottom: auto;
 	margin-top: auto;
 	font-size: 28px;
