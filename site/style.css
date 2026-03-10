@@ -51,14 +51,15 @@ p
 .flex
 {
 	display: flex;
-	margin: 0px 10px;
+	margin: 10px 10px;
+	gap: 20px;
 	
 	@media (max-width: 768px)
 	{flex-direction: column;}
 	@media (min-width: 1250px)
-	{margin: 0px 10%;}
+	{margin-left: 10%; margin-right: 10%;}
 	@media (min-width: 1500px)
-	{margin: 0px 20%;}
+	{margin-left: 20%; margin-right: 20%;}
 }
 
 
@@ -81,7 +82,6 @@ p
 	color: white;
 	text-decoration: none;
 }
-
 .boutonMenuPrincipal:hover
 {
 	background-color: #80057F;
@@ -108,24 +108,38 @@ p
 }
 
 
-.cellule-tableau
+.cellule-horizontale
 {
 	background-color: white;
 	flex: 1;
-	margin: 5px 10px;	
 	padding: 30px 20px;
+	display: flex;
 	
 	color: black;
 	font-size: 18px;
-	display: flex;
 	align-items: center;
 }
-.cellule-tableau:hover
+.cellule-verticale
+{
+	background-color: white;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 20px 20px 10px 20px;
+	flex: 1;
+	display: flex;
+	gap: 10px;
+	
+	color: black;
+	font-size: 18px;
+	align-items: center;
+	cursor: pointer;
+}
+.cellule-horizontale:hover,
+.cellule-verticale:hover
 {
 	background-color: #9D079C;
 	color: white;
 }
-
 
 .icone-tableau
 {
@@ -133,15 +147,24 @@ p
 	object-fit: contain;
 	padding: 0px 5% 0px 0px;
 }
-.cellule-tableau:hover .icone-tableau /*hover sur la cellule, mais modification de l'icone!*/
+.cellule-horizontale:hover .icone-tableau /*hover sur la cellule, mais modification de l'icone!*/
 {
 	filter: brightness(0) invert(1);
 }
 
-
 .texte-tableau
 {
 	width: 80%;
+}
+
+
+.boite
+{
+	background-color: #EDE5F0;
+	border: 5px solid #9D079C;
+	margin: 10px;
+	padding: 20px;
+	text-align: center;
 }
 
 
@@ -159,16 +182,6 @@ p
 .bouton:hover
 {
 	background-color: #80057F;
-}
-
-
-.boite
-{
-	background-color: #EDE5F0;
-	border: 5px solid #9D079C;
-	margin: 10px;
-	padding: 20px;
-	text-align: center;
 }
 
 

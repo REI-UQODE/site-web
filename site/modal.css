@@ -1,0 +1,75 @@
+/*-----------------------------*
+ * modal.css				   *
+ *							   *
+ * Styles de fenêtres modales. *
+ *-----------------------------*/
+
+.fond-modale
+{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fenetre-modale
+{
+	background-color: #FFFFFF;
+	margin: auto;
+	padding: 20px;
+	width: 80%;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+}
+
+.controles-modale
+{
+	color: #AAAAAA;
+	margin-left: auto;
+	margin-bottom: auto;
+	margin-top: auto;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.controles-modale:hover,
+.controles-modale:focus
+{
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#bouton-x-modale
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.viewer-modale
+{
+	display: flex;
+	gap: 20px;
+	min-height: 0;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+span.image-modale
+{
+	margin: auto;
+	height: 100%;
+	max-width: 100%;
+}
+
+img.image-modale
+{
+	height: 100%;
+	border-radius: 15px;
+	box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.2);
+	max-width: 100%;
+}

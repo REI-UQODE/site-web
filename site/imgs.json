@@ -1,0 +1,47 @@
+{
+	"categories":
+	[
+		{
+			"categorie": "UCTF",
+			"images":
+			[
+				{ "nom": "UCTF 2025", "fichier": "uctf2025.jpg" }
+			]
+		},
+		{
+			"categorie": "HackFest",
+			"images":
+			[
+				{ "nom": "HackFest 2023", "fichier": "hackfest2023.jpeg" }
+			]
+		},
+		{
+			"categorie": "uHack",
+			"images":
+			[
+				{ "nom": "uHack 2024", "fichier": "uHack2024.jpg" }
+			]
+		},
+		{
+			"categorie": "gameNight",
+			"images":
+			[
+				{ "nom": "Soirée jeux de société", "fichier": "gameNight.jpg" }
+			]
+		},
+		{
+			"categorie": "soireeEtude",
+			"images":
+			[
+				{ "nom": "Soirée d'étude", "fichier": "soireeEtude.jpg" }
+			]
+		},
+		{
+			"categorie": "atelierUQODE",
+			"images":
+			[
+				{ "nom": "Atelier UQODE", "fichier": "atelierUQODE.jpg" }
+			]
+		}
+	]
+}
