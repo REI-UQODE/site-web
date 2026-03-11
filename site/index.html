@@ -26,6 +26,8 @@
 	<div class="header">
 		<h1>REI</h1>
 		Regroupement des Étudiants en Informatique de l'UQO
+		<div style="height: 10px"></div>
+		<div class="centreur"><a class="bouton" href="https://discord.gg/XNPFzumVzb">Rejoignez notre serveur Discord!</a></div>
 	</div>
 	
 	<div class="gap"></div>
@@ -92,45 +94,57 @@
 	<div class="centreur"><a class="bouton" href="activites.html">Consultez nos prochains évènements!</a></div>
 	
 	<!--Photos des évènements passés-->
-	<p class="centreur">En plus des compétitions annuelles auxquelles prend part le REI (CSGames, Hackfest, UHack et UCTF), nous organisons aussi une foule d'autres évènements!</p>
+	<p class="centreur" style="margin: 0px 5px;">En plus des compétitions annuelles auxquelles prend part le REI (CSGames, Hackfest, UHack et UCTF), nous organisons aussi une foule d'autres évènements!</p>
 	<div class="flex">
-		<div class="cellule-verticale" onclick="loadImg(this, 'UCTF')">
+		<div class="cellule-verticale" onclick="loadImg('UCTF')">
 			<img class="arrondi" src="images/uctf2025.jpg" alt="photo de membres du REI">
 			UCTF 2025
 		</div>
-		<div class="cellule-verticale" onclick="loadImg(this, 'HackFest')">
+		<div class="cellule-verticale" onclick="loadImg('HackFest')">
 			<img class="arrondi" src="images/hackfest2023.jpeg" alt="photo de membres du REI">
 			Hackfest 2023
 		</div>
-		<div class="cellule-verticale" onclick="loadImg(this, 'uHack')">
+		<div class="cellule-verticale" onclick="loadImg('uHack')">
 			<img class="arrondi" src="images/uHack2024.jpg" alt="photo de membres du REI">
 			uHack 2024
 		</div>
 	</div>
 	<div class="flex">
-		<div class="cellule-verticale" onclick="loadImg(this, 'gameNight')">
+		<div class="cellule-verticale" onclick="loadImg('gameNight')">
 			<img class="arrondi" src="images/gameNight.jpg" alt="photo de membres du REI">
 			Soirée jeux de société
 		</div>
-		<div class="cellule-verticale" onclick="loadImg(this, 'soireeEtude')">
+		<div class="cellule-verticale" onclick="loadImg('soireeEtude')">
 			<img class="arrondi" src="images/soireeEtude.jpg" alt="photo de membres du REI">
 			Soirée d'étude
 		</div>
-		<div class="cellule-verticale" onclick="loadImg(this, 'atelierUQODE')">
+		<div class="cellule-verticale" onclick="loadImg('atelierUQODE')">
 			<img class="arrondi" src="images/atelierUQODE.jpg" alt="photo de membres du REI">
 			Atelier UQODE
 		</div>
 	</div>
 	
+	<div class="gap"></div>
+	<h2>Suivez-nous sur nos réseaux pour ne pas manquer nos prochains évènements!</h2>
+	<div class="centreur">
+		<a class="bouton" href="https://discord.gg/XNPFzumVzb">Rejoignez notre serveur Discord!</a>
+		<span class="spacer-mobile"></span>
+		<a class="bouton" style="margin-left: 20px;" href="https://www.instagram.com/rei.uqode">Suivez-nous sur Instagram</a>
+	</div>
+	
+	
 	<!--Viewer pour les images supplémentaires:-->
 	<!--Cet élément utilise javascript (c'est le seul)-->
 	<span id="fond-modale" class="fond-modale">
 		<div id="fenetre-modale" class="fenetre-modale">
-			<div id="bouton-x-modale" class="controles-modale" onclick=closeModal()>&times;</div>
+			<div style="display: flex">
+				<span id="titre-modale" style="margin: auto;"> <!--titre de l'image inséré ici par javascript--> </span>
+				<span id="bouton-x-modale" class="controles-modale" style="font-size: 32px;" onclick=closeModal()>&times;</span>
+			</div>
 			<div class="viewer-modale">
-				<span id="fleche-gauche-modale" class="controles-modale">&lt;</span>
-				<span id="image-modale" class="image-modale"></span> <!--image insérée par javascript; garder cet élément vide!-->
-				<span id="fleche-droite-modale" class="controles-modale">&gt;</span>
+				<span id="fleche-gauche-modale" class="controles-modale" onclick="prevImg()">&lt;</span>
+				<span id="image-modale" class="image-modale"> <!--image insérée par javascript; garder cet élément vide!--> </span>
+				<span id="fleche-droite-modale" class="controles-modale" onclick="nextImg()">&gt;</span>
 			</div>
 		</div>
 	</span>
@@ -166,7 +180,12 @@
 			<b>Local A-1214</b><br><br>
 			101 rue St-Jean-Bosco,<br>
 			Gatineau (Qc)<br>
-			J8X 3X7
+			J8X 3X7<br><br>
+			<a href="https://discord.gg/XNPFzumVzb"><span class="cercle-reseaux"><img class="img-reseaux" src="images/Discord-Symbol-White.svg" alt="logo discord"></span></a>
+			<a href="https://www.facebook.com/clubUQODE"><span class="cercle-reseaux"><img class="img-reseaux" src="images/Facebook_Logo_Secondary.png" alt="logo facebook"></span></a>
+			<a href="https://www.instagram.com/rei.uqode"><span class="cercle-reseaux"><img class="img-reseaux" src="images/Instagram_Glyph_White.svg" alt="logo instagram"></span></a>
+			<a href="https://www.linkedin.com/company/rei-uqode"><span class="cercle-reseaux"><img class="img-reseaux" src="images/InBug-White.png" alt="logo linkedIn"></span></a>
+			<a href="https://linktr.ee/rei.uqode"><span class="cercle-reseaux"><img class="img-reseaux" src="images/Linktree.svg" alt="logo linktree"></span></a>
 		</span>
 	</div>
 	

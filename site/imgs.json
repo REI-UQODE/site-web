@@ -5,42 +5,56 @@
 			"categorie": "UCTF",
 			"images":
 			[
-				{ "nom": "UCTF 2025", "fichier": "uctf2025.jpg" }
+				{ "nom": "UCTF 2025", "fichier": "uctf2025.jpg" },
+				{ "nom": "UCTF 2025", "fichier": "uctf2.jpg" },
+				{ "nom": "UCTF 2025", "fichier": "uctf3.jpg" },
+				{ "nom": "UCTF 2025", "fichier": "uctf4.jpg" }
 			]
 		},
 		{
 			"categorie": "HackFest",
 			"images":
 			[
-				{ "nom": "HackFest 2023", "fichier": "hackfest2023.jpeg" }
+				{ "nom": "HackFest 2023", "fichier": "hackfest2023.jpeg" },
+				{ "nom": "HackFest 2023", "fichier": "hackfest23.jpeg" },
+				{ "nom": "HackFest 2023", "fichier": "hackfest23-2.jpeg" }
 			]
 		},
 		{
 			"categorie": "uHack",
 			"images":
 			[
-				{ "nom": "uHack 2024", "fichier": "uHack2024.jpg" }
+				{ "nom": "uHack 2024", "fichier": "uHack2024.jpg" },
+				{ "nom": "uHack 2024", "fichier": "uHack.jpg" },
+				{ "nom": "uHack 2024", "fichier": "uhack2.jpg" }
 			]
 		},
 		{
 			"categorie": "gameNight",
 			"images":
 			[
-				{ "nom": "Soirée jeux de société", "fichier": "gameNight.jpg" }
+				{ "nom": "Soirée jeux de société", "fichier": "gameNight.jpg" },
+				{ "nom": "Soirée jeux de société", "fichier": "gamenight2.jpg" },
+				{ "nom": "Soirée jeux de société", "fichier": "gamenight3.jpg" }
 			]
 		},
 		{
 			"categorie": "soireeEtude",
 			"images":
 			[
-				{ "nom": "Soirée d'étude", "fichier": "soireeEtude.jpg" }
+				{ "nom": "Soirée d'étude", "fichier": "soireeEtude.jpg" },
+				{ "nom": "Soirée d'étude", "fichier": "soiree-etude.jpg" },
+				{ "nom": "Soirée d'étude", "fichier": "soiree-etude2.jpg" }
 			]
 		},
 		{
 			"categorie": "atelierUQODE",
 			"images":
 			[
-				{ "nom": "Atelier UQODE", "fichier": "atelierUQODE.jpg" }
+				{ "nom": "Atelier UQODE", "fichier": "atelierUQODE.jpg" },
+				{ "nom": "Soirée d'étude", "fichier": "atelier-dapprentissage-uqode.jpg" },
+				{ "nom": "Soirée d'étude", "fichier": "atelier-dapprentissage-uqode-2.jpg" },
+				{ "nom": "Soirée d'étude", "fichier": "UQODE_AtelierPython_Automne2024-4.jpg" }
 			]
 		}
 	]

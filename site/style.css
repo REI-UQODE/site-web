@@ -35,6 +35,17 @@ p
 	height: 40px;
 }
 
+.spacer-mobile
+{
+	display: inline;
+	
+	@media (max-width: 768px)
+	{display: block;}
+	
+	@media (max-width: 768px)
+	{margin-top: 20px;}
+}
+
 .separateur
 {
 	color: #9D079C;
@@ -231,6 +242,29 @@ img.arrondi
 {
 	color: white;
 	text-decoration: none;
+}
+
+.cercle-reseaux
+{
+	border: 1px solid gray;
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	margin: 0px 10px;
+}
+.cercle-reseaux:hover
+{
+	background-color: gray;
+}
+
+img.img-reseaux
+{
+	height: 30px;
+	width: 30px;
+	min-height: 0;
+	min-width: 0;
+	padding: 5px;
 }
 
 .copyright
