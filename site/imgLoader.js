@@ -11,6 +11,7 @@ numImg = -1; //image actuellement à l'écran
 
 modal = document.getElementById("fond-modale");
 viewer = document.getElementById("image-modale");
+titre = document.getElementById("titre-modale");
 
 document.addEventListener('keydown', function(event)
 {
@@ -47,6 +48,7 @@ async function loadImg (categorieDemandee)
 	//Affichage:
 	modal.style.display = "flex";
 	viewer.innerHTML = `<img class="image-modale" src="images/${categories[categorieActive].images[numImg].fichier}" alt="${categories[categorieActive].images[numImg].nom}">`;
+	titre.innerHTML = categories[categorieActive].images[numImg].nom;
 }
 
 
@@ -57,6 +59,7 @@ function prevImg ()
 	else
 	{numImg--;}
 	viewer.innerHTML = `<img class="image-modale" src="images/${categories[categorieActive].images[numImg].fichier}" alt="${categories[categorieActive].images[numImg].nom}">`;
+	titre.innerHTML = categories[categorieActive].images[numImg].nom;
 }
 
 
@@ -67,6 +70,7 @@ function nextImg ()
 	else
 	{numImg++;}
 	viewer.innerHTML = `<img class="image-modale" src="images/${categories[categorieActive].images[numImg].fichier}" alt="${categories[categorieActive].images[numImg].nom}">`;
+	titre.innerHTML = categories[categorieActive].images[numImg].nom;
 }
 
 

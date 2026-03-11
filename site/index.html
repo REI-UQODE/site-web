@@ -26,6 +26,8 @@
 	<div class="header">
 		<h1>REI</h1>
 		Regroupement des Étudiants en Informatique de l'UQO
+		<div style="height: 10px"></div>
+		<div class="centreur"><a class="bouton" href="https://discord.gg/XNPFzumVzb">Rejoignez notre serveur Discord!</a></div>
 	</div>
 	
 	<div class="gap"></div>
@@ -124,13 +126,21 @@
 	
 	<div class="gap"></div>
 	<h2>Suivez-nous sur nos réseaux pour ne pas manquer nos prochains évènements!</h2>
-	<div class="centreur"><a class="bouton" href="https://discord.gg/XNPFzumVzb">Rejoignez notre serveur Discord!</a></div>
+	<div class="centreur">
+		<a class="bouton" href="https://discord.gg/XNPFzumVzb">Rejoignez notre serveur Discord!</a>
+		<span class="spacer-mobile"></span>
+		<a class="bouton" style="margin-left: 20px;" href="https://www.instagram.com/rei.uqode">Suivez-nous sur Instagram</a>
+	</div>
+	
 	
 	<!--Viewer pour les images supplémentaires:-->
 	<!--Cet élément utilise javascript (c'est le seul)-->
 	<span id="fond-modale" class="fond-modale">
 		<div id="fenetre-modale" class="fenetre-modale">
-			<div id="bouton-x-modale" class="controles-modale" style="margin-left: auto;" onclick=closeModal()>&times;</div>
+			<div style="display: flex">
+				<span id="titre-modale" style="margin: auto;"> <!--titre de l'image inséré ici par javascript--> </span>
+				<span id="bouton-x-modale" class="controles-modale" style="font-size: 32px;" onclick=closeModal()>&times;</span>
+			</div>
 			<div class="viewer-modale">
 				<span id="fleche-gauche-modale" class="controles-modale" onclick="prevImg()">&lt;</span>
 				<span id="image-modale" class="image-modale"> <!--image insérée par javascript; garder cet élément vide!--> </span>
