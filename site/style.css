@@ -125,7 +125,8 @@ p
 	font-weight: bold;
 }
 
-.header-contenu{
+.header-contenu
+{
 	display: flex;
 	flex-grow: 1;
 	flex-direction: column;
@@ -133,14 +134,16 @@ p
 	text-align: center;
 }
 
-.header hr{
+.header hr
+{
 	margin-top: 0;
 	width: 20em;
 	max-width: 75%;
 	border: 1px solid white;
 }
 
-.header .bouton{
+.header .bouton
+{
 	font-size: 0.75em;
 }
 
@@ -202,7 +205,7 @@ p
 }
 
 
-.boite
+.terminal
 {
 	background-color: #4a4a4d; 
 	border: 5px solid #9D079C;
@@ -219,48 +222,67 @@ p
 	overflow: hidden;
 }
 
-.boite header{
+.terminal header
+{
 	display: flex;
 	justify-content: end;
 	background-color: #38383a;
 	padding: 0.5em
 }
 
-.boite header h2{
+.terminal header h2
+{
 	color: rgb(211, 211, 211);
 	flex-grow: 1;
 }
 
-.boite p{
+.terminal p
+{
 	color: rgb(181, 181, 181);
 }
 
-.boite .bouton{
-	border-radius: 0;
+.terminal .bouton
+{
+	/*border-radius: 0;*/ /*Non-nécessaire, je crois*/
 	box-shadow: 0.25em 0.5em 0 #0003;
 	transition: 0ms;
 }
 
-.boite .bouton:hover{
-	border-radius: 0;
+.terminal .bouton:hover
+{
 	box-shadow: 0.1em 0.2em 0 #0003;
 }
 
-.boite img{
+.terminal img
+{
 	width: 100%;
-	box-shadow: 0.5em 1em 0 rgba(0, 0, 0, 0.3);
+	/*box-shadow: 0.5em 1em 0 rgba(0, 0, 0, 0.3);*/
+	box-shadow: 0 0.5em 1em #0003; /*Je trouve que c'est plus beau quand c'est plus léger...*/
 }
 
-.boite-contenu{
+.contenu-terminal
+{
 	padding-top: 1em;
 	padding-bottom: 1em;
 	padding-left: 2em;
 	padding-right: 2em;
 }
 
-.boutons-console{
+.boutons-terminal
+{
 	display: flex;
 	align-items: center;
+}
+
+.bouton-terminal
+{
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	background-color: rgb(211, 57, 57); /*couleur à overrider dans le HTML*/
+	margin-right: 0.5em;
+	
+	cursor: pointer;
 }
 
 .bouton
