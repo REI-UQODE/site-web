@@ -9,12 +9,144 @@
 	
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="footer.css">
+	<style>
+		/*Général*/
+		h3{
+			font-size: 2em;
+			color: #9D079C;
+		}
+
+		h3 + hr{
+			width: 10%;
+			height: 0.3em;
+			margin: 0;
+			background-color: #9D079C;
+			border-radius: 0.2em;
+			border: 0;
+		}
+
+		#description1{
+			display: flex;
+			max-width: 50em;
+			margin: 3em 0;
+			text-align: justify;
+		}
+
+		#description2{
+			display: flex;
+			text-align: justify;
+			color: black;
+		}
+
+		#description2 #texte{
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			margin: 1em;
+		}
+
+		#description2 h3{
+			font-size: 2em;
+		}
+
+		#description2 hr{
+			width: 25%;
+			height: 0.3em;
+			margin: 0;
+			background-color: #9D079C;
+			border-radius: 0.2em;
+			border: 0;
+		}
+
+		#img-diviseur{
+			height: 30vw;
+			overflow-y: hidden;
+			margin: 2em 0;
+		}
+
+		#objectifs{
+			width:100vw;
+			box-sizing: border-box;
+			box-shadow: 0 0 1em #0003;
+			padding: 4em 10%;
+			margin: 4em;
+		}
+
+		/*Tableau objectifs*/
+		#tableau-objectifs{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-auto-rows: 1fr;
+			gap: 2em;
+		}
+
+		#tableau-objectifs > div{
+			display: flex;
+			flex-direction: column;
+		}
+
+		#tableau-objectifs > div h3{
+			font-size: 1.5em;
+			color: black;
+		}
+
+		.point{
+			float: left; 
+			width:0.5em; 
+			height: 0.5em; 
+			background-color: #9D079C; 
+			margin: 0 0.25em; 
+			margin-top: 0.5em;
+		}	
+		
+		#tableau-objectifs > div p{
+			text-align: justify;
+		}
+
+		/*Tableau membres*/
+		#tableau-membres{
+			display:grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-auto-rows: 1fr;
+			gap: 4em 1em; 
+			margin: 2em 0;
+		}
+
+		#tableau-membres > div{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 2em;
+			box-shadow: 0 0 2em #0003;
+		}
+
+		#tableau-membres > div img{
+			border-radius: 100%;
+		}
+
+		#tableau-membres > div h2{
+			color: #9D079C;
+		}
+
+		#tableau-membres > div p{
+			color:grey;
+			text-align: center;
+		}
+
+		#tableau-membres > div .img-conteneur{
+			width: 2em;
+			height: 2em;
+			background-color: grey;
+			border-radius: 100%;
+		}
+	</style>
 </head>
 
 
 <body>
 	<!--Titre et Menu Principal-->
-	<div class="header">
+	<header class="header">
 		<nav class="menuPrincipal">
 			<a href="index.html"><img src="images/logoREI.png" alt="logo du REI" style="height: 50px; width: auto; padding: 0px 20px 0px 0px;"></a>
 			<a class="boutonMenuPrincipal" href="qui-sommes-nous.html">Qui sommes-nous?</a>
@@ -27,14 +159,139 @@
 			<hr>
 			Apprenez-en plus sur le REI
 		</div>
-	</div>
+	</header>
 	
 	<!--Contenu-->
-	<!--TODO-->
+	<article style="display: flex; flex-direction: column; align-items: center; padding: 0 10%">
+		<!--Titre-->
+		<div class="gap"></div>
+		<h2>REI</h2>
+		<hr class="separateur">
+
+		<!--Description 1-->
+		<section id="description1">
+			<p style="float: left; font-size: 3.5em; margin: 0 0.2em; color:#9D079C;">À</p>
+			l'UQO, plusieurs associations sont accréditées en vertu de la Loi sur l’accréditation et le financement des associations d’étudiants. 
+			Elles ont pour but la promotion et la défense des droits et intérêts des étudiants de leur groupe d'appartenance respectif. 
+		</section>
+		<!--Description 2-->
+		<section id="description2">
+			<div class="img-conteneur"><img src="images/tmp.png"></div>
+			<div id="texte">
+				<h3>REI</h3>
+				<hr>
+				<p style="color:grey;">Regroupement des Étudiants en Informatique de l'Université du Québec en Outaouais.</p>
+				<p>
+					Le REI s’occupe d’animer la vie de nos étudiants depuis de nombreuses années. Grâce aux délégations d’élèves 
+					à divers évènements du monde informatique, nous occasionnons de diverses possibilités d’apprentissage et d’épanouissement.
+				</p>
+			</div>
+		</section>
+		<!--Image-->
+		<div id="img-diviseur" class="img-conteneur"><img src="images/tmp.png" style="max-height: 500%;"></div>
+		<!--Objectifs-->
+		<h3>NOS OBJECTIFS</h3>
+		<hr>
+		<section id="objectifs">
+			<div id="tableau-objectifs">
+				<div>
+					<h3>
+						<div class="point"></div>Gagner de l’expérience en codage
+					</h3>
+					<p>
+						Développer ses compétences en programmation à travers des projets collaboratifs et des ateliers encadrés par des étudiants expérimentés
+					</p>
+				</div>
+				<div>
+					<h3>
+						<div class="point"></div>Gagner de l’expérience en codage
+					</h3>
+					<p>
+						Développer ses compétences en programmation à travers des projets collaboratifs et des ateliers encadrés par des étudiants expérimentés
+					</p>
+				</div><div>
+					<h3>
+						<div class="point"></div>Gagner de l’expérience en codage
+					</h3>
+					<p>
+						Développer ses compétences en programmation à travers des projets collaboratifs et des ateliers encadrés par des étudiants expérimentés
+					</p>
+				</div><div>
+					<h3>
+						<div class="point"></div>Gagner de l’expérience en codage
+					</h3>
+					<p>
+						Développer ses compétences en programmation à travers des projets collaboratifs et des ateliers encadrés par des étudiants expérimentés
+					</p>
+				</div><div>
+					<h3>
+						<div class="point"></div>Gagner de l’expérience en codage
+					</h3>
+					<p>
+						Développer ses compétences en programmation à travers des projets collaboratifs et des ateliers encadrés par des étudiants expérimentés
+					</p>
+				</div><div>
+					<h3>
+						<div class="point"></div>Gagner de l’expérience en codage
+					</h3>
+					<p>
+						Développer ses compétences en programmation à travers des projets collaboratifs et des ateliers encadrés par des étudiants expérimentés
+					</p>
+				</div>
+			</div>
+		</section>
+		<!--Qui Sommes-nous?-->
+		<h3>QUI SOMMES-NOUS?</h3>
+		<hr>
+		<section id="tableau-membres">
+			<div>
+				<img src="images/tmp.png">
+				<h2>Personne Malade Trop Cool</h2>
+				<p>Description de cette maladie qui les rends trop cool</p>
+				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+			</div>
+			<div>
+				<img src="images/tmp.png">
+				<h2>Personne Malade Trop Cool</h2>
+				<p>Description de cette maladie qui les rends trop cool</p>
+				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+			</div><div>
+				<img src="images/tmp.png">
+				<h2>Personne Malade Trop Cool</h2>
+				<p>Description de cette maladie qui les rends trop cool</p>
+				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+			</div><div>
+				<img src="images/tmp.png">
+				<h2>Personne Malade Trop Cool</h2>
+				<p>Description de cette maladie qui les rends trop cool</p>
+				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+			</div><div>
+				<img src="images/tmp.png">
+				<h2>Personne Malade Trop Cool</h2>
+				<p>Description de cette maladie qui les rends trop cool</p>
+				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+			</div><div>
+				<img src="images/tmp.png">
+				<h2>Personne Malade Trop Cool</h2>
+				<p>Description de cette maladie qui les rends trop cool</p>
+				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+			</div><div>
+				<img src="images/tmp.png">
+				<h2>Personne Malade Trop Cool</h2>
+				<p>Description de cette maladie qui les rends trop cool</p>
+				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+			</div><div>
+				<img src="images/tmp.png">
+				<h2>Personne Malade Trop Cool</h2>
+				<p>Description de cette maladie qui les rends trop cool</p>
+				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+			</div>
+		</section>
+	</article>
 	
 	<!--Footer-->
 	<div class="gap"></div>
-	<div class="footer">
+	<footer class="footer">
 		<!--colonne 1 (REI-UQODE)-->
 		<span class="colonneFooter" style="font-size: 14px;">
 			<img src="images/logoREI.png" alt="logo du REI" style="max-width: 80%; margin-bottom: 5px;"><br>
@@ -69,7 +326,7 @@
 			<a href="https://www.linkedin.com/company/rei-uqode"><span class="cercle-reseaux"><img class="img-reseaux" src="images/InBug-White.png" alt="logo linkedIn"></span></a>
 			<a href="https://linktr.ee/rei.uqode"><span class="cercle-reseaux"><img class="img-reseaux" src="images/Linktree.svg" alt="logo linktree"></span></a>
 		</span>
-	</div>
+	</footer>
 	
 	<!--Copyright-->
 	<div class="copyright">
