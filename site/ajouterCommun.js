@@ -1,6 +1,6 @@
 export async function ajouterBasDePage(){
     // Ajouter la feuille css
-    let head = document.getElementsByTagNameNS("head")[0];
+    let head = document.getElementsByTagName("head")[0];
     let css = document.createElement("link");
     css.rel = "stylesheet";
     css.type = "text/css";
