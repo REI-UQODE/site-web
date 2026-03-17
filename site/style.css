@@ -6,6 +6,20 @@ body
 	overflow-x: hidden;
 }
 
+article{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+
+	@media (max-width: 768px) {
+		padding: 0 1em;
+	}
+	@media (min-width: 768px) {
+		padding: 0 10%;
+	}
+}
+
 h1
 {
 	font-size: 2.5em;
@@ -49,6 +63,7 @@ p
 
 .separateur
 {
+	width: 50vw;
 	color: #9D079C;
 	border-top: 5px solid;
 	margin: 1em 45% 2em 45%;
@@ -147,40 +162,42 @@ p
 	font-size: 0.75em;
 }
 
-.cellule-horizontale
-{
-	background-color: white;
-	flex: 1;
-	padding: 1.75em 1.75em;
-	display: flex;
-	
-	color: black;
-	font-size: 1.1em;
-	align-items: center;
-
-	transition: 300ms;
+@media (max-width: 768px){
+	.tableau-objectifs{
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
 }
-.cellule-verticale
+@media (min-width: 768px){
+	.tableau-objectifs{
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-auto-rows: 1fr;
+		gap: 1em;
+	}
+}
+
+.tableau-objectifs > div
 {
-	background-color: white;
-	flex-direction: column;
-	justify-content: space-evenly;
+	display: flex;
+	flex-direction: row;
+	height: 100%;
 	padding: 1em 1em 0.5em 1em;
-	flex: 1;
-	display: flex;
-	gap: 0.5em;
+	box-sizing: border-box;
 
-	border-radius: 1em;
+	border-radius: 0.5em;
 	
 	color: black;
+	background-color: white;
 	font-size: 1.1em;
 	align-items: center;
-	cursor: pointer;
+	/*cursor: pointer;*/ /*Pas de pointer sans interaction*/
 
 	transition: 300ms;
 }
-.cellule-horizontale:hover,
-.cellule-verticale:hover
+
+.tableau-objectifs > div:hover
 {
 	background-color: #9D079C;
 	color: white;
@@ -194,7 +211,7 @@ p
 
 	transition: 300ms;
 }
-.cellule-horizontale:hover .icone-tableau /*hover sur la cellule, mais modification de l'icone!*/
+.tableau-objectifs td div:hover .icone-tableau /*hover sur la cellule, mais modification de l'icone!*/
 {
 	filter: brightness(0) invert(1);
 }
@@ -233,3 +250,55 @@ img.arrondi
 }
 
 /* Couleur principale: #9D079C */
+
+@media (max-width: 768px){
+	.tableau-événements{
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+}
+@media (min-width: 768px){
+	.tableau-événements{
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-auto-rows: 1fr;
+		gap: 1em;
+	}
+}
+
+.tableau-événements > div
+{
+	background-color: white;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 20px 20px 10px 20px;
+	flex: 1;
+	display: flex;
+	gap: 10px;
+	color: black;
+	font-size: 18px;
+	align-items: center;
+	cursor: pointer;
+
+	border-radius: 0.5em;
+}
+
+.tableau-événements > div:hover
+{
+	background-color: #9D079C;
+	color: white;
+}
+
+.icone-tableau
+{
+	width: 15%;
+	object-fit: contain;
+	padding: 0 5% 0 0;
+
+	transition: 300ms;
+}
+.tableau-événements td div:hover .icone-tableau /*hover sur la cellule, mais modification de l'icone!*/
+{
+	filter: brightness(0) invert(1);
+}

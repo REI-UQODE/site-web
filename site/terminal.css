@@ -2,7 +2,7 @@
 {
 	background-color: #4a4a4d; 
 	border: 5px solid #9D079C;
-	margin: 1em;
+	margin: 1em 0;
 	padding: 0;
 	text-align: center;
 
@@ -13,6 +13,10 @@
 	border-radius: 1.5em;
 	box-shadow: 0 0.5em 1em #0003;
 	overflow: hidden;
+
+
+	@media (max-width: 768px){max-width: 100%; font-size: 0.9em;}
+	@media (min-width: 768px){max-width: 60vw;}
 }
 
 .terminal header
@@ -36,7 +40,7 @@
 
 .terminal .bouton
 {
-	/*border-radius: 0;*/ /*Non-nécessaire, je crois*/
+	border-radius: 0; /*Nécessaire, je crois ;P*/
 	box-shadow: 0.25em 0.5em 0 #0003;
 	transition: 0ms;
 }
@@ -55,10 +59,12 @@
 
 .contenu-terminal
 {
-	padding-top: 1em;
-	padding-bottom: 1em;
-	padding-left: 2em;
-	padding-right: 2em;
+	@media (max-width: 768px){
+		padding: 2em 0.5em;
+	}
+	@media(min-width: 768px){
+		padding: 0 1em;
+	}
 }
 
 .boutons-terminal
@@ -72,8 +78,16 @@
 	width: 1em;
 	height: 1em;
 	border-radius: 50%;
+	color: transparent;
 	background-color: rgb(211, 57, 57); /*couleur à overrider dans le HTML*/
 	margin-right: 0.5em;
 	
+	font-weight: bold;
 	cursor: pointer;
+
+	transition: 300ms;
+}
+
+.bouton-terminal:hover{
+	color: black;
 }
