@@ -5,11 +5,15 @@
 	<title>Regroupement des Étudiants en Informatique de l'UQO</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="images/logoREI.png"> <!--TODO: Cette image est beaucoup trop grosse pour rien...-->
+	<link rel="icon" href="/images/logoREI.png"> <!--TODO: Cette image est beaucoup trop grosse pour rien...-->
 	
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<style>
 		/*Général*/
+		header{
+			max-height: 20em;
+		}
+
 		h2{
 			font-size: 4em;
 		}
@@ -117,18 +121,21 @@
 		#tableau-membres > div{
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
+			justify-content: start;
 			align-items: center;
 			padding: 2em;
 			box-shadow: 0 0 2em #0003;
 		}
 
 		#tableau-membres > div img{
+			width: 100%;
+			aspect-ratio: 1;
 			border-radius: 100%;
+			object-fit: cover;
 		}
 
 		#tableau-membres > div h2{
-			font-size: 2em;
+			font-size: 1.75em;
 			color: #9D079C;
 		}
 
@@ -145,13 +152,13 @@
 		}
 	</style>
 
-	<script src="init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
+	<script src="/javascript/init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
 </head>
 
 
 <body>
 	<!--Titre et Menu Principal-->
-	<header class="header">
+	<header class="header" style="background-image: url('/images/hackfest2023.jpeg');">
 		<nav class="menuPrincipal"></nav>
 		<div class="header-contenu">
 			<h1>Qui sommes-nous?</h1>
@@ -175,7 +182,7 @@
 		</section>
 		<!--Description 2-->
 		<section id="description2">
-			<div class="img-conteneur"><img src="images/tmp.png"></div>
+			<div class="img-conteneur"><img src="/images/signal-2023-10-13-121945-3-min-scaled-1.jpeg"></div>
 			<div id="texte">
 				<h3>REI</h3>
 				<hr>
@@ -187,7 +194,7 @@
 			</div>
 		</section>
 		<!--Image-->
-		<div id="img-diviseur" class="img-conteneur"><img src="images/tmp.png" style="max-height: 500%;"></div>
+		<div id="img-diviseur" class="img-conteneur"><img src="/images/UQO-UHACK-27-04-SD-152-compressed.jpg" style="max-height: 500%;"></div>
 		<!--Objectifs-->
 		<h3>NOS OBJECTIFS</h3>
 		<hr>
@@ -203,38 +210,38 @@
 				</div>
 				<div>
 					<h3>
-						<div class="point"></div>Gagner de l’expérience en codage
+						<div class="point"></div> Développer le sentiment d’appartenance au module de l’informatique de l’UQO
 					</h3>
 					<p>
-						Développer ses compétences en programmation à travers des projets collaboratifs et des ateliers encadrés par des étudiants expérimentés
+						Créer un environnement où les étudiants se sentent inclus et valorisés dans leurs études en informatique, en favorisant les échanges et le soutien mutuel.
 					</p>
 				</div><div>
 					<h3>
-						<div class="point"></div>Gagner de l’expérience en codage
+						<div class="point"></div>Explorer de nouvelles technologies 
 					</h3>
 					<p>
-						Développer ses compétences en programmation à travers des projets collaboratifs et des ateliers encadrés par des étudiants expérimentés
+						Découvrir et apprendre des technologies émergentes (cloud, intelligence artificielle, blockchain) lors de sessions techniques organisées par UQODE
 					</p>
 				</div><div>
 					<h3>
-						<div class="point"></div>Gagner de l’expérience en codage
+						<div class="point"></div>Supporter les étudiants en informatique à travers leur parcours universitaire 
 					</h3>
 					<p>
-						Développer ses compétences en programmation à travers des projets collaboratifs et des ateliers encadrés par des étudiants expérimentés
+						Supporter les initiatives et projets étudiants de 1er et 2e cycle en développant un projet par session
 					</p>
 				</div><div>
 					<h3>
-						<div class="point"></div>Gagner de l’expérience en codage
+						<div class="point"></div> Participer à la vie universitaire 
 					</h3>
 					<p>
-						Développer ses compétences en programmation à travers des projets collaboratifs et des ateliers encadrés par des étudiants expérimentés
+						S’impliquer dans des événements étudiants, des compétitions de codage et des ateliers, renforçant ainsi la cohésion entre les membres de la communauté.
 					</p>
 				</div><div>
 					<h3>
-						<div class="point"></div>Gagner de l’expérience en codage
+						<div class="point"></div>Offrir des ressources aux membres leur permettant d’échanger de façon constructive 
 					</h3>
 					<p>
-						Développer ses compétences en programmation à travers des projets collaboratifs et des ateliers encadrés par des étudiants expérimentés
+						Mettre à disposition des forums, des groupes de discussion et des outils pour faciliter le partage d’idées, de solutions techniques et de conseils entre les membres.
 					</p>
 				</div>
 			</div>
@@ -244,46 +251,46 @@
 		<hr>
 		<section id="tableau-membres">
 			<div>
-				<img src="images/tmp.png">
-				<h2>Personne Malade Trop Cool</h2>
-				<p>Description de cette maladie qui les rends trop cool</p>
-				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+				<img src="/images/abdoulaye.jpeg">
+				<h2>Abdoulaye Soumah</h2>
+				<p>Président du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
 			</div>
 			<div>
-				<img src="images/tmp.png">
-				<h2>Personne Malade Trop Cool</h2>
-				<p>Description de cette maladie qui les rends trop cool</p>
-				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+				<img src="/images/alpha.jpeg">
+				<h2>Alpha Diallo</h2>
+				<p>Vice-Président du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
 			</div><div>
-				<img src="images/tmp.png">
-				<h2>Personne Malade Trop Cool</h2>
-				<p>Description de cette maladie qui les rends trop cool</p>
-				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+				<img src="/images/Comite_julian.jpg">
+				<h2>Julian David Palma Bolanos</h2>
+				<p>Trésorier du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
 			</div><div>
-				<img src="images/tmp.png">
-				<h2>Personne Malade Trop Cool</h2>
-				<p>Description de cette maladie qui les rends trop cool</p>
-				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+				<img src="/images/Comite_vincentH.jpg">
+				<h2>Vincent Hammon</h2>
+				<p>Scrétaire du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
 			</div><div>
-				<img src="images/tmp.png">
-				<h2>Personne Malade Trop Cool</h2>
-				<p>Description de cette maladie qui les rends trop cool</p>
-				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+				<img src="/images/fabiana.jpeg">
+				<h2>Fabiana Yznaga</h2>
+				<p>Conseillère à la publicité du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
 			</div><div>
-				<img src="images/tmp.png">
-				<h2>Personne Malade Trop Cool</h2>
-				<p>Description de cette maladie qui les rends trop cool</p>
-				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+				<img src="/images/Comite_will.jpg">
+				<h2>William Madgin</h2>
+				<p>Conseiller aux communications du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
 			</div><div>
-				<img src="images/tmp.png">
-				<h2>Personne Malade Trop Cool</h2>
-				<p>Description de cette maladie qui les rends trop cool</p>
-				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+				<img src="/images/Comite_vincentL.jpg">
+				<h2>Vincent Lafleur</h2>
+				<p>Conseiller aux activités du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
 			</div><div>
-				<img src="images/tmp.png">
-				<h2>Personne Malade Trop Cool</h2>
-				<p>Description de cette maladie qui les rends trop cool</p>
-				<div class="img-conteneur"><img src="images/Discord-Symbol-White.svg"></div>
+				<img src="/images/Comite_felix.jpg">
+				<h2>Félix Ladouceur</h2>
+				<p>Conseiller aux activités du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
 			</div>
 		</section>
 	</article>

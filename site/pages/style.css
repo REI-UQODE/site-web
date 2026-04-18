@@ -89,41 +89,9 @@ p
 	{margin-left: 20%; margin-right: 20%;}
 }
 
-.menuPrincipal
-{
-	background-color: #00000000;
-	padding: 0.5em 3%;
-	display: flex;
-	align-items: center;
-	margin: 0;
-	overflow-x: scroll;
-}
-
-.boutonMenuPrincipal
-{
-	/*background-color: aucune?*/
-	border-radius: 0.5em;
-	padding: 0.5em 1%;
-	margin: 0 0.5em;
-	
-	font-size: 0.65em;
-	color: rgb(174, 174, 174);
-	text-decoration: none;
-	box-shadow: 0 0 0 #0000;
-}
-
-.boutonMenuPrincipal:hover
-{
-	color: white;
-	background-color: #80057F;
-	transition: 300ms;
-	box-shadow: 0 0.5em 1em #0006;
-}
-
 
 .header
 {
-	background-image: url('images/photoGroupe.jpg');
 	background-size: cover;
 	background-color: rgba(0, 0, 0, 0.5); /*Ajuster le alpha pour une image + ou - sombre.*/
 	background-blend-mode: darken;
