@@ -45,6 +45,14 @@ p
 	margin: 1em 0.2em;
 }
 
+p a {
+	color: #9D079C
+}
+
+p a:visited{
+	color: #07239d
+}
+
 .gap
 {
 	height: 2em;
@@ -117,12 +125,24 @@ p
 	text-align: center;
 }
 
+.header-contenu h1
+{
+	text-shadow: 0 0 0.5em #000f;
+}
+
+.header-contenu p
+{
+	color: white;
+	text-shadow: 0 0 0.5em #000f;
+}
+
 .header hr
 {
 	margin-top: 0;
 	width: 20em;
 	max-width: 75%;
 	border: 1px solid white;
+	box-shadow: 1px 1px 20px 5px #0007;
 }
 
 .header .bouton

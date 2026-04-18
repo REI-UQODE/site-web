@@ -5,7 +5,8 @@
 	<title>Regroupement des Étudiants en Informatique de l'UQO</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="/images/logoREI.png"> <!--TODO: Cette image est beaucoup trop grosse pour rien...-->
+	<link rel="icon" href="/images/logoREI.png">
+	<title>REI | Accueil</title>
 	
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="terminal.css">
@@ -124,7 +125,7 @@
 		<div class="header-contenu">
 			<h1>REI</h1>
 			<hr>
-			Regroupement des Étudiants en Informatique de l'UQO
+			<p>Regroupement des Étudiants en Informatique de l'UQO</p>
 			<div style="height: 10px"></div>
 			<div class="centreur"><a class="bouton" href="https://discord.gg/XNPFzumVzb">Rejoignez notre serveur Discord!</a></div>
 		</div>
@@ -168,6 +169,21 @@
 		<!--Terminal-->
 		<div class="terminal">
 			<header>
+				<!--On pourrait ajouter un filtre pixelisé-->
+				<!--svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
+					<defs>
+						<filter id="pixelate" x="0" y="0">
+							<feFlood x="0.49" y="0.99" height="0.02" width="0.02"/> 
+							<feComposite width="2" height="4"/>
+							<feTile result="a"/>
+							<feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="b"/>
+							<feComposite in="b" in2="a" 
+										operator="in"/>
+							<feMorphology operator="dilate"
+											radius="2"/>
+						</filter>
+					</defs>
+				</svg--> 
 				<h2>Le REI et l'UQODE</h2>
 				<div class="boutons-terminal">
 					<div class="bouton-terminal" style="background-color: rgb(50, 187, 50);">+</div>
@@ -178,7 +194,7 @@
 			<div class="contenu-terminal">
 				<p>En tant qu'étudiant en informatique, profite du REI et de l'UQODE pour développer des connexions, saisir des opportunités et avancer avec enthousiasme dans ton parcours universitaire.</p>
 				<div class="flex" style="margin: 0; text-align: left; align-items: stretch; gap: 1em;">
-					<div class="img-conteneur"><img src="/images/uHack.jpg" alt="photo de membres du REI"></div>
+					<div class="img-conteneur" style="filter: url('#pixelate');"><img src="/images/uHack.jpg" alt="photo de membres du REI"></div>
 					<div style="display: flex; margin: 1em; flex-direction: column; justify-content: space-evenly; flex-grow: 1; gap: 10px;">
 						<div>
 							<h3>REI</h3>

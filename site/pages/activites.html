@@ -2,32 +2,193 @@
 
 <html>
 <head>
-	<title>Regroupement des Étudiants en Informatique de l'UQO</title>
+	<title>REI | Activités</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="images/logoREI.png"> <!--TODO: Cette image est beaucoup trop grosse pour rien...-->
+	<link rel="icon" href="/images/logoREI.png">
 	
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="terminal.css">
 
-	<script src="init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
+	<style>
+		/*Général*/
+		h2{
+			font-weight: 2000;
+			font-size: 2.5em;
+		}
+		/*description1*/
+		#description1{
+			display: flex;
+			flex-direction: row;
+		}
+
+		#description1 > div{
+			margin: 1em
+		}
+
+		#description1 p{
+			text-align: justify;
+		}
+
+		/*Événements Annuels*/
+		#événements-annuels{
+			display: grid;
+			grid-template-columns: auto auto auto;
+			align-items: start;
+		}
+
+		#événements-annuels > div{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin: 1em;
+		}
+
+		#événements-annuels > div h3{
+			text-align: center;
+			color: #9D079C;
+		}
+		#événements-annuels > div p{
+			text-align: justify;
+			margin: 0.1em;
+		}
+	</style>
+
+	<script src="/javascript/init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
 </head>
 
 
 <body>
 	<!--Titre et Menu Principal-->
-	<div class="header">
-		<nav class="menuPrincipal"></nav>
+	<div class="header" style="background-image: url('/images/gameNight.jpg');">
+		<nav></nav>
 		<div class="header-contenu">
 			<h1>Nos Activités</h1>
 			<hr>
 			Apprenez-en plus sur les activités du REI et de l'UQODE
-			<!--div style="height: 10px"></div>
-			<div class="centreur"><a class="bouton" href="calendrier.rei-uqode.ca">Consultez le calendrier</a></div-->
+			<div style="height: 10px"></div>
+			<div class="centreur"><a class="bouton" href="https://calendrier.rei-uqode.ca">Consultez le calendrier</a></div>
 		</div>
 	</div>
 	
 	<!--Contenu-->
-	<!--TODO-->
+	<article>
+		<div class="gap"></div>
+		<h2>NOS ACTIVITÉS ÉTUDIANTES ET NOS ÉVÉNEMENTS</h2>
+		<hr class="separateur">
+
+		<!--description 1-->
+		<section id="description1">
+			<div>
+				<p>Le REI et l’UQODE tiennent de nombreuses activités étudiantes et d’autres évènements! Restez à l’affût en rejoignant <a href="https://discord.gg/XNPFzumVzb">notre serveur discord!</a></p>
+				<p>
+					Le REI organise des activités centrée sur la vie étudiante dans le but de créer un sentiment d’appartenance au programme, tandis que l’UQODE 
+					organise des activités à caractère pédagogique centrées sur la programmation et la cybersécurité.
+				</p>
+				<p>Vous pouvez en apprendre plus <a href="/pages/qui-sommes-nous.html">sur le REI ici</a> et <a href="/pages/uqode.html">sur l’UQODE ici</a>.</p>
+			</div>
+			<div>
+				<img src="/images/uctf2.jpg">
+				<p>L'UCTF, la compétition de cybersécurité organisée par le REI et l'UQODE</p>
+			</div>
+		</section>
+
+		<!--Défi du moi-->
+		<div class="terminal">
+			<header>
+				<h2>Le Défi du Moi</h2>
+				<div class="boutons-terminal">
+					<div class="bouton-terminal" style="background-color: rgb(50, 187, 50);">+</div>
+					<div class="bouton-terminal" style="background-color: rgb(239, 213, 48);">-</div>
+					<div class="bouton-terminal" style="background-color: rgb(211, 57, 57);">x</div>
+				</div>
+			</header>
+			<div class="contenu-terminal">
+				<!--svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
+					<defs>
+						<filter id="pixelate" x="0" y="0">
+							<feFlood x="0.49" y="0.99" height="0.02" width="0.02"/> 
+							<feComposite width="2" height="4"/>
+							<feTile result="a"/>
+							<feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="b"/>
+							<feComposite in="b" in2="a" 
+										operator="in"/>
+							<feMorphology operator="dilate"
+											radius="2"/>
+						</filter>
+					</defs>
+				</svg--> 
+				<h3>Participez au défi du moi d’avril de l’UQODE!</h3>
+				<p>Le Défi du Mois est un défi de programmation compétitif dans lequel vous aurez à construire un programme qui répond à certains critères. Vous soumettrez votre solution et elle sera jugée selon divers critères et la meilleure solution sera couronnée gagnante du défi.</p>
+				<div class="flex" style="margin: 0; text-align: left; align-items: stretch; gap: 1em;">
+					<div class="img-conteneur" style="filter: url('#pixelate');"><img src="/images/DéfiAvril.png" alt="défi d'avril"></div>
+					<div style="display: flex; margin: 1em; flex-direction: column; flex-grow: 1; gap: 10px;">
+						<div>
+							<p>Soumettez vos solutions à <a class="bouton" href="uqode@uqo.ca">uqode@uqo.ca</a></p>
+							<p>Vous aurez du 1er au 30 Avril pour soumettre la solution gagnante!</p>
+							<p>Plus de détails sont offerts <a class="bouton" href="https://github.com/REI-UQODE/defisdumois">sur le Github</a></p>
+							<p>Suivez-nous sur nos réseaux sociaux pour des mises à jour régulières!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Événements Annuels-->
+		<div class="gap"></div>
+		<h2>Événements Annuels</h2>
+		<hr class="separateur">
+		<section id="événements-annuels">
+			<div>
+				<h3>HackFest</h3>
+				<p>Le REI envoie chaque automne une délégation d’étudiants en informatique de l’UQO au HackFest.</p>
+				<p>Le Hackfest est l’un des plus grands évènements de cybersécurité du Québec. On y retrouve de nombreuses conférences, des capture the flag (ctf), des ateliers et plus encore. </p>
+			</div>
+			<div>
+				<h3>CSGames</h3>
+				<p>Chaque hiver, le REI envoie une délégation d’étudiants au baccalauréat en informatique aux CSGames.</p>
+				<p>Les CSGames sont une grande compétition d’informatique comprenant notamment des défis de programmation, des puzzles et des fêtes. Cette compétition attire des étudiants en informatique de partout à travers le Québec.</p>
+			</div>
+			<div>
+				<h3>UHack</h3>
+				<p>Le REI offre la chance à tous ses membres de participer au UHack, organisé à chaque année ici même à l’UQO.</p>
+				<p>Il s’agit d’une compétition de programmation sous forme de hackathon qui consiste à résoudre des problèmes réels de différentes entreprises de l’Outaouais. </p>
+			</div>
+		</section>
+
+		<!--Autres Événements-->
+		<div class="gap"></div>
+		<h2>Autres Événements</h2>
+		<hr class="separateur">
+		<section id="événements-annuels">
+			<div>
+				<h3>Soirées Bingo et Jeux de société</h3>
+				<p>Le REI organise régulièrement des soirées Bingo et Jeux de société durant les sessions d’automne et d’hiver. Ce sont de parfaits moments pour socialiser, s’amuser et apprendre à connaître les autres étudiants du programme.</p>
+			</div>
+			<div>
+				<h3>UCTF</h3>
+				<p>L’UCTF est une compétition de cybersécurité organisée par le REI et l’UQODE. La compétition prend la forme d’un capture the flag (ctf) d’une durée de 24h.</p>
+				<p>Cette compétition est expressément destinée aux étudiants de l’UQO (autant ceux de Gatineau que ceux de St-Jérôme).</p>
+				<p>La première édition de l’UCTF a eu lieu en novembre 2025. </p>
+			</div>
+			<div>
+				<h3>Soirées d’étude</h3>
+				<p>Le REI organise souvent des soirées d’étude juste avant les examens.</p>
+			</div>
+		</section>
+
+		<!--Événements Actuels-->
+		<div class="gap"></div>
+		<h2>Événements Actuels</h2>
+		<p><b>Inscrivez-vous aux prochaines activités du REI et de l'UQODE!</b></p>
+		<a class="bouton" href="https://linktr.ee/rei.uqode" style="font-size: 1.5em;">Inscrivez-vous à nos activités</a>
+
+		<!--Calendrier-->
+		<div class="gap"></div>
+		<h2>Calendrier</h2>
+		<p style="text-align: center;"><b>Pour connaître le calendrier détaillé des activités du REI et de l'UQODE, vous pouvez consulter le calendrier commun des associations étudiantes de l'UQO.</b></p>
+		<a class="bouton" href="https://calendrier.rei-uqode.ca/" style="font-size: 1.5em;">Consultez le calendrier</a>
+	</article>
 	
 	<!--Footer-->
 	<footer></footer>

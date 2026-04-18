@@ -38,6 +38,25 @@
 	text-decoration: none;
 }
 
+.lienFooter:hover
+{
+	color: rgb(225, 180, 234);
+	text-decoration: none;
+}
+
+.lienFooter:visited
+{
+	color: rgb(97, 107, 120);
+	text-decoration: none;
+}
+
+
+.lienFooter:visited:hover
+{
+	color: rgb(170, 136, 182);
+	text-decoration: none;
+}
+
 .cercle-reseaux
 {
 	border: 1px solid gray;
