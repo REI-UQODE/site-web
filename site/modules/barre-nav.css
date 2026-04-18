@@ -28,3 +28,13 @@ nav
 	transition: 300ms;
 	box-shadow: 0 0.5em 1em #0006;
 }
+
+.boutonMenuPrincipal:visited
+{
+	color: rgb(174, 174, 174);
+}
+
+.boutonMenuPrincipal:visited:hover
+{
+	color: white
+}
