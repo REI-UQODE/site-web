@@ -29,7 +29,7 @@ async function loadImg (categorieDemandee)
 	//Chargement du fichier JSON contenant la liste des images:
 	if (categories.length === 0)
 	{
-		await fetch('imgs.json')
+		await fetch('/pages/accueil_imgs.json')
 		.then(response => response.json())
 		.then(data => {categories = data.categories;})
 		.catch(error => console.error("Impossible d'accéder à la liste des images: ", error));
@@ -47,7 +47,7 @@ async function loadImg (categorieDemandee)
 	
 	//Affichage:
 	modal.style.display = "flex";
-	viewer.innerHTML = `<img class="image-modale" src="images/${categories[categorieActive].images[numImg].fichier}" alt="${categories[categorieActive].images[numImg].nom}">`;
+	viewer.innerHTML = `<img class="image-modale" src="/images/${categories[categorieActive].images[numImg].fichier}" alt="${categories[categorieActive].images[numImg].nom}">`;
 	titre.innerHTML = categories[categorieActive].images[numImg].nom;
 }
 
@@ -58,7 +58,7 @@ function prevImg ()
 	{numImg = categories[categorieActive].images.length - 1;}
 	else
 	{numImg--;}
-	viewer.innerHTML = `<img class="image-modale" src="images/${categories[categorieActive].images[numImg].fichier}" alt="${categories[categorieActive].images[numImg].nom}">`;
+	viewer.innerHTML = `<img class="image-modale" src="/images/${categories[categorieActive].images[numImg].fichier}" alt="${categories[categorieActive].images[numImg].nom}">`;
 	titre.innerHTML = categories[categorieActive].images[numImg].nom;
 }
 
@@ -69,7 +69,7 @@ function nextImg ()
 	{numImg = 0;}
 	else
 	{numImg++;}
-	viewer.innerHTML = `<img class="image-modale" src="images/${categories[categorieActive].images[numImg].fichier}" alt="${categories[categorieActive].images[numImg].nom}">`;
+	viewer.innerHTML = `<img class="image-modale" src="/images/${categories[categorieActive].images[numImg].fichier}" alt="${categories[categorieActive].images[numImg].nom}">`;
 	titre.innerHTML = categories[categorieActive].images[numImg].nom;
 }
 
