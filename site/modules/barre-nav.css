@@ -3,6 +3,7 @@ nav
 	background-color: transparent;
 	padding: 0.5em 3%;
 	display: flex;
+	justify-content: start;
 	align-items: center;
 	margin: 0;
 	overflow-x: scroll;

@@ -15,10 +15,14 @@
 			font-size: 2.5em;
 		}
 
-		#section2{
+		@media(min-width: 768px){#section2{
 			display: grid;
 			grid-template-columns: 50% 50%;
-		}
+		}}
+		@media(max-width: 768px){#section2{
+			display: flex;
+			flex-direction: column;
+		}}
 
 		#infos > div{
 			display: grid;
@@ -46,6 +50,7 @@
 
 		#réseaux > div {
 			display: flex;
+			justify-content: center;
 			flex-direction: row;
 			flex-wrap: wrap;
 		}

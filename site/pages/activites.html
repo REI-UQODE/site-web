@@ -15,8 +15,9 @@
 		/*description1*/
 		#description1{
 			display: flex;
-			flex-direction: row;
 		}
+		@media (min-width: 768px) {#description1{flex-direction: row;}}
+		@media (max-width: 768px) {#description1{flex-direction: column;}}
 
 		#description1 > div{
 			margin: 1em
@@ -28,10 +29,20 @@
 
 		/*Événements Annuels*/
 		#événements-annuels{
-			display: grid;
-			grid-template-columns: auto auto auto;
 			align-items: start;
 		}
+		@media (min-width: 1000px){#événements-annuels{
+			display: grid;
+			grid-template-columns: auto auto auto;
+		}}
+		@media (max-width: 1000px){#événements-annuels{
+			display: grid;
+			grid-template-columns: auto auto;
+		}}
+		@media (max-width: 768px){#événements-annuels{
+			display: flex;
+			flex-direction: column;
+		}}
 
 		#événements-annuels > div{
 			display: flex;

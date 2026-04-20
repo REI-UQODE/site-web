@@ -11,29 +11,41 @@
 	<link rel="stylesheet" type="text/css" href="terminal.css">
 
 	<style>
-		#description1{
+		@media(min-width: 768px){ #description1{
 			display: grid;
 			grid-template-columns: auto auto;
-		}
+		}}
+		@media(max-width: 768px){ #description1{
+			display: flex;
+			flex-direction: column;
+		}}
 		#description1 > div {
 			margin: 1em;
 		}
 
 		.contenu-terminal{
 			display: flex;
-			flex-direction: row;
 		}
+		@media(min-width:768px){.contenu-terminal{flex-direction: row;}}
+		@media(max-width:768px){.contenu-terminal{flex-direction: column;}}
+
 		.contenu-terminal *{
 			margin: 0.5em;
 		}
 
 		/*Tableau membres*/
 		#tableau-membres{
-			display:grid;
-			grid-template-columns: 1fr 1fr 1fr;
 			grid-auto-rows: 1fr;
 			gap: 4em 1em;
 		}
+		@media(min-width: 768px){#tableau-membres{
+			display:grid;
+			grid-template-columns: 1fr 1fr 1fr;
+		}}
+		@media(max-width: 768px){#tableau-membres{
+			display:flex;
+			flex-direction: column;
+		}}
 
 		#tableau-membres > div{
 			display: flex;
@@ -187,6 +199,19 @@
 				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
 			</div>
 		</section>
+
+		<!--Déclaration de mandat-->
+		<div class="gap"></div>
+		<h2>Déclaration de Mandat et Registre des Membres</h2>
+		<hr class="separateur">
+		<p>
+			L'UQODE existe par décret du REI et est régie par sa Déclaration de Mandat, inscrite dans les 
+			<a href="/pages/qui-sommes-nous.html#status-et-reglements">Status et Réglements du REI</a>, et son 
+			Registre des Membres. Restez informé des règles qui nous régissent ci-dessous.
+		</p>
+		<p>Veuillez noter que nous ferons tout en notre possible pour maintenir ces documents à jour, mais qu'il est possible qu'il y ait des retards.</p>
+		<a class="bouton" href="../documents/Déclaration de Mandat.pdf">Téléchargez la Déclaration de Mandat</a>
+		<a class="bouton" href="../documents/Registre des Membres.pdf">Téléchargez le Registre des Membres</a>
 	</article>
 	
 	<!--Footer-->
