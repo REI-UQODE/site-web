@@ -29,6 +29,7 @@ h1
 
 h2
 {
+	font-size: 4em;
 	text-align: center;
 	color: #9D079C;
 	margin: 0 0.2em;
@@ -150,21 +151,24 @@ a:visited{
 	font-size: 0.75em;
 }
 
-.bouton
+.bouton, button
 {
 	background-color: #9D079C;
+	margin: 0.5em;
 	padding: 0.5em 1em;
 	border-radius: 0.5em;
 	display: inline-block;
 	
+	border: 0;
 	color: white;
 	text-decoration: none;
 	font-size: 1.1em;
 	box-shadow: 0 0.5em 1em #0003;
 
 	transition: 300ms;
+	cursor: pointer;
 }
-.bouton:hover
+.bouton:hover, button:hover
 {
 	background-color: #80057F;
 	box-shadow: 0 0.25em 0.5em #0006;
@@ -176,6 +180,11 @@ a:visited{
 
 .bouton:visited:hover{
 	color: white;
+}
+
+/*Utilisé si un bouton agit comme un bouton radio*/
+.bouton-actif{
+	background-color: #80057F !important;
 }
 
 .img-conteneur{

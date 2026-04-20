@@ -15,8 +15,8 @@
 	overflow: hidden;
 
 
-	@media (max-width: 768px){max-width: 100%; font-size: 0.9em;}
-	@media (min-width: 768px){max-width: 60vw;}
+	@media (max-width: 1250px){max-width: 100%; font-size: 0.9em;}
+	@media (min-width: 1250px){max-width: 60vw;}
 }
 
 .terminal header
@@ -38,14 +38,14 @@
 	color: rgb(181, 181, 181);
 }
 
-.terminal .bouton
+.terminal .bouton, .terminal button
 {
 	border-radius: 0; /*Nécessaire, je crois ;P*/
 	box-shadow: 0.25em 0.5em 0 #0003;
 	transition: 0ms;
 }
 
-.terminal .bouton:hover
+.terminal .bouton:hover, .terminal button:hover
 {
 	box-shadow: 0.1em 0.2em 0 #0003;
 }

@@ -8,15 +8,77 @@
 	<link rel="icon" href="/images/logoREI.png"> <!--TODO: Cette image est beaucoup trop grosse pour rien...-->
 	
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="footer.css">
+	<link rel="stylesheet" type="text/css" href="terminal.css">
+
+	<style>
+		#description1{
+			display: grid;
+			grid-template-columns: auto auto;
+		}
+		#description1 > div {
+			margin: 1em;
+		}
+
+		.contenu-terminal{
+			display: flex;
+			flex-direction: row;
+		}
+		.contenu-terminal *{
+			margin: 0.5em;
+		}
+
+		/*Tableau membres*/
+		#tableau-membres{
+			display:grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-auto-rows: 1fr;
+			gap: 4em 1em;
+		}
+
+		#tableau-membres > div{
+			display: flex;
+			flex-direction: column;
+			justify-content: start;
+			align-items: center;
+			padding: 2em;
+			box-shadow: 0 0 2em #0003;
+		}
+
+		#tableau-membres > div img{
+			width: 100%;
+			max-width: 15em;
+			aspect-ratio: 1;
+			border-radius: 100%;
+			object-fit: cover;
+		}
+
+		#tableau-membres > div h2{
+			font-size: 1.75em;
+			color: #9D079C;
+		}
+
+		#tableau-membres > div p{
+			margin : 0 0 1em 0;
+			color:grey;
+			text-align: center;
+		}
+
+		#tableau-membres > div .img-conteneur{
+			width: 2em;
+			height: 2em;
+			background-color: grey;
+			border-radius: 100%;
+		}
+	</style>
 
 	<script src="/javascript/init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
+	<script src="/javascript/tableau-domaines-uqode.js" defer></script>
 </head>
 
 
 <body>
 	<!--Titre et Menu Principal-->
-	<div class="header">
+	<div class="header" style="background-image: url('/images/UQODE_AtelierPython_Automne2024.jpg');">
 		<nav class="menuPrincipal"></nav>
 		<div class="header-contenu">
 			<h1>l'UQODE</h1>
@@ -26,7 +88,106 @@
 	</div>
 	
 	<!--Contenu-->
-	<!--TODO-->
+	<article>
+		<!--description 1-->
+		<section id="description1">
+			<div>
+				<img src="../images/atelier-dapprentissage-uqode.jpg">
+				<p>Atelier de l'UQODE</p>
+			</div>
+			<div>
+				<p>L’UQODE est le comité de programmation et de cybersécurité de l’UQO.</p>
+				<p>L’UQODE est un comité indépendant soutenu, géré et financé par le REI (Regroupement des Étudiants en Informatique). Alors que le REI se charge de la vie étudiante en informatique, l’UQODE cherche à créer des évènements à caractère pédagogique afin de permettre aux étudiants en informatique ou de d’autres programmes d’en apprendre plus sur divers sujets liés à l’informatique.</p>
+				<p>L’UQODE ne tient pas de calendrier strict de ses activités, mais elles sont toujours communiquées à tous les étudiants en informatique par le REI et elles sont aussi annoncées sur notre <a href="https://discord.gg/XNPFzumVzb">serveur discord</a>.</p>
+				<p>L’UQODE est ouvert à tous les étudiants de tous le programmes de l’UQO!</p>
+			</div>
+		</section>
+
+		<!--Tableau-->
+		<p style="margin: 2em;">L’UQODE explore plusieurs domaines de l’informatique, dont les suivants:</p>
+		<div class="terminal">
+			<header> 
+				<h2>Le REI et l'UQODE</h2>
+				<div class="boutons-terminal">
+					<div class="bouton-terminal" style="background-color: rgb(50, 187, 50);">+</div>
+					<div class="bouton-terminal" style="background-color: rgb(239, 213, 48);">-</div>
+					<div class="bouton-terminal" style="background-color: rgb(211, 57, 57);">x</div>
+				</div>
+			</header>
+			<div class="contenu-terminal">
+				<div id="tableau-domaines-boutons" style="display: flex; flex-direction: column; min-width: 20em;">
+					<button id="cybersécurité">Cybersécurité</button>
+					<button id="intelligence-artificielle">Intelligence Artificielle</button>
+					<button id="programmation">Programmation</button>
+					<button id="développement-web">Développement Web</button>
+					<button id="administration-réseaux">Administration des réseaux</button>
+				</div>
+				<div id="tableau-domaines-textes" style="text-align: left;">
+					<p for="cybersécurité" style="display: none;">
+						Les ateliers en cybersécurité vise à sensibiliser et à protéger la communauté étudiante contre les 
+						menaces numériques. Les membres analyseront les vulnérabilités, participeront à des ateliers de 
+						sécurité et mettront en place des stratégies de protection. Si vous êtes intéressé par les enjeux 
+						de sécurité informatique et souhaitez acquérir des compétences pratiques, les ateliers en cybersécurité 
+						vous conviendront.
+					</p>
+					<p for="intelligence-artificielle" style="display: none;">
+						Le domaine de l'intelligence artificielle englobe de nombreux aspects, allant de l'analyse de données
+						à la prise de décision algorithmique aux réseaux de neurones. L'UOQDE vise à parfaire la compréhension
+						de ces domaines, des différentes techniques utilisées ainsi que du bon choix de ces dernières.
+					</p>
+					<p for="programmation" style="display: none;">
+						Domaine dédié au développement de solutions logicielles pour répondre aux besoins des membres 
+						du comité et de la communauté étudiante. En participant à des projets collaboratifs, vous pourrez 
+						renforcer vos compétences en programmation et apprendre de nouvelles méthodologies. Que vous soyez 
+						novice ou expérimenté, les ateliers en programmation est un excellent moyen de mettre en pratique 
+						vos connaissances et de travailler en équipe.
+					</p>
+					<p for="administration-réseaux" style="display: none;">
+						Domaine dédiée à la gestion, l’optimisation et l’apprentissage des infrastructures réseau au sein du club. 
+						Apprenez à configurer des systèmes, à surveiller la performance du réseau et à résoudre des problèmes techniques. 
+						Si vous souhaitez comprendre le fonctionnement des réseaux et acquérir des compétences en administration 
+						système, les ateliers en administration des réseaux vous conviendront parfaitement.
+					</p>
+					<p for="développement-web" style="display: none;">
+						Domaine dédié à la conception, au développement et à l’amélioration de projets web au sein du comité. Apprenez à 
+						créer des sites web interactifs, à travailler avec des technologies front-end et back-end, et à résoudre des 
+						problèmes liés au développement web. Si vous souhaitez maîtriser les bases du développement web et acquérir des 
+						compétences pratiques en programmation, en design et en intégration web, les ateliers en développement web seront 
+						parfaits pour vous.
+					</p>
+				</div>
+			</div>
+		</div>
+		<p>Si vous avez des questions, n’hésitez pas à nous envoyer un <a href="uqode@uqo.ca">courriel</a>!</p>
+
+		<a class="bouton" href="activites.html">Apprenez-en plus sur nos activités</a>
+
+		<!--Membres-->
+		<div class="gap"></div>
+		<h2>Notre Équipe</h2>
+		<hr class="separateur">
+		<section id="tableau-membres">
+			<div>
+				<img src="/images/godbout.png">
+				<h2>Vincent Godbout</h2>
+				<p>Président de l'UQODE</p>
+				<p>Coordonateur de la UJam</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+			</div>
+			<div>
+				<img src="/images/IMG_1534-scaled.jpeg">
+				<h2>Nicolas Audette</h2>
+				<p>Vice-Président du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+			</div>
+			<div>
+				<img src="/images/Comite_vincentL.jpg">
+				<h2>Vincent Lafleur</h2>
+				<p>Coordonateur de l'UCTF</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+			</div>
+		</section>
+	</article>
 	
 	<!--Footer-->
 	<footer></footer>
