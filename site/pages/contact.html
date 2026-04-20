@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>REI | Contacts</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/images/logoREI.png">
+	<title>REI | Contacts</title>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<style>
+		h2{
+			font-size: 2.5em;
+		}
+
+		@media(min-width: 768px){#section2{
+			display: grid;
+			grid-template-columns: 50% 50%;
+		}}
+		@media(max-width: 768px){#section2{
+			display: flex;
+			flex-direction: column;
+		}}
+
+		#infos > div{
+			display: grid;
+			grid-template-columns: 20% 80%;
+		}
+
+		#infos > div > div{
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			margin: 1em;
+		}
+
+		#infos > div .img-conteneur{
+			width: 4em;
+			height: 4em;
+		}
+
+		#infos > div .img-conteneur img{
+			width: 100%;
+			aspect-ratio: 100%;
+			object-fit: cover;
+			border-radius: 100%;
+		}
+
+		#réseaux > div {
+			display: flex;
+			justify-content: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		#réseaux > div > a {
+			display: flex;
+			justify-self: center;
+			align-items: center;
+			margin: 0.25em;
+			padding: 0.75em;
+			width: 2.5em; 
+			height: 2.5em;
+			border-radius: 100%;
+		}
+	</style>
+
+	<script src="/javascript/init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
+</head>
+
+
+<body>
+	<!--Titre et Menu Principal-->
+	<div class="header" style="background-image: url('/images/9W0A7-197-1-compressed-scaled-1.jpg');">
+		<nav class="menuPrincipal"></nav>
+		<div class="header-contenu">
+			<h1>Contactez-nous</h1>
+		</div>
+	</div>
+	
+	<!--Contenu-->
+	<article>
+		<!--section 1-->
+		<div class="gap"></div>
+		<section id="section1">
+			<div style="display: grid; grid-template-columns: auto auto;">
+				<div style="margin:1em">
+					<p>Vous avez des questions sur nos activités?</p>
+					<p>Vous pouvez consulter <a href="/pages/activites.html">la liste de nos activités</a>. N’oubliez pas de rejoindre notre <a href="https://discord.gg/XNPFzumVzb">serveur discord</a> pour ne rien manquer!</p>
+					<p>Pour toute question concernant les ateliers de l’<a href="/pages/uqode.html">UQODE</a>, envoyez un <a href="uqode@uqo.ca">courriel</a> au comité.</p>
+					<p>Pour toute question liée à la vie étudiante ou d’intérêt général, envoyez un <a href="rei@uqo.ca">courriel</a> au <a hre="/pages/qui-sommes-nous.html">REI</a>.</p>
+					<p>N’hésitez pas non plus à venir nous voir en personne au local <b>A-1214</b>, au pavillon Lucien-Brault de l’UQO.</p>
+				</div>
+				<div style="margin: 1em;">
+					<img src="/images/uctf3.jpg" style="float: right">
+				</div>
+			</div>
+		</section>
+
+		<!--section 2-->
+		<div class="gap"></div>
+		<h2>Nos informations</h2>
+		<hr class="separateur">
+		<section id="section2">
+			<!--informations-->
+			<div id="infos">
+				<!--adresse-->
+				<div>
+					<div class="img-conteneur"><img src="/images/tmp.png"></div>
+					<div>
+						<p>Pour nous rencontrer en personne :</p>
+						<p>
+							<b>Université du Québec en Outaouais<br>
+							Pavillon Lucien-Brault<br></b>
+							local <b>A-1214</b><br>
+							101, rue St-Jean-Bosco<br>
+							Gatineau (Qc)<br>
+							J8Y 3G5
+						</p>
+					</div>
+				</div>
+				<div>
+					<div class="img-conteneur"><img src="/images/tmp.png"></div>
+					<div>
+						<p><b>REI</b> (Regroupement des Étudiants en Informatique de l'UQO) :</p>
+						<a href="rei@uqo.ca">rei@uqo.ca</a>
+					</div>
+				</div>
+				<div>
+					<div class="img-conteneur"><img src="/images/tmp.png"></div>
+					<div>
+						<p><b>UQODE</b> (Comité du REI) :</p>
+						<a href="uqode@uqo.ca">uqode@uqo.ca</a>
+					</div>
+				</div>
+			</div>
+			<!--réseaux-->
+			<div id="réseaux">
+				<h2>RESTONS EN CONTACT!</h2>
+				<div>
+					<a href="https://discord.gg/XNPFzumVzb" style="background-color: #5c43be;">
+						<img src="../images/Discord-Symbol-White.svg">
+					</a>
+					<a href="https://github.com/REI-UQODE" style="background-color: #000111;">
+						<img src="../images/GitHub_Invertocat_White_Clearspace.svg">
+					</a>
+					<a href="https://linktr.ee/rei.uqode" style="background-color: #0ccd19;">
+						<img src="../images/Linktree.svg">
+					</a>
+					<a href="https://bsky.app/profile/rei-uqode.bsky.social" style="background-color: #0bb1e9;">
+						<img src="../images/Bluesky_logo_(black).svg">
+					</a>
+					<a href="https://defcon.social/@rei_uqode" style="background-color: #654fc7;">
+						<img src="../images/mastodon-logo-white.svg">
+					</a>
+					<a href="https://www.instagram.com/rei.uqode" style="background-color: #e35a0a;">
+						<img src="../images/Instagram_Glyph_White.svg">
+					</a>
+					<a href="https://www.facebook.com/clubUQODE" style="background-color: #2d53ad;">
+						<img src="../images/Facebook_Logo_Secondary.png">
+					</a>
+					<a href="https://www.linkedin.com/company/rei-uqode" style="background-color: #1d46a5;">
+						<img src="../images/InBug-White.png">
+					</a>
+
+				</div>
+			</div>
+		</section>
+	</article>
+	
+	<!--Footer-->
+	<footer></footer>
+</body>
+</html>

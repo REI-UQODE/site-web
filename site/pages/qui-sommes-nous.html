@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>REI | Qui Sommes-Nous?</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/images/logoREI.png">
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		/*Général*/
+		header{
+			max-height: 20em;
+		}
+
+		h3{
+			font-size: 2em;
+			color: #9D079C;
+		}
+
+		h3 + hr{
+			width: 10%;
+			height: 0.3em;
+			margin: 0;
+			background-color: #9D079C;
+			border-radius: 0.2em;
+			border: 0;
+		}
+
+		#description1{
+			display: block;
+			max-width: 50em;
+			margin: 3em 0;
+			text-align: justify;
+		}
+
+		#description2{
+			display: flex;
+			text-align: justify;
+		}
+		@media(min-width:768px){#description2{flex-direction: row;}}
+		@media(max-width:768px){#description2{flex-direction: column-reverse;}}
+
+		#description2 #texte{
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			margin: 1em;
+		}
+
+		#description2 h3{
+			font-size: 2em;
+		}
+
+		#description2 hr{
+			width: 25%;
+			height: 0.3em;
+			margin: 0;
+			background-color: #9D079C;
+			border-radius: 0.2em;
+			border: 0;
+		}
+
+		#img-diviseur{
+			height: 30vw;
+			overflow-y: hidden;
+			margin: 2em 0;
+		}
+
+		#objectifs{
+			width:100vw;
+			box-sizing: border-box;
+			box-shadow: 0 0 1em #0003;
+			padding: 4em 10%;
+			margin: 4em;
+		}
+
+		/*Tableau objectifs*/
+		#tableau-objectifs{
+			grid-auto-rows: 1fr;
+			gap: 2em;
+		}
+
+		@media (min-width: 1000px) {
+			#tableau-objectifs{
+				display:grid;
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+		}
+		@media (max-width: 1000px) {
+			#tableau-objectifs{
+				display:grid;
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+		@media (max-width: 600px) {
+			#tableau-objectifs{
+				display:flex;
+				flex-direction: column;
+			}
+		}
+
+		#tableau-objectifs > div{
+			display: flex;
+			flex-direction: column;
+		}
+
+		#tableau-objectifs > div h3{
+			font-size: 1.5em;
+			color: black;
+		}
+
+		.point{
+			float: left; 
+			width:0.5em; 
+			height: 0.5em; 
+			background-color: #9D079C; 
+			margin: 0 0.25em; 
+			margin-top: 0.5em;
+		}	
+		
+		#tableau-objectifs > div p{
+			text-align: justify;
+		}
+
+		/*Tableau membres*/
+		#tableau-membres{
+			grid-auto-rows: 1fr;
+			gap: 4em 1em; 
+			margin: 2em 0;
+		}
+		@media (min-width: 1000px) {
+			#tableau-membres{
+				display:grid;
+				grid-template-columns: 25% 25% 25% 25%;
+			}
+		}
+		@media (max-width: 1000px) {
+			#tableau-membres{
+				display:grid;
+				grid-template-columns: 50% 50%;
+			}
+		}
+		@media (max-width: 600px) {
+			#tableau-membres{
+				display:flex;
+				flex-direction: column;
+			}
+		}
+
+		#tableau-membres > div{
+			display: flex;
+			flex-direction: column;
+			justify-content: start;
+			align-items: center;
+			padding: 2em;
+			box-shadow: 0 0 2em #0003;
+		}
+
+		#tableau-membres > div img{
+			width: 100%;
+			aspect-ratio: 1;
+			border-radius: 100%;
+			object-fit: cover;
+		}
+
+		#tableau-membres > div h2{
+			font-size: 1.75em;
+			color: #9D079C;
+		}
+
+		#tableau-membres > div p{
+			color:grey;
+			text-align: center;
+		}
+
+		#tableau-membres > div .img-conteneur{
+			width: 2em;
+			height: 2em;
+			background-color: grey;
+			border-radius: 100%;
+		}
+	</style>
+
+	<script src="/javascript/init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
+</head>
+
+
+<body>
+	<!--Titre et Menu Principal-->
+	<header class="header" style="background-image: url('/images/hackfest2023.jpeg');">
+		<nav class="menuPrincipal"></nav>
+		<div class="header-contenu">
+			<h1>Qui sommes-nous?</h1>
+			<hr>
+			Apprenez-en plus sur le REI
+		</div>
+	</header>
+	
+	<!--Contenu-->
+	<article style="display: flex; flex-direction: column; align-items: center; padding: 0 10%">
+		<!--Titre-->
+		<div class="gap"></div>
+		<h2>REI</h2>
+		<hr class="separateur">
+
+		<!--Description 1-->
+		<section id="description1">
+			<p style="float: left; font-size: 3.5em; margin: 0 0.2em; color:#9D079C;">À</p>
+			l'UQO, plusieurs associations sont accréditées en vertu de la Loi sur l’accréditation et le financement des associations d’étudiants. 
+			Elles ont pour but la promotion et la défense des droits et intérêts des étudiants de leur groupe d'appartenance respectif. 
+		</section>
+		<!--Description 2-->
+		<section id="description2">
+			<div class="img-conteneur"><img src="/images/signal-2023-10-13-121945-3-min-scaled-1.jpeg"></div>
+			<div id="texte">
+				<h3>REI</h3>
+				<hr>
+				<p style="color:grey;">Regroupement des Étudiants en Informatique de l'Université du Québec en Outaouais.</p>
+				<p style="color:black;"">
+					Le REI s’occupe d’animer la vie de nos étudiants depuis de nombreuses années. Grâce aux délégations d’élèves 
+					à divers évènements du monde informatique, nous occasionnons de diverses possibilités d’apprentissage et d’épanouissement.
+				</p>
+			</div>
+		</section>
+		<!--Image-->
+		<div id="img-diviseur" class="img-conteneur"><img src="/images/UQO-UHACK-27-04-SD-152-compressed.jpg" style="max-height: 500%;"></div>
+		<!--Objectifs-->
+		<h3>NOS OBJECTIFS</h3>
+		<hr>
+		<section id="objectifs">
+			<div id="tableau-objectifs">
+				<div>
+					<h3>
+						<div class="point"></div>Gagner de l’expérience en codage
+					</h3>
+					<p>
+						Développer ses compétences en programmation à travers des projets collaboratifs et des ateliers encadrés par des étudiants expérimentés
+					</p>
+				</div>
+				<div>
+					<h3>
+						<div class="point"></div> Développer le sentiment d’appartenance au module de l’informatique de l’UQO
+					</h3>
+					<p>
+						Créer un environnement où les étudiants se sentent inclus et valorisés dans leurs études en informatique, en favorisant les échanges et le soutien mutuel.
+					</p>
+				</div><div>
+					<h3>
+						<div class="point"></div>Explorer de nouvelles technologies 
+					</h3>
+					<p>
+						Découvrir et apprendre des technologies émergentes (cloud, intelligence artificielle, blockchain) lors de sessions techniques organisées par UQODE
+					</p>
+				</div><div>
+					<h3>
+						<div class="point"></div>Supporter les étudiants en informatique à travers leur parcours universitaire 
+					</h3>
+					<p>
+						Supporter les initiatives et projets étudiants de 1er et 2e cycle en développant un projet par session
+					</p>
+				</div><div>
+					<h3>
+						<div class="point"></div> Participer à la vie universitaire 
+					</h3>
+					<p>
+						S’impliquer dans des événements étudiants, des compétitions de codage et des ateliers, renforçant ainsi la cohésion entre les membres de la communauté.
+					</p>
+				</div><div>
+					<h3>
+						<div class="point"></div>Offrir des ressources aux membres leur permettant d’échanger de façon constructive 
+					</h3>
+					<p>
+						Mettre à disposition des forums, des groupes de discussion et des outils pour faciliter le partage d’idées, de solutions techniques et de conseils entre les membres.
+					</p>
+				</div>
+			</div>
+		</section>
+		<!--Qui Sommes-nous?-->
+		<h3>QUI SOMMES-NOUS?</h3>
+		<hr>
+		<section id="tableau-membres">
+			<div>
+				<img src="/images/abdoulaye.jpeg">
+				<h2>Abdoulaye Soumah</h2>
+				<p>Président du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+			</div>
+			<div>
+				<img src="/images/alpha.jpeg">
+				<h2>Alpha Diallo</h2>
+				<p>Vice-Président du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+			</div><div>
+				<img src="/images/Comite_julian.jpg">
+				<h2>Julian David Palma Bolanos</h2>
+				<p>Trésorier du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+			</div><div>
+				<img src="/images/Comite_vincentH.jpg">
+				<h2>Vincent Hammon</h2>
+				<p>Scrétaire du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+			</div><div>
+				<img src="/images/fabiana.jpeg">
+				<h2>Fabiana Yznaga</h2>
+				<p>Conseillère à la publicité du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+			</div><div>
+				<img src="/images/Comite_will.jpg">
+				<h2>William Madgin</h2>
+				<p>Conseiller aux communications du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+			</div><div>
+				<img src="/images/Comite_vincentL.jpg">
+				<h2>Vincent Lafleur</h2>
+				<p>Conseiller aux activités du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+			</div><div>
+				<img src="/images/Comite_felix.jpg">
+				<h2>Félix Ladouceur</h2>
+				<p>Conseiller aux activités du REI</p>
+				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+			</div>
+		</section>
+		<!--Status et réglements-->
+		<div class="gap"></div>
+		<h2 id="status-et-reglements">Status et Réglements</h2>
+		<hr class="separateur">
+		<p>L'association est régie par des status et réglements que nous devons suivre à tous les jours. Restez informé des règles qui nous régissent ci-dessous.</p>
+		<p>Veuillez noter que nous ferons tout en notre possible pour maintenir ce document à jour, mais qu'il est possible qu'il y ait des retards.</p>
+		<a class="bouton" href="/documents/Status et règlements (2024).pdf">Télécharger les Status et Réglements</a>
+	</article>
+	
+	<!--Footer-->
+	<footer></footer>
+</body>
+</html>

@@ -1,0 +1,93 @@
+.terminal
+{
+	background-color: #4a4a4d; 
+	border: 5px solid #9D079C;
+	margin: 1em 0;
+	padding: 0;
+	text-align: center;
+
+	color: rgb(211, 211, 211);
+
+	font-family: 'Courier New', Courier, monospace;
+	/*font-size: 1.1em;*/
+	border-radius: 1.5em;
+	box-shadow: 0 0.5em 1em #0003;
+	overflow: hidden;
+
+
+	@media (max-width: 1250px){max-width: 100%; font-size: 0.9em;}
+	@media (min-width: 1250px){max-width: 60vw;}
+}
+
+.terminal header
+{
+	display: flex;
+	justify-content: end;
+	background-color: #38383a;
+	padding: 0.5em
+}
+
+.terminal header h2
+{
+	color: rgb(211, 211, 211);
+	flex-grow: 1;
+}
+
+.terminal p
+{
+	color: rgb(181, 181, 181);
+}
+
+.terminal .bouton, .terminal button
+{
+	border-radius: 0; /*Nécessaire, je crois ;P*/
+	box-shadow: 0.25em 0.5em 0 #0003;
+	transition: 0ms;
+}
+
+.terminal .bouton:hover, .terminal button:hover
+{
+	box-shadow: 0.1em 0.2em 0 #0003;
+}
+
+.terminal img
+{
+	width: 100%;
+	/*box-shadow: 0.5em 1em 0 rgba(0, 0, 0, 0.3);*/
+	box-shadow: 0 0.5em 1em #0003; /*Je trouve que c'est plus beau quand c'est plus léger...*/
+}
+
+.contenu-terminal
+{
+	@media (max-width: 768px){
+		padding: 2em 0.5em;
+	}
+	@media(min-width: 768px){
+		padding: 1em;
+	}
+}
+
+.boutons-terminal
+{
+	display: flex;
+	align-items: center;
+}
+
+.bouton-terminal
+{
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	color: transparent;
+	background-color: rgb(211, 57, 57); /*couleur à overrider dans le HTML*/
+	margin-right: 0.5em;
+	
+	font-weight: bold;
+	cursor: pointer;
+
+	transition: 300ms;
+}
+
+.bouton-terminal:hover{
+	color: black;
+}

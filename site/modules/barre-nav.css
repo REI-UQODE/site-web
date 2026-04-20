@@ -1,0 +1,41 @@
+nav
+{
+	background-color: transparent;
+	padding: 0.5em 3%;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	margin: 0;
+	overflow-x: scroll;
+}
+
+.boutonMenuPrincipal
+{
+	/*background-color: aucune?*/
+	border-radius: 0.5em;
+	padding: 0.5em 1%;
+	margin: 0 0.5em;
+	
+	font-size: 0.65em;
+	color: rgb(174, 174, 174);
+	text-decoration: none;
+	box-shadow: 0 0 0 #0000;
+}
+
+.boutonMenuPrincipal:hover
+{
+	color: white;
+	background-color: #80057F;
+	transition: 300ms;
+	box-shadow: 0 0.5em 1em #0006;
+}
+
+.boutonMenuPrincipal:visited
+{
+	color: rgb(174, 174, 174);
+}
+
+.boutonMenuPrincipal:visited:hover
+{
+	color: white
+}
