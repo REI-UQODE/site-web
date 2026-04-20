@@ -8,7 +8,11 @@
 				{ "nom": "UCTF 2025", "fichier": "uctf2025.jpg" },
 				{ "nom": "UCTF 2025", "fichier": "uctf2.jpg" },
 				{ "nom": "UCTF 2025", "fichier": "uctf3.jpg" },
-				{ "nom": "UCTF 2025", "fichier": "uctf4.jpg" }
+				{ "nom": "UCTF 2025", "fichier": "uctf4.jpg" },
+				{ "nom": "UCTF 2025", "fichier": "uctf5.jpg" },
+				{ "nom": "UCTF 2025", "fichier": "uctf6.jpg" },
+				{ "nom": "UCTF 2025", "fichier": "uctf7.jpg" },
+				{ "nom": "Conférence de David Cassey", "fichier": "uctf-conference.jpg" }
 			]
 		},
 		{
@@ -51,10 +55,10 @@
 			"categorie": "atelierUQODE",
 			"images":
 			[
-				{ "nom": "Atelier UQODE", "fichier": "atelierUQODE.jpg" },
-				{ "nom": "Soirée d'étude", "fichier": "atelier-dapprentissage-uqode.jpg" },
-				{ "nom": "Soirée d'étude", "fichier": "atelier-dapprentissage-uqode-2.jpg" },
-				{ "nom": "Soirée d'étude", "fichier": "UQODE_AtelierPython_Automne2024-4.jpg" }
+				{ "nom": "Atelier Python", "fichier": "atelierUQODE.jpg" },
+				{ "nom": "Atelier Python", "fichier": "atelier-dapprentissage-uqode.jpg" },
+				{ "nom": "Atelier de l'UQODE", "fichier": "atelier-dapprentissage-uqode-2.jpg" },
+				{ "nom": "Atelier de l'UQODE", "fichier": "UQODE_AtelierPython_Automne2024-4.jpg" }
 			]
 		}
 	]
