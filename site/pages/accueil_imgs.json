@@ -34,6 +34,29 @@
 			]
 		},
 		{
+			"categorie": "uJam",
+			"images":
+			[
+				{ "nom": "uJam 2026", "fichier": "ujam3.jpg" },
+				{ "nom": "uJam 2026", "fichier": "ujam2.jpg" },
+				{ "nom": "uJam 2026", "fichier": "ujam1.jpg" },
+				{ "nom": "uJam 2026", "fichier": "ujam4.jpg" }
+			]
+		},
+		{
+			"categorie": "CSGames",
+			"images":
+			[
+				{ "nom": "CS Games 2026", "fichier": "csgames26-1.jpg" },
+				{ "nom": "CS Games 2026", "fichier": "csgames26-2.jpg" },
+				{ "nom": "CS Games 2026", "fichier": "csgames26-3.jpg" },
+				{ "nom": "CS Games 2026", "fichier": "csgames26-4.jpg" },
+				{ "nom": "CS Games 2026", "fichier": "csgames26-5.jpg" },
+				{ "nom": "CS Games 2026", "fichier": "csgames26-6.jpg" },
+				{ "nom": "CS Games 2026", "fichier": "csgames26-7.jpg" }
+			]
+		},
+		{
 			"categorie": "gameNight",
 			"images":
 			[
