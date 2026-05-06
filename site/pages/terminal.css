@@ -1,8 +1,8 @@
 .terminal
 {
-	background-color: #29292a; 
-	border: 3px solid #9D079C;
-	margin: 0 0;
+	background-color: #4a4a4d; 
+	border: 5px solid #9D079C;
+	margin: 1em 0;
 	padding: 0;
 	text-align: center;
 
@@ -23,13 +23,12 @@
 {
 	display: flex;
 	justify-content: end;
-	background-color: #141416;
+	background-color: #38383a;
 	padding: 0.5em
 }
 
 .terminal header h2
 {
-	font-size: 2em;
 	color: rgb(211, 211, 211);
 	flex-grow: 1;
 }

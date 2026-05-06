@@ -12,11 +12,6 @@
 	<link rel="stylesheet" type="text/css" href="terminal.css">
 	<link rel="stylesheet" type="text/css" href="modal.css">
 	<style>
-		article{
-			background: url('../images/header-shape1.png');
-			background-size: 100%;
-		}
-
 		/*Tableau Objectifs*/
 		@media (max-width: 768px){
 			#tableau-objectifs{
@@ -142,7 +137,7 @@
 		<hr class="separateur">
 		
 		<!--Tableau des objectifs-->
-		<section id="tableau-objectifs" class="verre-givré">
+		<section id="tableau-objectifs">
 			<div>
 				<img src="/images/iconeTerminal.svg" alt="icone"> <!--placeholder-->
 				<span>Gagner de l'expérience en programmation</span>
@@ -173,46 +168,44 @@
 		<div class="gap"></div>
 		
 		<!--Terminal-->
-		<div class="verre-givré">
-			<div class="terminal">
-				<header>
-					<!--On pourrait ajouter un filtre pixelisé-->
-					<!--svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
-						<defs>
-							<filter id="pixelate" x="0" y="0">
-								<feFlood x="0.49" y="0.99" height="0.02" width="0.02"/> 
-								<feComposite width="2" height="4"/>
-								<feTile result="a"/>
-								<feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="b"/>
-								<feComposite in="b" in2="a" 
-											operator="in"/>
-								<feMorphology operator="dilate"
-												radius="2"/>
-							</filter>
-						</defs>
-					</svg--> 
-					<h2>Le REI et l'UQODE</h2>
-					<div class="boutons-terminal">
-						<div class="bouton-terminal" style="background-color: rgb(50, 187, 50);">+</div>
-						<div class="bouton-terminal" style="background-color: rgb(239, 213, 48);">-</div>
-						<div class="bouton-terminal" style="background-color: rgb(211, 57, 57);">x</div>
-					</div>
-				</header>
-				<div class="contenu-terminal">
-					<p>En tant qu'étudiant en informatique, profite du REI et de l'UQODE pour développer des connexions, saisir des opportunités et avancer avec enthousiasme dans ton parcours universitaire.</p>
-					<div class="flex" style="margin: 0; text-align: left; align-items: stretch; gap: 1em;">
-						<div class="img-conteneur" style="filter: url('#pixelate');"><img src="/images/uHack.jpg" alt="photo de membres du REI"></div>
-						<div style="display: flex; margin: 1em; flex-direction: column; justify-content: space-evenly; flex-grow: 1; gap: 10px;">
-							<div>
-								<h3>REI</h3>
-								<p>Le Regroupement des Étudiants en Informatique représente tous les étudiants des baccalauréats en informatique de l'UQO et est en charge d'organiser la vie étudiante en informatique.</p>
-								<a class="bouton" href="qui-sommes-nous.html">En savoir plus ></a>
-							</div>
-							<div>
-								<h3>UQODE</h3>
-								<p>L'UQODE est le comité de programmation et de cybersécurité de l'UQO. Relevez des défis et boostez vos compétences en programmation et en cybersécurité grâce à ce comité ouvert à tous les étudiants de l'UQO.</p>
-								<a class="bouton" href="uqode.html">En savoir plus ></a>
-							</div>
+		<div class="terminal">
+			<header>
+				<!--On pourrait ajouter un filtre pixelisé-->
+				<!--svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
+					<defs>
+						<filter id="pixelate" x="0" y="0">
+							<feFlood x="0.49" y="0.99" height="0.02" width="0.02"/> 
+							<feComposite width="2" height="4"/>
+							<feTile result="a"/>
+							<feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="b"/>
+							<feComposite in="b" in2="a" 
+										operator="in"/>
+							<feMorphology operator="dilate"
+											radius="2"/>
+						</filter>
+					</defs>
+				</svg--> 
+				<h2>Le REI et l'UQODE</h2>
+				<div class="boutons-terminal">
+					<div class="bouton-terminal" style="background-color: rgb(50, 187, 50);">+</div>
+					<div class="bouton-terminal" style="background-color: rgb(239, 213, 48);">-</div>
+					<div class="bouton-terminal" style="background-color: rgb(211, 57, 57);">x</div>
+				</div>
+			</header>
+			<div class="contenu-terminal">
+				<p>En tant qu'étudiant en informatique, profite du REI et de l'UQODE pour développer des connexions, saisir des opportunités et avancer avec enthousiasme dans ton parcours universitaire.</p>
+				<div class="flex" style="margin: 0; text-align: left; align-items: stretch; gap: 1em;">
+					<div class="img-conteneur" style="filter: url('#pixelate');"><img src="/images/uHack.jpg" alt="photo de membres du REI"></div>
+					<div style="display: flex; margin: 1em; flex-direction: column; justify-content: space-evenly; flex-grow: 1; gap: 10px;">
+						<div>
+							<h3>REI</h3>
+							<p>Le Regroupement des Étudiants en Informatique représente tous les étudiants des baccalauréats en informatique de l'UQO et est en charge d'organiser la vie étudiante en informatique.</p>
+							<a class="bouton" href="qui-sommes-nous.html">En savoir plus ></a>
+						</div>
+						<div>
+							<h3>UQODE</h3>
+							<p>L'UQODE est le comité de programmation et de cybersécurité de l'UQO. Relevez des défis et boostez vos compétences en programmation et en cybersécurité grâce à ce comité ouvert à tous les étudiants de l'UQO.</p>
+							<a class="bouton" href="uqode.html">En savoir plus ></a>
 						</div>
 					</div>
 				</div>

@@ -1,7 +1,7 @@
 body
 {
 	margin: 0;
-	background-color: #1a1a1a;
+	background-color: #EBEBEB;
 	font-family: Helvetica, sans-serif, Arial;
 	overflow-x: hidden;
 }
@@ -200,25 +200,3 @@ img.arrondi
 }
 
 /* Couleur principale: #9D079C */
-
-.fond-étoilé{
-	padding: 5em;
-	background-image: url('/images/header-shape1.png');
-	background-size: 200%;
-}
-
-.verre-givré{
-	padding: 2.5em;
-	border-radius: 1em;
-	background-image: linear-gradient(#ffffff10 0%, #ffffff30 5%, #ffffff30 95%, #ffffff40 100%);
-	border-top: 1px solid #fffb;
-	border-left: 1px solid #fff6;
-	border-right: 1px solid #3335;
-	border-bottom: 1px solid #333b;
-	backdrop-filter: blur(20px);
-	box-shadow: 
-		-3em 4em 5em -2em rgba(255, 101, 227, 0.3), 
-		1em -2em 5em -2em rgba(101, 165, 255, 0.3),
-		-2em -1em 5em -2em rgba(101, 255, 104, 0.3),
-		3em 3em 5em -2em rgba(255, 237, 38, 0.3);
-}
