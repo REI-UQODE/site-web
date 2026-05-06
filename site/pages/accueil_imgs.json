@@ -8,7 +8,11 @@
 				{ "nom": "UCTF 2025", "fichier": "uctf2025.jpg" },
 				{ "nom": "UCTF 2025", "fichier": "uctf2.jpg" },
 				{ "nom": "UCTF 2025", "fichier": "uctf3.jpg" },
-				{ "nom": "UCTF 2025", "fichier": "uctf4.jpg" }
+				{ "nom": "UCTF 2025", "fichier": "uctf4.jpg" },
+				{ "nom": "UCTF 2025", "fichier": "uctf5.jpg" },
+				{ "nom": "UCTF 2025", "fichier": "uctf6.jpg" },
+				{ "nom": "UCTF 2025", "fichier": "uctf7.jpg" },
+				{ "nom": "Conférence de David Cassey", "fichier": "uctf-conference.jpg" }
 			]
 		},
 		{
@@ -27,6 +31,29 @@
 				{ "nom": "uHack 2024", "fichier": "uHack2024.jpg" },
 				{ "nom": "uHack 2024", "fichier": "uHack.jpg" },
 				{ "nom": "uHack 2024", "fichier": "uhack2.jpg" }
+			]
+		},
+		{
+			"categorie": "uJam",
+			"images":
+			[
+				{ "nom": "uJam 2026", "fichier": "ujam3.jpg" },
+				{ "nom": "uJam 2026", "fichier": "ujam2.jpg" },
+				{ "nom": "uJam 2026", "fichier": "ujam1.jpg" },
+				{ "nom": "uJam 2026", "fichier": "ujam4.jpg" }
+			]
+		},
+		{
+			"categorie": "CSGames",
+			"images":
+			[
+				{ "nom": "CS Games 2026", "fichier": "csgames26-1.jpg" },
+				{ "nom": "CS Games 2026", "fichier": "csgames26-2.jpg" },
+				{ "nom": "CS Games 2026", "fichier": "csgames26-3.jpg" },
+				{ "nom": "CS Games 2026", "fichier": "csgames26-4.jpg" },
+				{ "nom": "CS Games 2026", "fichier": "csgames26-5.jpg" },
+				{ "nom": "CS Games 2026", "fichier": "csgames26-6.jpg" },
+				{ "nom": "CS Games 2026", "fichier": "csgames26-7.jpg" }
 			]
 		},
 		{
@@ -51,10 +78,10 @@
 			"categorie": "atelierUQODE",
 			"images":
 			[
-				{ "nom": "Atelier UQODE", "fichier": "atelierUQODE.jpg" },
-				{ "nom": "Soirée d'étude", "fichier": "atelier-dapprentissage-uqode.jpg" },
-				{ "nom": "Soirée d'étude", "fichier": "atelier-dapprentissage-uqode-2.jpg" },
-				{ "nom": "Soirée d'étude", "fichier": "UQODE_AtelierPython_Automne2024-4.jpg" }
+				{ "nom": "Atelier Python", "fichier": "atelierUQODE.jpg" },
+				{ "nom": "Atelier Python", "fichier": "atelier-dapprentissage-uqode.jpg" },
+				{ "nom": "Atelier de l'UQODE", "fichier": "atelier-dapprentissage-uqode-2.jpg" },
+				{ "nom": "Atelier de l'UQODE", "fichier": "UQODE_AtelierPython_Automne2024-4.jpg" }
 			]
 		}
 	]
