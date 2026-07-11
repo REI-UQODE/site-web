@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Inscription aux nouvelles de l'UQODE</title>
+	<meta charset="UTF-8">
+	
+	<style>
+		body
+		{
+			background-color: #870B86;
+			margin: 0;
+			font-family: Helvetica, sans-serif, Arial;
+		}
+		
+		#page
+		{
+			background-color: #EBEBEB;
+			padding: 30px;
+			margin: 0 150px;
+		}
+		
+		a.bouton
+		{
+			background-color: #9D079C;
+			margin: 0.5em;
+			padding: 0.5em 1em;
+			border-radius: 0.5em;
+			display: inline-block;
+			border: 0;
+			color: white;
+			text-decoration: none;
+			font-size: 1.1em;
+			box-shadow: 0 0.5em 1em #0003;
+			transition: 300ms;
+			cursor: pointer;
+			font-weight: bold;
+		}
+		
+		.rangee-formulaire
+		{
+			display: flex;
+			justify-content: space-between;
+			width: 47em;
+			margin-bottom: 20px;
+		}
+		
+		.rangee-formulaire input,
+		.rangee-formulaire select
+		{
+			width: 20em;
+		}
+		
+		.rangee-formulaire button
+		{
+			margin-left: auto;
+			width: 10em;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="page">
+		<h1>Assure-toi de ne jamais manquer les activités de l'UQODE!</h1>
+		<a href="https://discord.gg/XNPFzumVzb" class="bouton">Rejoint notre serveur Discord!</a>
+		<form action="inscription.php" method="POST">
+			<h2>Inscription aux courriels de l'UQODE</h2>
+			<div class="rangee-formulaire">
+				<label for="prenom">Entrez votre prénom</label>
+				<input name="prenom" type="text" required>
+			</div>
+			<div class="rangee-formulaire">
+				<label for="nomFamille">Entrez votre nom de famille</label>
+				<input name="nomFamille" type="text" required>
+			</div>
+			<div class="rangee-formulaire">
+				<label for="programme">Indiquez le programme de l'UQO que vous suivez actuellement</label>
+				<select name="programme" required>
+					<option value="" disabled selected>Choisissez un programme...</option>
+					<option value="informatique">Bacc. en Informatique</option>
+					<option value="genie">Bacc. en Génie (informatique ou électrique)</option>
+					<option value="2ecycle">Maitrise ou doctorat</option>
+					<option value="gradue">Étudiant gradué</option>
+					<option value="enseignant">Professeur ou chargé de cours</option>
+					<option value="autre">Autre</option>
+				</select>
+			</div>
+			<div class="rangee-formulaire">
+				<label for="courriel">Entrez le courriel que vous désirez inscrire</label>
+				<input name="courriel" type="email" placeholder="abcd01@exemple.com" required>
+			</div>
+			<div class="rangee-formulaire">
+			<button type="submit">Envoyer</button>
+			</div>
+		</form>
+	<div>
+</body>
+</html>
