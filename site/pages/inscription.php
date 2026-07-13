@@ -82,57 +82,39 @@ else
 
 <html>
 <head>
-	<title>Inscription aux nouvelles de l'UQODE</title>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/images/logoREI.png">
+	<title>UQODE | Inscription aux courriels</title>
 	
-	<style>
-		body
-		{
-			background-color: #870B86;
-			margin: 0;
-			font-family: Helvetica, sans-serif, Arial;
-		}
-		
-		#page
-		{
-			background-color: #EBEBEB;
-			padding: 30px;
-			margin: 0 150px;
-		}
-		
-		a.bouton
-		{
-			background-color: #9D079C;
-			margin: 0.5em;
-			padding: 0.5em 1em;
-			border-radius: 0.5em;
-			display: inline-block;
-			border: 0;
-			color: white;
-			text-decoration: none;
-			font-size: 1.1em;
-			box-shadow: 0 0.5em 1em #0003;
-			transition: 300ms;
-			cursor: pointer;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<script src="/javascript/init-commun.js?v=5" type="module" defer></script>
 </head>
 
 <body>
-	<div id="page">
-		<?php
-		if (isset($erreur))
-		{
-			echo "<h1>$erreur</h1>";
-			echo "<a class='bouton' href='mailing.html'>Revenir au formulaire d'inscription</a>";
-		}
-		else
-		{
-			echo "<h1>Tu as été abonné avec succès.</h1>";
-			echo "<a class='bouton' href='https://rei-uqode.ca'>Revenir au site web</a>";
-		}
-		?>
-		<p>N'oublie pas de rejoindre notre <a href="https://discord.gg/XNPFzumVzb">serveur discord</a> pour ne rien manquer des activités du REI et de l'UQODE!</p>
+	<!--Titre et Menu Principal-->
+	<div class="header" style="background-image: url('/images/UQODE_AtelierPython_Automne2024.jpg');">
+		<nav class="menuPrincipal"></nav>
+		<div class="header-contenu">
+			<?php
+			if (isset($erreur))
+			{
+				echo "<h1>$erreur</h1>";
+				echo "<hr><div>N'oublie pas de rejoindre notre <a href='https://discord.gg/XNPFzumVzb'>serveur discord</a> pour ne rien manquer des activités du REI et de l'UQODE!</div>";
+				echo "<div clss='centreur'><a class='bouton' href='mailing.html'>Revenir au formulaire d'inscription</a></div>";
+			}
+			else
+			{
+				echo "<h1>Tu as été abonné avec succès.</h1>";
+				echo "<hr><div>N'oublie pas de rejoindre notre <a href='https://discord.gg/XNPFzumVzb' style='display: inline-block'>serveur discord</a> pour ne rien manquer des activités du REI et de l'UQODE!</div>";
+				echo "<div class='centreur'><a class='bouton' href='https://rei-uqode.ca'>Revenir au site web</a></div>";
+			}
+			?>
+			<!--h1>Tu as été abonné avec succès</h1>
+			<div class="centreur"><a href="https://discord.gg/XNPFzumVzb" class="bouton" style="width: 20em">Rejoint notre serveur Discord!</a></div-->
+		</div>
 	</div>
+	<footer></footer>
 </body>
 </html>

@@ -2,39 +2,17 @@
 
 <html>
 <head>
-	<title>Inscription aux nouvelles de l'UQODE</title>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/images/logoREI.png">
+	<title>UQODE | Inscription aux courriels</title>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
 	
 	<style>
-		body
+		form
 		{
-			background-color: #870B86;
-			margin: 0;
-			font-family: Helvetica, sans-serif, Arial;
-		}
-		
-		#page
-		{
-			background-color: #EBEBEB;
-			padding: 30px;
-			margin: 0 150px;
-		}
-		
-		a.bouton
-		{
-			background-color: #9D079C;
-			margin: 0.5em;
-			padding: 0.5em 1em;
-			border-radius: 0.5em;
-			display: inline-block;
-			border: 0;
-			color: white;
-			text-decoration: none;
-			font-size: 1.1em;
-			box-shadow: 0 0.5em 1em #0003;
-			transition: 300ms;
-			cursor: pointer;
-			font-weight: bold;
+			margin-top: 40px;
 		}
 		
 		.rangee-formulaire
@@ -57,14 +35,24 @@
 			width: 10em;
 		}
 	</style>
+	
+	<script src="/javascript/init-commun.js?v=5" type="module" defer></script>
 </head>
 
 <body>
-	<div id="page">
-		<h1>Assure-toi de ne jamais manquer les activités de l'UQODE!</h1>
-		<a href="https://discord.gg/XNPFzumVzb" class="bouton">Rejoint notre serveur Discord!</a>
+	<!--Titre et Menu Principal-->
+	<div class="header" style="background-image: url('/images/UQODE_AtelierPython_Automne2024.jpg');">
+		<nav class="menuPrincipal"></nav>
+		<div class="header-contenu">
+			<h1>Inscription aux courriels de l'UQODE</h1>
+			<hr>Assure-toi de ne jamais manquer nos activités!</hr>
+			<div class="centreur"><a href="https://discord.gg/XNPFzumVzb" class="bouton" style="width: 20em">Rejoint notre serveur Discord!</a></div>
+		</div>
+	</div>
+	
+	<!--Contenu-->
+	<article>
 		<form action="inscription.php" method="POST">
-			<h2>Inscription aux courriels de l'UQODE</h2>
 			<div class="rangee-formulaire">
 				<label for="prenom">Entrez votre prénom</label>
 				<input name="prenom" type="text" required>
@@ -93,6 +81,8 @@
 			<button type="submit">Envoyer</button>
 			</div>
 		</form>
-	<div>
+	</article>
+	
+	<footer></footer>
 </body>
 </html>
