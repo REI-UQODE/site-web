@@ -101,13 +101,13 @@ else
 			if (isset($erreur))
 			{
 				echo "<h1>$erreur</h1>";
-				echo "<hr><div>N'oublie pas de rejoindre notre <a href='https://discord.gg/XNPFzumVzb'>serveur discord</a> pour ne rien manquer des activités du REI et de l'UQODE!</div>";
+				echo "<hr><div>N'oublie pas de rejoindre notre serveur discord pour ne rien manquer des activités du REI et de l'UQODE!</div>";
 				echo "<div clss='centreur'><a class='bouton' href='mailing.html'>Revenir au formulaire d'inscription</a></div>";
 			}
 			else
 			{
 				echo "<h1>Tu as été abonné avec succès.</h1>";
-				echo "<hr><div>N'oublie pas de rejoindre notre <a href='https://discord.gg/XNPFzumVzb' style='display: inline-block'>serveur discord</a> pour ne rien manquer des activités du REI et de l'UQODE!</div>";
+				echo "<hr><div>N'oublie pas de rejoindre notre serveur discord pour ne rien manquer des activités du REI et de l'UQODE!</div>";
 				echo "<div class='centreur'><a class='bouton' href='https://rei-uqode.ca'>Revenir au site web</a></div>";
 			}
 			?>
