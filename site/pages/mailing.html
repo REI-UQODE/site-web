@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/images/logoREI.png">
+	<title>UQODE | Inscription aux courriels</title>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<style>
+		form
+		{
+			margin-top: 40px;
+		}
+		
+		.rangee-formulaire
+		{
+			display: flex;
+			justify-content: space-between;
+			width: 47em;
+			margin-bottom: 20px;
+			
+			@media (max-width: 768px)
+			{flex-direction: column; width: auto;}
+		}
+		
+		/*.newline-mobile
+		{
+			display: none;
+			
+			@media (max-width: 768px)
+			{display: block;}
+		}*/
+		
+		.rangee-formulaire input,
+		.rangee-formulaire select
+		{
+			width: 20em;
+		}
+		
+		.rangee-formulaire button
+		{
+			margin-left: auto;
+			width: 10em;
+		}
+	</style>
+	
+	<script src="/javascript/init-commun.js?v=5" type="module" defer></script>
+</head>
+
+<body>
+	<!--Titre et Menu Principal-->
+	<div class="header" style="background-image: url('/images/UQODE_AtelierPython_Automne2024.jpg');">
+		<nav class="menuPrincipal"></nav>
+		<div class="header-contenu">
+			<h1>Inscription aux courriels de l'UQODE</h1>
+			<hr>Assure-toi de ne jamais manquer nos activités!</hr>
+		</div>
+	</div>
+	
+	<!--Contenu-->
+	<article>
+		<p style="text-align: center">
+			Si vous êtes inscrit au baccalauréat en informatique, votre adresse courriel de l'UQO est déjà inscrite à nos courriels.<br>
+			Nous envoyons normalement environ un courriel par semaine ou deux.
+		</p>
+		<form action="inscription.php" method="POST">
+			<div class="rangee-formulaire">
+				<label for="prenom">Entrez votre prénom</label>
+				<input name="prenom" type="text" required>
+			</div>
+			<div class="rangee-formulaire">
+				<label for="nomFamille">Entrez votre nom de famille</label>
+				<input name="nomFamille" type="text" required>
+			</div>
+			<div class="rangee-formulaire">
+				<label for="programme">Indiquez le programme de l'UQO que vous suivez actuellement</label>
+				<select name="programme" required>
+					<option value="" disabled selected>Choisissez un programme...</option>
+					<option value="informatique">Bacc. en Informatique</option>
+					<option value="genie">Bacc. en Génie (informatique ou électrique)</option>
+					<option value="2ecycle">Maitrise ou doctorat</option>
+					<option value="gradue">Étudiant gradué</option>
+					<option value="enseignant">Professeur ou chargé de cours</option>
+					<option value="autre">Autre</option>
+				</select>
+			</div>
+			<div class="rangee-formulaire">
+				<label for="courriel">Entrez le courriel que vous désirez inscrire</label>
+				<input name="courriel" type="email" placeholder="abcd01@exemple.com" required>
+			</div>
+			<div class="rangee-formulaire">
+			<button type="submit">Envoyer</button>
+			</div>
+		</form>
+		<hr class="separateur">
+		<div class="centreur">
+			<a href="https://discord.gg/XNPFzumVzb" class="bouton" style="width: 20em">Rejoins notre serveur Discord!</a>
+		</div>
+	</article>
+	
+	<footer></footer>
+</body>
+</html>
