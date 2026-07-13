@@ -100,7 +100,7 @@ else
 			<?php
 			if (isset($erreur))
 			{
-				echo "<h1>$erreur</h1>";
+				echo "<h1 style='font-size: 1.5em'>$erreur</h1>";
 				echo "<hr><div>N'oublie pas de rejoindre notre serveur discord pour ne rien manquer des activités du REI et de l'UQODE!</div>";
 				echo "<div clss='centreur'><a class='bouton' href='mailing.html'>Revenir au formulaire d'inscription</a></div>";
 			}
