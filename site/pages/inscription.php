@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		 * Malheureusement, hoster notre propre serveur de courriel serait vraiment compliqué, voire impossible sans l'accord du STI,
 		 *   et utiliser notre adresse @uqo.ca ou un gmail serait au moins aussi compliqué et nécessiterait un monitorage constant.
 		 * Je commente donc cette section (qui n'est d'ailleurs vraiment pas complète) pour l'instant...
-		 * Si on décommente ça un jour, $erreur est une variable dont la définition indique un erreur. Son contenu (string) doit être affiché à l'écran (inséré dans le html).
 		 * 
 		 * $to = "recipient@example.com";
 		 * $subject = "Test Email from PHP";
@@ -58,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		{
 			error_log("Inscription de $prenom $nomFamille ($courriel) au mailing.");
 			
-			$inscrits[] = ["prenom" => $prenom, "nomFamille" => $nomFamille, "programme" => $programme, "courriel" => $courriel];
+			$inscrits[] = ["prenom" => $prenom, "nomFamille" => $nomFamille, "programme" => $programme, "courriel" => $courriel, "methodeInscription" => "site_web"];
 			file_put_contents(jsonMailingList, json_encode($inscrits, JSON_PRETTY_PRINT));
 			
 			try
