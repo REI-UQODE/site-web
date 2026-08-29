@@ -181,6 +181,22 @@
 			background-color: grey;
 			border-radius: 100%;
 		}
+		
+		#tableau-membres > div .infos-contact
+		{
+			display: flex;
+			gap: 1em
+		}
+		
+		.hoverbox
+		{
+			background-color: grey;
+			color: white;
+			font-size: 0.8em;
+			padding: 0.2em 0.5em;
+			margin-top: 1em;
+			display: none;
+		}
 	</style>
 
 	<script src="/javascript/init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
@@ -285,49 +301,75 @@
 				<img src="/images/Comite_vincentL.jpg">
 				<h2>Vincent Lafleur</h2>
 				<p>Président du REI</p>
-				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+				<div class="infos-contact">
+					<div class="img-conteneur" onmouseover="montrerUsager('Lafleur', 'Discord')" onmouseout="cacherUsager('Lafleur')"><img src="/images/Discord-Symbol-White.svg"></div>
+				</div>
+				<div class="hoverbox" id="hoverbox-Lafleur"></div>
 			</div>
 			<div>
 				<img src="/images/vicePresidente.jpeg">
 				<h2>Mame Fatou Lindor Diop</h2>
 				<p>Vice-Présidente du REI</p>
-				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+				<div class="infos-contact">
+					<div class="img-conteneur" onmouseover="montrerUsager('Lindor', 'Discord')" onmouseout="cacherUsager('Lindor')"><img src="/images/Discord-Symbol-White.svg"></div>
+				</div>
+				<div class="hoverbox" id="hoverbox-Lindor"></div>
 			</div>
 			<div>
 				<img src="/images/seb.jpg">
 				<h2>Sébastien Roussel</h2>
 				<p>Trésorier du REI</p>
-				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+				<div class="infos-contact">
+					<div class="img-conteneur" onmouseover="montrerUsager('Sebastien', 'Discord')" onmouseout="cacherUsager('Sebastien')"><img src="/images/Discord-Symbol-White.svg"></div>
+				</div>
+				<div class="hoverbox" id="hoverbox-Sebastien"></div>
 			</div>
 			<div>
 				<img src="/images/madiha.jpg">
 				<h2>Madiha Osman Ahmed</h2>
 				<p>Secrétaire du REI</p>
-				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+				<div class="infos-contact">
+					<div class="img-conteneur" onmouseover="montrerUsager('Madiha', 'Discord')" onmouseout="cacherUsager('Madiha')"><img src="/images/Discord-Symbol-White.svg"></div>
+				</div>
+				<div class="hoverbox" id="hoverbox-Madiha"></div>
 			</div>
 			<div>
 				<img src="/images/godbout.png">
 				<h2>Vincent Godbout</h2>
 				<p>Conseiller à la publicité du REI</p>
-				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+				<div class="infos-contact">
+					<div class="img-conteneur" onmouseover="montrerUsager('Godbout', 'Discord')" onmouseout="cacherUsager('Godbout')"><img src="/images/Discord-Symbol-White.svg"></div>
+					<div class="img-conteneur" onmouseover="montrerUsager('Godbout', 'Matrix')" onmouseout="cacherUsager('Godbout')"><img src="/images/element-logo-white.png"></div>
+				</div>
+				<div class="hoverbox" id="hoverbox-Godbout"></div>
 			</div>
 			<div>
 				<img src="/images/richard.jpg">
 				<h2>Richard Constant Nemale Ntowa</h2>
 				<p>Conseiller aux communications du REI</p>
-				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+				<div class="infos-contact">
+					<div class="img-conteneur" onmouseover="montrerUsager('Richard', 'Discord')" onmouseout="cacherUsager('Richard')"><img src="/images/Discord-Symbol-White.svg"></div>
+				</div>
+				<div class="hoverbox" id="hoverbox-Richard"></div>
 			</div>
 			<div>
 				<img src="/images/nicolas.jpg">
 				<h2>Nicolas Audette</h2>
 				<p>Conseiller aux activités du REI</p>
-				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+				<div class="infos-contact">
+					<div class="img-conteneur" onmouseover="montrerUsager('Nicolas', 'Discord')" onmouseout="cacherUsager('Nicolas')"><img src="/images/Discord-Symbol-White.svg"></div>
+					<div class="img-conteneur" onmouseover="montrerUsager('Nicolas', 'Matrix')" onmouseout="cacherUsager('Nicolas')"><img src="/images/element-logo-white.png"></div>
+				</div>
+				<div class="hoverbox" id="hoverbox-Nicolas"></div>
 			</div>
 			<div>
 				<img src="/images/hugo.jpg">
 				<h2>Hugo Thivierge</h2>
 				<p>Conseiller aux activités du REI</p>
-				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+				<div class="infos-contact">
+					<div class="img-conteneur" onmouseover="montrerUsager('Hugo', 'Discord')" onmouseout="cacherUsager('Hugo')"><img src="/images/Discord-Symbol-White.svg"></div>
+				</div>
+				<div class="hoverbox" id="hoverbox-Hugo"></div>
 			</div>
 		</section>
 		<!--Statuts et réglements-->
@@ -341,5 +383,77 @@
 	
 	<!--Footer-->
 	<footer></footer>
+	
+	<script>
+		function montrerUsager (nom, service)
+		{
+			
+			if (service == "Matrix")
+			{
+				switch (nom)
+				{
+					case 'Nicolas':
+						hoverbox = document.getElementById('hoverbox-Nicolas');
+						hoverbox.innerHTML = "@nicolas:rei-uqode.ca";
+						break;
+					
+					case 'Godbout':
+						hoverbox = document.getElementById('hoverbox-Godbout');
+						hoverbox.innerHTML = "@gyoo18:gyoo.ca";
+						break;
+				}
+			}
+			
+			else if (service = "Discord")
+			{
+				switch (nom)
+				{
+					case 'Nicolas':
+						hoverbox = document.getElementById('hoverbox-Nicolas');
+						hoverbox.innerHTML = "@nicolas.6464 (@Nico64)";
+						break;
+					
+					case 'Godbout':
+						hoverbox = document.getElementById('hoverbox-Godbout');
+						hoverbox.innerHTML = "@gyoostudio";
+						break;
+					
+					case 'Lafleur':
+						hoverbox = document.getElementById('hoverbox-Lafleur');
+						hoverbox.innerHTML = "@mustangguy44 (@Stang_Boy)";
+						break;
+					
+					case 'Richard':
+						hoverbox = document.getElementById('hoverbox-Richard');
+						hoverbox.innerHTML = "@minato061215 (@Richard)";
+						break;
+					
+					case 'Sebastien':
+						hoverbox = document.getElementById('hoverbox-Sebastien');
+						hoverbox.innerHTML = "@grosr (@R)";
+						break;
+					
+					case 'Madiha':
+						hoverbox = document.getElementById('hoverbox-Madiha');
+						hoverbox.innerHTML = "@madiha_20074_06021 (@Madiha)";
+						break;
+					
+					case 'Hugo':
+						hoverbox = document.getElementById('hoverbox-Hugo');
+						hoverbox.innerHTML = "@hugus0916 (@Hugo t)";
+						break;
+					
+					case 'Lindor':
+						hoverbox = document.getElementById('hoverbox-Lindor');
+						hoverbox.innerHTML = "@lindordiop_42234 (@LindorDiop)";
+				}
+			}
+			
+			hoverbox.style.display = "inline-block";
+		}
+		
+		function cacherUsager (nom)
+		{document.getElementById('hoverbox-' + nom).style.display = "none";}
+	</script>
 </body>
 </html>
