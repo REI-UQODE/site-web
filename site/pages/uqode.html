@@ -101,6 +101,7 @@
 
 	<script src="/javascript/init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
 	<script src="/javascript/tableau-domaines-uqode.js" defer></script>
+	<script src="/javascript/mouseover-membres.js" defer></script>
 </head>
 
 
@@ -253,58 +254,5 @@
 	
 	<!--Footer-->
 	<footer></footer>
-	
-	<script>
-		function montrerUsager (nom, service)
-		{
-			
-			if (service == "Matrix")
-			{
-				switch (nom)
-				{
-					case 'Nicolas':
-						hoverbox = document.getElementById('hoverbox-Nicolas');
-						hoverbox.innerHTML = "@nicolas:rei-uqode.ca";
-						break;
-					
-					case 'Godbout':
-						hoverbox = document.getElementById('hoverbox-Godbout');
-						hoverbox.innerHTML = "@gyoo18:gyoo.ca";
-						break;
-				}
-			}
-			
-			else if (service = "Discord")
-			{
-				switch (nom)
-				{
-					case 'Nicolas':
-						hoverbox = document.getElementById('hoverbox-Nicolas');
-						hoverbox.innerHTML = "@nicolas.6464 (@Nico64)";
-						break;
-					
-					case 'Godbout':
-						hoverbox = document.getElementById('hoverbox-Godbout');
-						hoverbox.innerHTML = "@gyoostudio";
-						break;
-					
-					case 'Lafleur':
-						hoverbox = document.getElementById('hoverbox-Lafleur');
-						hoverbox.innerHTML = "@mustangguy44 (@Stang_Boy)";
-						break;
-					
-					case 'Richard':
-						hoverbox = document.getElementById('hoverbox-Richard');
-						hoverbox.innerHTML = "@minato061215 (@Richard)"
-						break;
-				}
-			}
-			
-			hoverbox.style.display = "inline-block";
-		}
-		
-		function cacherUsager (nom)
-		{document.getElementById('hoverbox-' + nom).style.display = "none";}
-	</script>
 </body>
 </html>
