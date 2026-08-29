@@ -17,7 +17,7 @@ function montrerUsager (nom, service)
 				}
 			}
 			
-			else if (service = "Discord")
+			else if (service == "Discord")
 			{
 				switch (nom)
 				{
