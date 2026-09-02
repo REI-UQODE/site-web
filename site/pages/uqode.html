@@ -81,10 +81,27 @@
 			background-color: grey;
 			border-radius: 100%;
 		}
+		
+		#tableau-membres > div .infos-contact
+		{
+			display: flex;
+			gap: 1em
+		}
+		
+		.hoverbox
+		{
+			background-color: grey;
+			color: white;
+			font-size: 0.8em;
+			padding: 0.2em 0.5em;
+			margin-top: 1em;
+			display: none;
+		}
 	</style>
 
 	<script src="/javascript/init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
 	<script src="/javascript/tableau-domaines-uqode.js" defer></script>
+	<script src="/javascript/mouseover-membres.js" defer></script>
 </head>
 
 
@@ -110,7 +127,7 @@
 			<div>
 				<p>L’UQODE est le comité de programmation et de cybersécurité de l’UQO.</p>
 				<p>L’UQODE est un comité indépendant soutenu, géré et financé par le REI (Regroupement des Étudiants en Informatique). Alors que le REI se charge de la vie étudiante en informatique, l’UQODE cherche à créer des évènements à caractère pédagogique afin de permettre aux étudiants en informatique ou de d’autres programmes d’en apprendre plus sur divers sujets liés à l’informatique.</p>
-				<p>L’UQODE ne tient pas de calendrier strict de ses activités, mais elles sont toujours communiquées à tous les étudiants en informatique par le REI et elles sont aussi annoncées sur notre <a href="https://discord.gg/XNPFzumVzb">serveur discord</a>.</p>
+				<p>L’UQODE ne tient pas de calendrier strict de ses activités, mais elles sont toujours communiquées à tous les étudiants en informatique par le REI et elles sont aussi annoncées sur notre <a href="https://element.rei-uqode.ca">serveur matrix</a> et retransmises au <a href="https://discord.gg/XNPFzumVzb">serveur discord</a>.</p>
 				<p>L’UQODE est ouvert à tous les étudiants de tous le programmes de l’UQO!</p>
 			</div>
 		</section>
@@ -172,7 +189,7 @@
 				</div>
 			</div>
 		</div>
-		<p>Si vous avez des questions, n’hésitez pas à nous envoyer un <a href="mailto:uqode@uqo.ca">courriel</a>!</p>
+		<p>Si vous avez des questions, n’hésitez pas à nous envoyer un <a href="mailto:uqode@uqo.ca">courriel</a> ou à nous les poser sur <a href="https://element.rei-uqode.ca">matrix</a>!</p>
 
 		<a class="bouton" href="activites.html">Apprenez-en plus sur nos activités</a>
 
@@ -185,25 +202,39 @@
 				<img src="/images/godbout.png">
 				<h2>Vincent Godbout</h2>
 				<p>Président de l'UQODE<br>et Coordonateur de la UJam</p>
-				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+				<div class="infos-contact">
+					<div class="img-conteneur" onmouseover="montrerUsager('Godbout', 'Discord')" onmouseout="cacherUsager('Godbout')"><img src="/images/Discord-Symbol-White.svg"></div>
+					<div class="img-conteneur" onmouseover="montrerUsager('Godbout', 'Matrix')" onmouseout="cacherUsager('Godbout')"><img src="/images/element-logo-white.png"></div>
+				</div>
+				<div class="hoverbox" id="hoverbox-Godbout"></div>
 			</div>
 			<div>
 				<img src="/images/nicolas.jpg">
 				<h2>Nicolas Audette</h2>
 				<p>Vice-Président de l'UQODE</p>
-				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+				<div class="infos-contact">
+					<div class="img-conteneur" onmouseover="montrerUsager('Nicolas', 'Discord')" onmouseout="cacherUsager('Nicolas')"><img src="/images/Discord-Symbol-White.svg"></div>
+					<div class="img-conteneur" onmouseover="montrerUsager('Nicolas', 'Matrix')" onmouseout="cacherUsager('Nicolas')"><img src="/images/element-logo-white.png"></div>
+				</div>
+				<div class="hoverbox" id="hoverbox-Nicolas"></div>
 			</div>
 			<div>
 				<img src="/images/Comite_vincentL.jpg">
 				<h2>Vincent Lafleur</h2>
 				<p>Coordonateur de l'UCTF</p>
-				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+				<div class="infos-contact">
+					<div class="img-conteneur" onmouseover="montrerUsager('Lafleur', 'Discord')" onmouseout="cacherUsager('Lafleur')"><img src="/images/Discord-Symbol-White.svg"></div>
+				</div>
+				<div class="hoverbox" id="hoverbox-Lafleur"></div>
 			</div>
 			<div>
 				<img src="/images/richard.jpg">
 				<h2>Richard Constant Nemale Ntowa</h2>
-				<p>Coordonateur des Activités en Intelligence Artificielle</p>
-				<div class="img-conteneur"><img src="/images/Discord-Symbol-White.svg"></div>
+				<p>Coordonateur des activités en IA</p>
+				<div class="infos-contact">
+					<div class="img-conteneur" onmouseover="montrerUsager('Richard', 'Discord')" onmouseout="cacherUsager('Richard')"><img src="/images/Discord-Symbol-White.svg"></div>
+				</div>
+				<div class="hoverbox" id="hoverbox-Richard"></div>
 			</div>
 		</section>
 
