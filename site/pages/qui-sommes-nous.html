@@ -36,7 +36,8 @@
 		}
 
 		#description2{
-			display: flex;
+			display: grid;
+			grid-template-columns: 50% 50%;
 			text-align: justify;
 		}
 		@media(min-width:768px){#description2{flex-direction: row;}}
@@ -209,7 +210,7 @@
 
 <body>
 	<!--Titre et Menu Principal-->
-	<header class="header" style="background-image: url('/images/hackfest2023.jpeg');">
+	<header class="header" style="background-image: url('/images/csgames26-6.jpg');">
 		<nav class="menuPrincipal"></nav>
 		<div class="header-contenu">
 			<h1>Qui sommes-nous?</h1>
@@ -233,7 +234,7 @@
 		</section>
 		<!--Description 2-->
 		<section id="description2">
-			<div class="img-conteneur"><img src="/images/signal-2023-10-13-121945-3-min-scaled-1.jpeg"></div>
+			<div class="img-conteneur"><img class="arrondi" src="/images/ujam3.jpg"></div>
 			<div id="texte">
 				<h3>REI</h3>
 				<hr>
@@ -245,7 +246,7 @@
 			</div>
 		</section>
 		<!--Image-->
-		<div id="img-diviseur" class="img-conteneur"><img src="/images/UQO-UHACK-27-04-SD-152-compressed.jpg" style="max-height: 500%;"></div>
+		<div id="img-diviseur" class="img-conteneur" style="border-radius: 1em; box-shadow: 0 0 0.5em #0003;"><img src="/images/uctf4.jpg" style="max-height: 500%;"></div>
 		<!--Objectifs-->
 		<h3>NOS OBJECTIFS</h3>
 		<hr>
