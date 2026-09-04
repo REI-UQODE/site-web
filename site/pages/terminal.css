@@ -27,10 +27,21 @@
 	padding: 0.5em
 }
 
-.terminal header h2
+.terminal h2
 {
 	color: rgb(211, 211, 211);
 	flex-grow: 1;
+	font-family: 'Courier New', Courier, monospace;
+	text-shadow: none;
+}
+
+.terminal h3
+{
+	color: rgb(211, 211, 211);
+	flex-grow: 1;
+	font-family: 'Courier New', Courier, monospace;
+	text-shadow: none;
+	font-size: 2em;
 }
 
 .terminal p

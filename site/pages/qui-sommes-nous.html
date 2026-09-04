@@ -74,6 +74,7 @@
 			box-shadow: 0 0 1em #0003;
 			padding: 4em 10%;
 			margin: 4em;
+			background-color: #ff9d00;
 		}
 
 		/*Tableau objectifs*/
@@ -109,6 +110,7 @@
 		#tableau-objectifs > div h3{
 			font-size: 1.5em;
 			color: black;
+			font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 		}
 
 		.point{
@@ -122,6 +124,7 @@
 		
 		#tableau-objectifs > div p{
 			text-align: justify;
+			color: black;
 		}
 
 		/*Tableau membres*/
@@ -158,7 +161,7 @@
 			box-shadow: 0 0 2em #0003;
 		}
 
-		#tableau-membres > div img{
+		#tableau-membres > div > img{
 			width: 100%;
 			aspect-ratio: 1;
 			border-radius: 100%;
@@ -167,7 +170,6 @@
 
 		#tableau-membres > div h2{
 			font-size: 1.75em;
-			color: #9D079C;
 		}
 
 		#tableau-membres > div p{
@@ -178,6 +180,7 @@
 		#tableau-membres > div .img-conteneur{
 			width: 2em;
 			height: 2em;
+			padding: 0.25em;
 			background-color: grey;
 			border-radius: 100%;
 		}
@@ -224,7 +227,7 @@
 
 		<!--Description 1-->
 		<section id="description1">
-			<p style="float: left; font-size: 3.5em; margin: 0 0.2em; color:#9D079C;">À</p>
+			<p style="float: left; font-size: 3.5em; margin: 0 0.2em -0.4em 0; color:#9D079C; font-family: 'montserrat';">À</p>
 			l'UQO, plusieurs associations sont accréditées en vertu de la Loi sur l’accréditation et le financement des associations d’étudiants. 
 			Elles ont pour but la promotion et la défense des droits et intérêts des étudiants de leur groupe d'appartenance respectif. 
 		</section>
@@ -368,7 +371,9 @@
 				<h2>Hugo Thivierge</h2>
 				<p>Conseiller aux activités du REI</p>
 				<div class="infos-contact">
-					<div class="img-conteneur" onmouseover="montrerUsager('Hugo', 'Discord')" onmouseout="cacherUsager('Hugo')"><img src="/images/Discord-Symbol-White.svg"></div>
+					<div class="img-conteneur" onmouseover="montrerUsager('Hugo', 'Discord')" onmouseout="cacherUsager('Hugo')">
+						<img src="/images/Discord-Symbol-White.svg">
+					</div>
 				</div>
 				<div class="hoverbox" id="hoverbox-Hugo"></div>
 			</div>

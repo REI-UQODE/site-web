@@ -1,3 +1,18 @@
+@font-face{
+	font-family: luck;
+	src: url(/polices/luck-font/LuckSlant-aYrGo.otf)
+}
+
+@font-face{
+	font-family: billstein;
+	src: url(/polices/billstein-font/Billstein-3zPyL.ttf)
+}
+
+@font-face{
+	font-family: montserrat;
+	src: url(/polices/montserrat-font/MontserratBlack-3zOvZ.ttf)
+}
+
 body
 {
 	margin: 0;
@@ -26,8 +41,11 @@ h1
 h2
 {
 	text-align: center;
-	color: #9D079C;
+	color: #be07be;
 	margin: 0 0.2em;
+	font-weight: 0;
+	font-family: 'billstein';
+	text-shadow: -0.04em 0.04em 0 #5922b9, -0.08em 0.08em 0 #5922b9, -0.12em 0.12em 0 #5922b9, -0.16em 0.16em 0 #5922b9;
 
 	@media (min-width: 768px) {font-size: 4em;}
 	@media (max-width: 768px) {font-size: 2em;}
@@ -36,6 +54,7 @@ h2
 h3
 {
 	margin: 0 0.2em;
+	font-family: 'montserrat';
 }
 
 p
@@ -96,8 +115,8 @@ a {
 .header
 {
 	background-size: cover;
-	background-color: rgba(0, 0, 0, 0.5); /*Ajuster le alpha pour une image + ou - sombre.*/
-	background-blend-mode: darken;
+	background-color: rgba(0, 0, 0, 0.35); /*Ajuster le alpha pour une image + ou - sombre.*/
+	background-blend-mode: overlay;
 	background-position: center;
 	background-attachment: local;
 	height: 30em;
