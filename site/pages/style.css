@@ -41,11 +41,11 @@ h1
 h2
 {
 	text-align: center;
-	color: #be07be;
+	color: #9D079C;
 	margin: 0 0.2em;
 	font-weight: 0;
-	font-family: 'billstein';
-	text-shadow: -0.04em 0.04em 0 #5922b9, -0.08em 0.08em 0 #5922b9, -0.12em 0.12em 0 #5922b9, -0.16em 0.16em 0 #5922b9;
+	font-family: 'montserrat';
+	/*text-shadow: -0.04em 0.04em 0 #5922b9, -0.08em 0.08em 0 #5922b9, -0.12em 0.12em 0 #5922b9, -0.16em 0.16em 0 #5922b9;*/
 
 	@media (min-width: 768px) {font-size: 4em;}
 	@media (max-width: 768px) {font-size: 2em;}
