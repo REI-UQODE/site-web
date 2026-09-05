@@ -111,6 +111,13 @@
 			background-color: #9D079C;
 			color: white;
 		}
+		
+		#img-defis
+		{
+			text-align: center;
+			@media (min-width: 768px)
+			{width: 25%;}
+		}
 	</style>
 
 	<script src="/javascript/init-commun.js" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
@@ -134,12 +141,12 @@
 	</header>
 	<article>
 		<div class="gap"></div>
-		<h2>Défi Juin-Août</h2>
+		<!--h2>Défi de Juillet-Août</h2>
 		<hr class="separateur"></hr>
 		<!--Terminal-->
 		<div class="terminal">
 			<header>
-				<h2>Le Gagnant Est : </h2>
+				<h2>Défis du mois</h2>
 				<div class="boutons-terminal">
 					<div class="bouton-terminal" style="background-color: rgb(50, 187, 50);">+</div>
 					<div class="bouton-terminal" style="background-color: rgb(239, 213, 48);">-</div>
@@ -147,15 +154,17 @@
 				</div>
 			</header>
 			<div class="contenu-terminal">
-				<h3>🏆 Camilien Provencher! 🏆</h3>
 				<div class="flex" style="margin: 0; text-align: left; align-items: stretch; gap: 1em;">
-					<div class="img-conteneur"><image src="/images/markdown-icon.png" width="100%"; height="auto"></image></div>
-					<div style="display: flex; margin: 1em; flex-direction: column; justify-content: space-evenly; flex-grow: 1; gap: 10px;">
-						<p>Jetez un coup d'oeuil au classement!</p>
-						<a class="bouton" href="https://github.com/REI-UQODE/defisDuMois/tree/main/juilletAout2026/soumissions">Voir les solutions > </a>
-						<h3>Défi de Septembre</h3>
+					<div class="img-conteneur" id="img-defis"><image src="/images/defi_sept2026.webp" width="100%"; height="auto"></image></div>
+					<div style="display: flex; margin: 1em; flex-direction: column; justify-content: space-evenly; flex-grow: 1;" class="centreur">
+						<h3>Défi de<br>Septembre</h3>
 						<p>Remportez le défi de ce moi-ci!</p>
-						<a class="bouton" href="/pages/activites.html#defis-du-moi">En savoir plus > </a>
+						<a class="bouton" href="/pages/activites.html#defi-du-mois">En savoir plus > </a>
+					</div>
+					<div style="display: flex; margin: 1em; flex-direction: column; justify-content: space-evenly; flex-grow: 1;" class="centreur">
+						<h3>Gagnant de Juillet-Août:<br>🏆 Camilien Provencher! 🏆</h3>
+						<a class="bouton" href="/pages/defis.html">Consulter notre mur de gloire! > </a>
+						<a class="bouton" href="https://github.com/REI-UQODE/defisDuMois/tree/main/juilletAout2026/soumissions">Voir toutes les soumissions > </a>
 					</div>
 				</div>
 			</div>
