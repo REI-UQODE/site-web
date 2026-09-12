@@ -12,6 +12,10 @@
 	<link rel="stylesheet" type="text/css" href="terminal.css">
 	<link rel="stylesheet" type="text/css" href="modal.css">
 	<style>
+		p{
+			color: black
+		}
+
 		/*Tableau Objectifs*/
 		@media (max-width: 768px){
 			#tableau-objectifs{
@@ -132,6 +136,74 @@
 			<h5 class="centreur" style="margin: 0"><a class="bouton" style="margin: 0" href="/documents/joindreMatrix.pdf">Ou consultez notre guide pour y créer un compte</a></h5>
 		</div>
 	</header>
+	<article style="padding-bottom: 3em; background-color: #151516; 
+		box-shadow:  0.75em  0.75em 0.75em -0.75em rgb(145, 255, 185) inset,  4em  4em 4em -4em rgba(30, 255, 113, 0.644) inset,
+					 0.75em -0.75em 0.75em -0.75em rgb(145, 228, 255) inset,  4em -4em 4em -4em rgba(30, 109, 255, 0.644) inset,
+					-0.75em -0.75em 0.75em -0.75em rgb(211, 145, 255) inset, -4em -4em 4em -4em rgba(188, 30, 255, 0.644) inset,
+					-0.75em  0.75em 0.75em -0.75em rgb(255, 196, 145) inset, -4em  4em 4em -4em rgba(255, 135, 30, 0.644) inset,
+					0 0 10em rgba(29, 29, 29, 0.634), 0 1em 3em rgb(72, 145, 255);">
+		<div class="gap"></div>
+		<h2 style="color: #b80fb8; text-shadow: 0 0.1em 1em #b80fb8;">REI Découverte</h2>
+		<hr class="separateur">
+		
+		<h3 style="font-size: 2em; color: rgb(229, 46, 46); text-shadow: 0 0.1em 1em #df2222;">Seulement <span id="REI_decouverte_timer"></span> restants!</h3>
+		<script>
+			// Set the date we're counting down to
+			var countDownDate = new Date("Sept 14, 2026 19:00:00").getTime();
+
+			// Update the count down every 1 second
+			var x = setInterval(function() {
+
+				// Get today's date and time
+				var now = new Date().getTime();
+
+				// Find the distance between now and the count down date
+				var distance = countDownDate - now;
+
+				// Time calculations for days, hours, minutes and seconds
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				// Display the result in the element with id="demo"
+				document.getElementById("REI_decouverte_timer").innerHTML = days + "j " + hours + ":" + minutes + ":" + seconds;
+
+				// If the count down is finished, write some text
+				if (distance < 0) {
+					clearInterval(x);
+					document.getElementById("REI_decouverte_timer").innerHTML = "EXPIRED";
+				}
+			}, 1000);
+		</script>
+		<div class="gap"></div>
+		<div style="display: grid; grid-template-columns: 50% 50%;">
+			<img src="/images/REI découverte.png" style="max-height: 40em;">
+			<div id="p_rei_dec" style="padding-left: 1em;">
+				<style>
+					#p_rei_dec p {
+						color: rgb(237, 222, 234);
+						text-shadow: 0 0.1em 0.5em rgba(196, 9, 150, 0.872);
+					}
+					#p_rei_dec .bouton:hover {
+						background-color: #b80fb8;
+						box-shadow:  0.1em  0.1em 0.25em rgb(108, 218, 148),  0.25em  0.25em 1em -0em rgba(30, 255, 113, 0.764),
+									0.1em -0.1em 0.25em rgb(89, 142, 159),  0.25em -0.25em 1em -0em rgba(30, 109, 255, 0.587),
+									-0.1em -0.1em 0.25em rgb(153, 72, 208), -0.25em -0.25em 1em -0em rgb(221, 30, 255),
+									-0.1em  0.1em 0.25em rgb(255, 166, 87), -0.25em  0.25em 1em -0em rgb(255, 119, 0);;
+					}
+				</style>
+				<p>Le Regroupement des Étudiants en Informatique (REI) organise une présentation de ton association étudiante! Vient à la rencontre des gens qui te représentes et de tes collègues.</p>
+				<p>📑 <b>Au menu</b> : Présentation, suivit d'un jeu d'intégration.</p>
+				<p>📍 <b>Où?</b> : Au Café-Bar le Tonik, à la cafétéria du Campus d'Alexandre-Taché</p>
+				<p>📆 <b>Quand?</b> : Le lundi 14 septembre</p>
+				<p>⏳ <b>À Quelle Heure?</b> : 19h-21h (Ou un peu plus tard, si vous voulez 😉)</p>
+				<p>🍕 <b>Pizza?</b> : Peut être!</p>
+
+				<a class="bouton" href="https://evelya.co/universite-du-quebec-en-outaouais/regroupement-des-etudiants-en-informatique/rei-decouverte-3163">Inscrivez-vous maintenant!</a>
+			</div>
+		</div>
+	</article>
 	<article>
 		<div class="gap"></div>
 		<h2>Défi Juin-Août</h2>
