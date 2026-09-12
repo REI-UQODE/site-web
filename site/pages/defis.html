@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/images/logoREI.png">
+	<title>UQODE | Inscription aux courriels</title>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="terminal.css">
+	
+	<style>
+		form
+		{
+			margin-top: 40px;
+		}
+		
+		.rangee-formulaire
+		{
+			display: flex;
+			justify-content: space-between;
+			width: 47em;
+			margin-bottom: 20px;
+			
+			@media (max-width: 768px)
+			{flex-direction: column; width: auto;}
+		}
+		
+		/*.newline-mobile
+		{
+			display: none;
+			
+			@media (max-width: 768px)
+			{display: block;}
+		}*/
+		
+		.rangee-formulaire input,
+		.rangee-formulaire select
+		{
+			width: 20em;
+		}
+		
+		.rangee-formulaire button
+		{
+			margin-left: auto;
+			width: 10em;
+		}
+		
+		table
+		{
+			border: 1px solid black;
+			border-spacing: 0;
+			width: 60%;
+			margin-top: 1em;
+		}
+		
+		th, td
+		{
+			border: 1px solid black;
+			padding: 0.3em 1em;
+		}
+		
+		th
+		{
+			background-color: darkgray;	
+		}
+		
+		.terminal h3
+		{
+			font-size: 34px;
+		}
+		
+		.terminal h4
+		{
+			font-size: 24px;
+		}
+	</style>
+	
+	<script src="/javascript/init-commun.js?v=5" type="module" defer></script>
+</head>
+
+<body>
+	<!--Titre et Menu Principal-->
+	<div class="header" style="background-image: url('/images/uctf7.jpg');">
+		<nav class="menuPrincipal"></nav>
+		<div class="header-contenu">
+			<h1>Les gagnants du mois de l'UQODE</h1>
+			<hr>
+			Consulte notre mur de gloire!
+		</div>
+	</div>
+	
+	<!--Contenu-->
+	<article>
+		<div class="terminal">
+			<header>
+				<h2>Gagnant de Juillet-Août</h2>
+				<div class="boutons-terminal">
+					<div class="bouton-terminal" style="background-color: rgb(50, 187, 50);">+</div>
+					<div class="bouton-terminal" style="background-color: rgb(239, 213, 48);">-</div>
+					<div class="bouton-terminal" style="background-color: rgb(211, 57, 57);">x</div>
+				</div>
+			</header>
+			<div class="contenu-terminal">
+				<h3>🏆 Camilien Provencher! 🏆</h3>
+				<div class="flex" style="margin: 0; text-align: left; align-items: stretch; gap: 1em;">
+					<div class="img-conteneur"><image src="/images/markdown-icon.png" width="100%"; height="auto"></image></div>
+					<div style="display: flex; margin: 1em; flex-direction: column; justify-content: space-evenly; flex-grow: 1; gap: 10px;">
+						<p>Jetez un coup d'oeil au classement!</p>
+						<a class="bouton" href="https://github.com/REI-UQODE/defisDuMois/tree/main/juilletAout2026/soumissions">Voir les solutions > </a>
+						<h4>Défi de Septembre</h4>
+						<p>Remportez le défi de ce mois-ci!</p>
+						<a class="bouton" href="/pages/activites.html#defi-du-mois">En savoir plus > </a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="gap"></div>
+		<h2>Les défis du mois de l'UQODE</h2>
+		<p class="centreur">
+			Durant toute l'année, à chaque mois, l'UQODE organise un défi de programmation où tous les étudiants intéressés sont invités à participer.<br>
+			En un mois, programmez une application utile en repoussant les limites de vos connaissances et de votre inventivité.<br>
+			Nos défis sont ouverts et accessibles à tous, que vous soyez débutant ou bien avancé dans votre programme!<br>
+			<a class="bouton" href="/pages/activites.html#defi-du-mois" style="font-size: 26px;">Participe au défi actuel!</a>
+		</p>
+		
+		<div class="gap"></div>
+		<h2>Historique des gagnants</h2>
+		<table>
+			<tr>
+				<th>mois</th>
+				<th>défi</th>
+				<th>gagnant</th>
+				<th>soumission</th>
+			</tr>
+			<tr id="rangee-1">
+				<td>Mars 2026</td>
+				<td>Jeu de Connect 4 (<a href="https://github.com/REI-UQODE/defisDuMois/tree/main/mars2026#readme">github</a>)</td>
+				<td>Tanjon Yavo</td>
+				<td><a href="https://github.com/REI-UQODE/defisDuMois/blob/main/mars2026/Soumissions/Tanjon'Yavo.png">github</a></td>
+			</tr>
+			<tr id="rangee-2">
+				<td>Avril 2026</td>
+				<td>Dilemme du prisonnier (<a href="https://github.com/REI-UQODE/defisDuMois/tree/main/avril2026#readme">github</a>)</td>
+				<td>Mouhamadou Konaré</td>
+				<td><a href="https://github.com/REI-UQODE/defisDuMois/tree/main/avril2026/Soumissions/gagnant">github</a></td>
+			</tr>
+			<tr id="rangee-3">
+				<td>Mai-Juin 2026</td>
+				<td>Parseur JSON (<a href="https://github.com/REI-UQODE/defisDuMois/tree/main/maiJuin2026#readme">github</a>)</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr id="rangee-4">
+				<td>Juillet-Août 2026</td>
+				<td>Éditeur Markdown (<a href="https://github.com/REI-UQODE/defisDuMois/tree/main/juilletAout2026#readme">github</a>)</td>
+				<td>Camilien Provencher</td>
+				<td><a href="https://github.com/REI-UQODE/defisDuMois/tree/main/juilletAout2026/soumissions/Camilien%20Provencher">github</a></td>
+			</tr>
+			<tr id="rangee-5">
+				<td>Septembre 2026</td>
+				<td>Jeu de sudoku (<a href="https://github.com/REI-UQODE/defisDuMois/tree/main/septembre2026#readme">github</a>)</td>
+				<td>Défi en cours!</td>
+				<td>Défi en cours!</td>
+			</tr>
+		</table>
+	</article>
+	
+	<footer></footer>
+</body>
+</html>
