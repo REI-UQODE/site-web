@@ -7,6 +7,15 @@ nav
 	align-items: center;
 	margin: 0;
 	overflow-x: scroll;
+
+	/*Retirer la barre de défilement*/
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/*Retirer la barre de défilement*/
+nav::-webkit-scrollbar{
+    display: none;
 }
 
 .boutonMenuPrincipal
