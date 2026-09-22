@@ -56,9 +56,9 @@ function montrerUsager (nom, service)
 						hoverbox.innerHTML = "@hugus0916 (@Hugo t)";
 						break;
 					
-					case 'Lindor':
-						hoverbox = document.getElementById('hoverbox-Lindor');
-						hoverbox.innerHTML = "@lindordiop_42234 (@LindorDiop)";
+					case 'Felix':
+						hoverbox = document.getElementById('hoverbox-Felix');
+						hoverbox.innerHTML = "@mrcarnaval (@Félix)";
 				}
 			}
 			
