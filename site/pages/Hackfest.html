@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>REI | Hackfest</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/images/logoREI.png">
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="terminal.css">
+
+	<style>
+		/*Général*/
+		#billets{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+		}
+	</style>
+
+	<script src="/javascript/init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
+	<script src="/javascript/décompte.js?v=5" defer></script>
+</head>
+
+
+<body>
+	<!--Titre et Menu Principal-->
+	<div class="header" style="background-image: url('/images/gameNight.jpg');">
+		<nav></nav>
+		<div class="header-contenu">
+			<h1>HACKFEST</h1>
+			<hr>
+			<div style="height: 10px"></div>
+			<div class="centreur"><a class="bouton" href="https://calendrier.rei-uqode.ca">Consultez le calendrier</a></div>
+		</div>
+	</div>
+	
+	<!--Contenu-->
+	<article>
+		<div class="gap"></div>
+		<h2>Billets</h2>
+		<hr class="separateur">
+
+		<!--description 1-->
+		<section id="billets">
+			<div>
+				<h3 style="font-size: 2em; color: #e8416b;">Les billets ouvrent dans <decompte fin="Oct 6, 2026 8:30:00" texte-fin="MAINTENANT"></decompte>!</h3>
+			</div>
+			<div style="width: 100%;">
+				<h3>Les billets incluents : </h3>
+				<ul>
+					<li>Un billet d'une valeur de 100$ pour l'événement.</li>
+					<li>Le logement pour 2 nuits, d'une valeur de 40$-60$</li>
+				</ul>
+				<h3>Covoiturage</h3>
+				<p>Les frais de transports seront remboursés (Essence, Électricité, Stationnement, Péage, etc.) selon les conditions suivantes :</p>
+				<ul>
+					<li>Une seule personne dans la voiture : 0$</li>
+					<li>2+ Personnes dans la voiture : (Nb de places occupées/Nb places disponibles) x Le coût du transport</li>
+					<li>Une photo de tous les participants dans la voiture doit être soumise après l'événement.</li>
+					<li>Une photo de toutes les factures devant être remboursées doit être soumise après l'événement.</li>
+				</ul>
+			</div>
+		</section>
+	</article>
+	
+	<!--Footer-->
+	<footer></footer>
+</body>
+</html>
