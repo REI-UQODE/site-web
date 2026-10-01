@@ -41,7 +41,7 @@ h1
 h2
 {
 	text-align: center;
-	color: #9D079C;
+	color: #AC4A7E;
 	margin: 0 0.2em;
 	font-weight: 0;
 	/*font-family: 'montserrat';
@@ -54,17 +54,41 @@ h2
 h3
 {
 	margin: 0 0.2em;
+	color: #100D13;
 	font-family: 'montserrat';
 }
 
 p
 {
-	color: #707070;
+	color: #100D13;
 	margin: 1em 0.2em;
 }
 
 a {
-	color: #9D079C
+	color: #AC4A7E;
+}
+
+table{
+	margin: 1em;
+	border-spacing: 0;
+	border: 2px solid black;
+	border-radius: 1.5em;
+	overflow: hidden;
+	box-shadow: 0 0 1em #0003;
+}
+
+th {
+	border: 1px solid black;
+	padding: 0.5em;
+	text-align: center;
+	background-color: #AC4A7E;
+	color: #FCFCFC;
+}
+
+tr, td {
+	border: 1px solid black;
+	padding: 0.5em;
+	text-align: center;
 }
 
 .gap
@@ -86,7 +110,7 @@ a {
 .separateur
 {
 	width: 50vw;
-	color: #9D079C;
+	color: #AC4A7E;
 	border-top: 5px solid;
 	margin: 1em 45% 2em 45%;
 }
@@ -166,7 +190,7 @@ a {
 
 .bouton, button
 {
-	background-color: #9D079C;
+	background-color: #AC4A7E;
 	margin: 0.5em;
 	padding: 0.5em 1em;
 	border-radius: 0.5em;
@@ -183,7 +207,7 @@ a {
 }
 .bouton:hover, button:hover
 {
-	background-color: #80057F;
+	background-color: #7943B0;
 	box-shadow: 0 0.25em 0.5em #0006;
 }
 
@@ -197,10 +221,10 @@ a {
 
 /*Utilisé si un bouton agit comme un bouton radio*/
 .bouton-actif{
-	background-color: #80057F !important;
+	background-color: rgb(116, 11, 116) !important;
 }
 
-.img-conteneur{
+div:has(img){
 	display: flex;
 	align-items: center;
 	justify-content: center;

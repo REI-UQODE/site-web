@@ -12,22 +12,112 @@
 
 	<style>
 		/*Général*/
-		#billets{
+		section {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			width: 100%;
 		}
+
+		h3 {
+			max-width: 100%;
+			text-align: center;
+		}
+
+		@media (max-width: 768px) {
+			#desc-1 {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				align-items: center;
+			}
+			#desc-1 > * {
+				width: 100%;
+			}
+		}
+
+		@media (min-width: 768px) {
+			#desc-1 {
+				display: flex;
+				flex-direction: row;
+				width: 100%;
+				max-width: 100%;
+				align-items: start;
+			}	
+			#desc-1 > * {
+				width: 50%;
+			}
+		}
+
+		#desc-1 > div {
+			margin: 1em;
+		}
+
+		#desc-1 p {
+			text-align: justify;
+		}
+
+		@media (max-width: 768px) {
+			#desc-2 {
+				display: flex; 
+				flex-direction: column-reverse;
+				max-width: 100%;
+			}
+		}
+
+		@media (min-width: 768px) {
+			#desc-2 {
+				display: flex; 
+				flex-direction: row;
+				max-width: 100%;
+			}	
+
+		}
+
+		@media (max-width: 768px) {
+			#desc-3 {
+				display: flex; 
+				flex-direction: column;
+				max-width: 100%;
+			}
+		}
+
+		@media (min-width: 768px) {
+			#desc-3 {
+				display: flex; 
+				flex-direction: row;
+				max-width: 100%;
+			}	
+
+		}
+
+		@media (max-width: 768px) {
+			#desc-4 {
+				display: flex; 
+				flex-direction: column-reverse;
+				max-width: 100%;
+			}
+		}
+
+		@media (min-width: 768px) {
+			#desc-4 {
+				display: flex; 
+				flex-direction: row;
+				max-width: 100%;
+			}	
+
+		}
 	</style>
 
 	<script src="/javascript/init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
 	<script src="/javascript/décompte.js?v=5" defer></script>
+	<script src="/modules/dérouleur.js?v=5" defer></script>
 </head>
 
 
 <body>
 	<!--Titre et Menu Principal-->
-	<div class="header" style="background-image: url('/images/gameNight.jpg');">
+	<div class="header" style="background-image: url('/images/Hackfest2025_groupe4.jpg');">
 		<nav></nav>
 		<div class="header-contenu">
 			<h1>HACKFEST</h1>
@@ -45,23 +135,129 @@
 
 		<!--description 1-->
 		<section id="billets">
-			<div>
+			<div style="margin: 1em;">
 				<h3 style="font-size: 2em; color: #e8416b;">Les billets ouvrent dans <decompte fin="Oct 6, 2026 8:30:00" texte-fin="MAINTENANT"></decompte>!</h3>
 			</div>
 			<div style="width: 100%;">
+				<h3>Éligibilité</h3>
+				<p>Vous devez être inscrit dans l'un des programmes suivant :</p>
+				<derouleur actif="false" style="max-height: 10em;">
+					<ul>
+						<li>6784 - Baccalauréat en cybersécurité</li>
+						<li>6785 - Baccalauréat en cybersécurité - régime coopératif</li>
+						<li>7833 - Baccalauréat en informatique</li>
+						<li>6627 - Baccalauréat en inforamtique - régime coopératif</li>
+						<li>4665 - Certificat en gouvernance et cybersécurité</li>
+						<li>4108 - Certificat en informatique de gestion</li>
+						<li>4666 - Certificat en réseaux informatiques et cybersécurité</li>
+						<li>4802 - Certificat en technologies de l'information</li>
+						<!-- <li>4775 - Diplôme d'études supérieures spécialisées en gestion intelligente de l'énergie</li>
+						<li>3097 - Maîtrise en informatique (profil mémoire)</li>
+						<li>3037 - Maîtrise en informatiqe (profil professionnel)</li>
+						<li>1454 - Diplôme d'études supérieures spécialisées en cybersécurité</li>
+						<li>2360 - Diplôme d'études supérieures spécialisées en science des données et intelligence artificielle</li>
+						<li>1641 - Diplôme d'études supérieures spécialisées en sciences et technologies de l'information</li>
+						<li>3081 - Doctorat en sciences et technologies de l'information</li>
+						<li>0935 - Programme court de deuxième cycle en cybersécurité</li>
+						<li>0934 - Programme court de deuxième cycle en mégadonnées et intelligence d'affaires</li> -->
+					</ul>
+				</derouleur>
 				<h3>Les billets incluents : </h3>
 				<ul>
-					<li>Un billet d'une valeur de 100$ pour l'événement.</li>
+					<li>Une passe d'une valeur de 100$ pour le Hackfest.</li>
 					<li>Le logement pour 2 nuits, d'une valeur de 40$-60$</li>
+					<!-- <li>La nourriture</li>
+					<li>Les frais de transports (voir ci-bas)</li> -->
 				</ul>
+				<b style="color: #e8416b;">N'inclue PAS de passe pour le CTF.</b>
+				<p>
+					Nous rembourseront une partie de votre billet si, <b>et uniquement si</b>, vous êtes présent sur la photo de l'événement que nous prendrons sur place. 
+					<b>Aucune exception.</b> Nous ne rembourserons pas votre billet si vous ne vous présentez pas à l'événement.
+				</p>
 				<h3>Covoiturage</h3>
-				<p>Les frais de transports seront remboursés (Essence, Électricité, Stationnement, Péage, etc.) selon les conditions suivantes :</p>
+				<p>Les frais de transports seront remboursés (Essence, Électricité, <s>Stationnement</s>, Péage, etc.) selon les conditions suivantes :</p>
 				<ul>
-					<li>Une seule personne dans la voiture : 0$</li>
-					<li>2+ Personnes dans la voiture : (Nb de places occupées/Nb places disponibles) x Le coût du transport</li>
+					<li>Vous faites du covoiturage :
+						<table>
+							<tr>	<th>Passagers</th>	<th>% Remboursé</th>	</tr>
+							<tr>	<td>0</td>			<td>0%</td>				</tr>
+							<tr>	<td>1</td>			<td>50%</td>			</tr>
+							<tr>	<td>2</td>			<td>75%</td>			</tr>
+							<tr>	<td>3+</td>			<td>100%</td>			</tr>
+						</table>
+					</li>
 					<li>Une photo de tous les participants dans la voiture doit être soumise après l'événement.</li>
 					<li>Une photo de toutes les factures devant être remboursées doit être soumise après l'événement.</li>
+					<li>Vous devez être sur la photo que nous prendrons sur le site de l'événement.</li>
 				</ul>
+			</div>
+		</section>
+		<section id="description">
+			<div class="gap"></div>
+			<h2>Hackfest</h2>
+			<hr class="separateur">
+
+			<div id="desc-1">
+				<img class="arrondi" src="/images/HackFestPromo.webp">
+				<div>
+					<p>
+						Le Hackfest est le plus grand événement bilingue de cybersécurité et de piratage au Canada.
+						C'est un événement de trois jours regroupant CTF, conférences et ateliers.
+					</p>
+					<h3>Les conférences et ateliers</h3>
+					<p>
+						Le Hackfest est surtout un congrès en cybersécurité où des experts de l'industrie viennent tenir
+						des conférences et des ateliers sur divers types de sujets. L'horaire des conférences est 
+						disponible sur le site web du Hackfest.<br>
+						<a class="bouton" href="https://hackfest.ca/horaire/">Voir l'horaire ></a><br>
+						Nous seront présents sur les lieux le vendredi et samedi.
+					</p>
+					<h3>C'est quoi un CTF?</h3>
+					<p>
+						Un CTF, ou Capture The Flag, est une compétition de cybersécurité où les participants devront
+						résoudre des défis plus ou moins difficiles, le plus rapidement possible pour gagner des points 
+						et gagner. <b>La passe CTF n'est PAS inclue dans le billet</b> et doit être achetée séparément.
+						Ne vous inquiétez pas : un CTF débutant est fournis gratuitement sur place, à qui veut participer.
+					</p>
+				</div>
+			</div>
+			<div class="gap"></div>
+			<div id="desc-2">
+				<div style="display: flex; flex-direction: column; align-items: center; min-width: 50%;">
+					<h3>Dates Importantes</h3>
+					<table>
+						<tr>	<th>Date</th>					<th>Note</th>									</tr>
+						<tr>	<td>Lundi 6 octobre</td>		<td>Ouverture des inscriptions</td>				</tr>
+						<tr>	<td>Mardi 27 octobre</td>		<td>Fermeture des inscriptions</td>				</tr>
+						<tr>	<td>Vendredi 30 octobre</td>	<td>Première journée du Hackfest</td>			</tr>
+						<tr>	<td>Ven 30 oct. 17h</td>		<td>Première photo de groupe obligatoire</td>	</tr>
+						<tr>	<td>Ven 30 oct. nuit</td>		<td>1ère nuit fournie</td>						</tr>
+						<tr>	<td>Samedi 31 octobre</td>		<td>Deuxième journée du Hackfest</td>			</tr>
+						<tr>	<td>Sam 31 oct. 12h</td>		<td>Deuxième photo de groupe obligatoire</td>	</tr>
+						<tr>	<td>Sam 31 oct. nuit</td>		<td>Deuxième nuit fournie</td>					</tr>
+						<tr>	<td>Dimanche 1er Novemebre</td>	<td>Journée libre à Québec</td>					</tr>
+					</table>
+				</div>
+				<div style="overflow: hidden; min-height: 25em; max-width: 100%; padding: 0; margin: 1em; flex: 1 0 0; border-radius: 1.1em; box-shadow: 0.25em 0.25em 1em rgba(0, 0, 0, 0.2);"><div style="height: 30em; margin: 0; padding: 0;"><img style="max-height: 100%; max-width: 400vw;" src="/images/Hackfest2025_1.jpg"></div></div>
+			</div>
+			<h3>Lieux importants</h3>
+			<div id="desc-3">
+				<div style="overflow: hidden; min-height: 25em; max-width: 100%; padding: 0; margin: 1em; flex: 1 0 0; border-radius: 1.1em; box-shadow: 0.25em 0.25em 1em rgba(0, 0, 0, 0.2);"><div style="height: 30em; margin: 0; padding: 0;"><img style="max-height: 100%; max-width: 400vw;" src="/images/hackfest23-2.jpeg"></div></div>
+				<div style="display: flex; flex-direction: column; align-items: center; min-width: 50%; max-width: 100%;">
+					<div class="gap"></div>
+					<h3><a href="https://www.convention.qc.ca/">Centre des Congrès de Québec</a> - Hackfest</h3>
+					<div class="gap"></div>
+					<iframe width="350" height="350" style="margin: 1em;" src="https://www.openstreetmap.org/export/embed?bbox=-71.21855020523073%2C46.80620634633401%2C-71.21467709541322%2C46.81418084660733&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=17/46.810194/-71.216613">Afficher une carte plus grande</a></small>
+				</div>
+			</div>
+			<div class="gap"></div>
+			<div id="desc-4">
+				<div style="display: flex; flex-direction: column; align-items: center; min-width: 50%; max-width: 100%;">
+					<h3><a href="https://qbeds.ca/">Auberge QBeds</a> - Logement</h3>
+					<div class="gap"></div>
+					<iframe width="350" height="350" style="margin: 1em;" src="https://www.openstreetmap.org/export/embed?bbox=-71.21739417314531%2C46.80512316232672%2C-71.21642589569093%2C46.80711693838692&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=19/46.806120/-71.216910">Afficher une carte plus grande</a></small>
+				</div>
+				<div style="overflow: hidden; min-height: 25em; max-width: 100%; padding: 0; margin: 1em; flex: 1 0 0; border-radius: 1.1em; box-shadow: 0.25em 0.25em 1em rgba(0, 0, 0, 0.2);"><div style="height: 30em; margin: 0; padding: 0;"><img style="max-height: 100%; max-width: 400vw;" src="/images/Hackfest2025_groupe2.jpg"></div></div>
 			</div>
 		</section>
 	</article>
