@@ -224,7 +224,7 @@ tr, td {
 	background-color: rgb(116, 11, 116) !important;
 }
 
-div:has(img){
+.img-conteneur {
 	display: flex;
 	align-items: center;
 	justify-content: center;
