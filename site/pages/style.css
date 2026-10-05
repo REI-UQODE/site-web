@@ -91,6 +91,73 @@ tr, td {
 	text-align: center;
 }
 
+form{
+	display: flex;
+	flex-direction: column;
+}
+
+form * {
+	margin: 0.5em;
+}
+
+form label{
+	font-weight: bold;
+	cursor: pointer;
+}
+
+form label:hover{
+	color: #7943B0;
+}
+
+form input[type="text"]{
+	font-size: 1em;
+	padding: 0.5em;
+	border-radius: 0.75em;
+	box-shadow: 0 0 0.25em #0003 inset;
+	border: 2px solid #100D13;
+}
+
+form input[type="text"].erreur {
+	border: 2px solid #d92c66;
+}
+
+form input[type=text]:hover{
+	border: 2px solid #7943B0;
+}
+
+form input[type=file]{
+	color: #100D13;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+form input[type=file].erreur{
+	color: #d92c66;
+}
+
+form input[type=file]::file-selector-button{
+	overflow: visible;
+	background-color: #AC4A7E;
+	margin: 0.5em;
+	padding: 0.5em 1em;
+	border-radius: 0.5em;
+	display: inline-block;
+	
+	border: 0;
+	color: white;
+	text-decoration: none;
+	font-size: 1.1em;
+	box-shadow: 0 0.5em 1em #0003;
+
+	transition: 300ms;
+	cursor: pointer;
+}
+
+form input[type=file]::file-selector-button:hover{
+	background-color: #7943B0;
+	box-shadow: 0 0.25em 0.5em #0006;
+}
+
 .gap
 {
 	height: 2em;
