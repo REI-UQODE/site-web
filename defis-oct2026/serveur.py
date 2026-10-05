@@ -371,7 +371,7 @@ class defiServeur(BaseHTTPRequestHandler):
             zipfile.ZipFile(rep_zip).extractall(rep)
 
             try:
-                res = subprocess.run(["docker","run","--rm","-v",f"{rep}:/app","defis-oct2026"], check=False, capture_output=True, text=True).stdout
+                res = subprocess.run(["docker","run","--rm","-v",f"{rep}:/app","--networking","none","defis-oct2026"], check=False, capture_output=True, text=True).stdout
             except:
                 shutil.rmtree(rep)
                 self.send_error(500, "Le programme a rencontré une erreur.")
