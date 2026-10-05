@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Regroupement des Étudiants en Informatique de l'UQO</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/images/logoREI.png">
+	<title>REI | Accueil</title>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="terminal.css">
+	<link rel="stylesheet" type="text/css" href="modal.css">
+	<style>
+		#tableau-gagnants{
+			display: flex;
+			flex-direction: column;
+			margin: 1em;
+			padding: 1%;
+			background-color: white;
+			width: 100%;
+			height: 40vh;
+			border: 1px solid black;
+			border-radius: 1em;
+			box-shadow: 0 0 1em #0003;
+		}
+
+		#tableau-contenu {
+			display: flex; 
+			flex-direction: row; 
+			width: 100%; 
+			flex-grow: 1;
+		}
+
+		#tableau-axe-x {
+			display: flex; flex-direction: column; width: fit-content
+		}
+
+		#tableau-axe-x > p {
+			margin: 0;
+			font-size: 0.75em;
+			text-align: right;
+			color: #666;
+		}
+
+		#tableau-svg {
+			width: calc(100% - 3px); 
+			margin: 3px; 
+			border: 2px solid black;
+		}
+
+		#tableau-legende {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+		}
+
+		#tableau-legende > div {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		#tableau-legende > div > div.puce {
+			width: 0.5em;
+			height: 0.5em;
+			margin: 0.25em;
+			border-radius: 100%;
+			background-color: red;
+		}
+
+		#tableau-legende > div > p {
+			margin: 0;
+			color: #666;
+		}
+
+		.notif{
+			overflow: hidden;
+			width: 100%;
+			margin: 0;
+		}
+
+		.notif > div{
+			display: flex;
+			flex-direction: column;
+			margin: 1em;
+			padding: 0.5em;
+			border-radius: 1em;
+			box-shadow: 0 0 0.5em #0003;
+		}
+
+		.notif.ok > div{
+			background-color: rgb(61, 167, 70);
+			border: 2px solid rgb(100, 247, 113);
+		}
+
+		.notif.erreur > div{
+			background-color: rgb(203, 28, 80);
+			border: 2px solid rgb(247, 100, 112);
+		}
+
+		.notif > div{
+			position: relative;
+		}
+
+		.notif p {
+			margin: 0.5em;
+			color: #FCFCFC;
+			font-weight: bold;
+		}
+
+		.notif .barre-chargement{
+			height: 0.5em;
+			background-color: #FCFCFC;
+			border-radius: 0.5em;
+		}
+	</style>
+
+	<script src="/javascript/init-commun.js" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
+	<script src="/javascript/imgLoader.js" defer></script>
+	<script src="/javascript/hash.js" type="module"></script>
+</head>
+
+
+<body>
+	<!--Titre et Menu Principal-->
+	<header class="header" style="background-image: url('/images/Hackfest2025_groupe2.jpg');">
+		<!--Menu Principal-->
+		<nav></nav>
+		<div class="header-contenu">
+			<h1>PREMIER</h1>
+			<hr>
+			<p>Défi d'octobre 2026</p>
+			<div style="height: 10px"></div>
+		</div>
+	</header>
+	<article>
+		<!--div id="tableau-gagnants">
+			<div id="tableau-contenu">
+				<div id="tableau-axe-x"></div>
+				<svg id="tableau-svg"></svg>
+			</div>
+			<div id="tableau-legende">
+				<div>
+					<div class="puce"></div>
+					<p>Vincent Godbout</p>
+				</div>
+			</div>
+		</div -->
+		<div style="display: grid; grid-template-columns: 50% 50%; width: 100%;">
+			<div style="display: flex; flex-direction: column; align-items: center;">
+				<h3 style="text-align: center;">Soumissions</h3>
+				<table id="soumissions">
+					<tr><th>Date</th><th>Nom</th><th>Bot</th><th>Code Source</th><th>Score</th></tr>
+					<tr><td colspan='5' style='font-weight:bold; padding: 1em;'>Aucune soumission jusqu'à présent...</td</tr>
+				</table>
+			</div>
+			<div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+				<h3 style="text-align: center;">Soumettre</h3>
+				<form id="soumettre-form" style="max-width: 30em; width: 100%;">
+					<label for="soumettre-form-nom">Votre Nom : </label>
+					<input id="soumettre-form-nom" type="text">
+					<label id="soumettre-form-nom-erreur" style="display: hidden; color: #d92c66;"></label>
+					<label for="soumettre-form-bot">Le nom de votre bot :</label>
+					<input id="soumettre-form-bot" type="text">
+					<label id="soumettre-form-bot-erreur" style="display: hidden; color: #d92c66;"></label>
+					<label for="soumettre-form-code-source">Lien vers votre code source :</label>
+					<input id="soumettre-form-code-source" type="text">
+					<label id="soumettre-form-code-source-erreur" style="display: hidden; color: #d92c66;"></label>
+					<label for="soumettre-form-zip">Votre soumission :</label>
+					<input id="soumettre-form-zip" type="file" accept=".zip">
+					<label id="soumettre-form-zip-erreur" style="display: hidden; color: #d92c66;"></label>
+					<input type="submit" class="bouton">
+				</form>
+				<div id="notifs" style="width: 100%; margin: 0;"></div>
+			</div>
+		</div>
+	</article>
+	
+	<!--Footer-->
+	<footer></footer>
+</body>
+<script type="module" defer>
+	import { genererHash } from "/javascript/hash.js";
+	const API="http://localhost:5000";
+	let soumissions = document.getElementById("soumissions");
+	let soumettreForm = document.getElementById("soumettre-form");
+
+	async function rechargerSoumissions (){
+		// La liste des soumissions retournée est ordonnée chronologiquement
+		let soumissionsJSON = null;
+		try{
+			soumissionsJSON = await fetch(API+"/soumissions").then((e)=>{return e.json();});
+		}catch (erreur){
+			lancerNotif(500, "Le serveur est injoignable.");
+			return;
+		}
+		soumissions.innerHTML = "<tr><th>Date</th><th>Nom</th><th>Bot</th><th>Code Source</th><th>Score</th></tr>"
+		if (soumissionsJSON.length == 0){
+			soumissions.innerHTML += "<tr><td colspan='5' style='font-weight:bold; padding: 1em;'>Aucune soumission jusqu'à présent...</td</tr>"
+		}else{
+			for(let s of soumissionsJSON){
+				let codeSource = s["code_source"].length > 0? "<a href='"+s["code_source"]+"' class='bouton'>&lt/&gt</a>" : "X";
+				soumissions.innerHTML += "<tr><td>"+s["date"]+"</td><td>"+s["soumissionaire"]+"</td><td>"+s["nom_bot"]+"</td><td>"+codeSource+"</td><td>"+s["score"]+"</td></tr>";
+			}
+		}
+	}
+
+	document.addEventListener("DOMContentLoaded",async ()=>{
+		soumissions = document.getElementById("soumissions");
+		await rechargerSoumissions();
+	});
+
+	async function lancerNotif(code, message) {
+		let DUREE_NOTIF = 0;
+
+		let notifsConteneur = document.getElementById("notifs");
+		let notif = document.createElement("div");
+		notif.classList.add("notif");
+		let div = document.createElement("div");
+		notif.appendChild(div);
+		div.innerHTML = "<p>Code - "+code+"</p>";
+		if (message){
+			div.innerHTML += "<p>"+message+"</p>";
+		}
+		div.innerHTML += "<div class='barre-chargement'></div>";
+		if (code < 300){
+			notif.classList.remove("erreur");
+			notif.classList.add("ok");
+			DUREE_NOTIF = 5000;
+		}else{
+			notif.classList.remove("ok");
+			notif.classList.add("erreur");
+			DUREE_NOTIF = 10000;
+		}
+		notifsConteneur.appendChild(notif);
+		div.animate(
+			[
+				{top: '-'+notif.offsetHeight+"px"},
+				{top: "0"}
+			],
+			{
+				duration: 500,
+				easing:"cubic-bezier(.56,.05,.53,1.29)",
+				fill: "forwards"
+			});
+		notif.animate([
+				{height: 0},
+				{height: notif.offsetHeight+"px"}
+			],
+			{
+				duration: 300,
+				easing: "ease-in-out",
+				fill: "forwards"
+			});
+		let barreChargement = div.getElementsByClassName("barre-chargement")[0];
+		barreChargement.animate([
+				{width: "100%"},
+				{width: "0"}
+			],
+			{
+				duration: DUREE_NOTIF,
+				easing: "linear",
+				fill: "forwards"
+			});
+		setTimeout(()=>{
+			div.animate(
+			[
+				{top: "0"},
+				{top: '-'+notif.offsetHeight+"px"}
+			],
+			{
+				duration: 500,
+				easing:"cubic-bezier(.7,-0.3,.9,.71)",
+				fill: "forwards"
+			});
+			setTimeout(()=>{
+				notif.animate([
+					{height: notif.offsetHeight+"px"},
+					{height: 0}
+				],
+				{
+					duration: 500,
+					easing: "ease-in-out",
+					fill: "forwards"
+				});
+				setTimeout(()=>{
+					notifsConteneur.removeChild(notif);
+				},500)
+			},500);
+		},DUREE_NOTIF);
+	}
+
+	document.addEventListener("DOMContentLoaded", ()=>{
+		soumettreForm = document.getElementById("soumettre-form");
+		soumettreForm.addEventListener("submit",async (e)=>{
+			e.preventDefault();
+
+			let e_nom = document.getElementById("soumettre-form-nom");
+			let e_bot = document.getElementById("soumettre-form-bot");
+			let e_lien = document.getElementById("soumettre-form-code-source");
+			let e_zip = document.getElementById("soumettre-form-zip");
+
+			let nom_erreur = document.getElementById("soumettre-form-nom-erreur");
+			let bot_erreur = document.getElementById("soumettre-form-bot-erreur");
+			let lien_erreur = document.getElementById("soumettre-form-code-source-erreur");
+			let zip_erreur = document.getElementById("soumettre-form-zip-erreur");
+
+			e_nom.classList.remove("erreur");
+			e_bot.classList.remove("erreur");
+			e_lien.classList.remove("erreur");
+			e_zip.classList.remove("erreur");
+			nom_erreur.style.setProperty("display","none");
+			bot_erreur.style.setProperty("display","none");
+			lien_erreur.style.setProperty("display","none");
+			zip_erreur.style.setProperty("display","none");
+			
+			let valide = true;
+			if (e_nom.value.length == 0){
+				e_nom.classList.add("erreur");
+				nom_erreur.innerText = "Votre nom est requis";
+				nom_erreur.style.setProperty("display","block");
+				valide = false;
+			}
+
+			if (e_nom.value.length > 64){
+				e_nom.classList.add("erreur");
+				nom_erreur.innerText = "Votre nom ne peut pas faire plus de 64 caractères";
+				nom_erreur.style.setProperty("display","block");
+				valide = false;
+			}
+
+			if (e_bot.value.length == 0){
+				e_bot.classList.add("erreur");
+				bot_erreur.innerText = "Le nom de votre bot est requis";
+				bot_erreur.style.setProperty("display","block");
+				valide = false;
+			}
+
+			if (e_bot.value.length > 64){
+				e_bot.classList.add("erreur");
+				bot_erreur.innerText = "Le nom de votre bot ne peut pas faire plus de 64 caractères";
+				bot_erreur.style.setProperty("display","block");
+				valide = false;
+			}
+
+			if (e_lien.value.length > 0){
+				try {
+					let lien_res = await fetch(e_lien.value);
+					if (lien_res.status >= 400){
+						e_lien.classList.add("erreur");
+						lien_erreur.innerText = "Le lien renvoie une erreur : "+lien_res.status;
+						lien_erreur.style.setProperty("display","block");
+						valide = false;
+					}	
+				} catch (error) {
+					e_lien.classList.add("erreur");
+					lien_erreur.innerText = "Le lien spécifié est injoignable";
+					lien_erreur.style.setProperty("display","block");
+					valide = false;
+				}
+			}
+
+			if (e_lien.value.length > 512){
+				e_bot.classList.add("erreur");
+				lien_erreur.innerText = "Le lien ne peut pas faire plus de 512 caractères.";
+				lien_erreur.style.setProperty("display","block");
+				valide = false;
+			}
+
+			if (e_zip.value.split('.').pop() != "zip"){
+				zip_erreur.classList.add("erreur");
+				zip_erreur.innerText = "Le fichier doit être un '.zip'";
+				zip_erreur.style.setProperty("display","block");
+				valide = false;
+			}
+
+			if (!valide){
+				return;
+			}
+
+			let messageForm = new FormData();
+			messageForm.append("soumissionaire",e_nom.value);
+			messageForm.append("nom_bot",e_bot.value);
+			messageForm.append("code_source",e_lien.value);
+			messageForm.append("hash",genererHash(Date.now() + e_nom.value + e_bot.value, 16));
+			messageForm.append("zip",e_zip.files[0]);
+
+			let res = null;
+			try{
+				res = await fetch(
+						API+"/soumission",
+						{
+							method: "POST",
+							body: messageForm
+						}
+					);
+			}catch (error){
+				await lancerNotif(500, "Le serveur est injoingable.");
+				return;
+			}
+
+			
+			let messageJSON = await res.json();
+			let message = "";
+			if(!messageJSON){
+				message = null;
+			}
+			if(res.status == 200){
+				message = "Votre score : " + messageJSON["score"];
+			}else{
+				message = messageJSON["message"];
+			}
+			await lancerNotif(res.status,message);
+			await rechargerSoumissions();
+		});
+	})
+
+	/*async function rechargerTableau() {
+		let tableau = document.getElementById("tableau-gagnant");
+		let tableauContenu = document.getElementById("tableau-contenu");
+		let tableauAxeX = document.getElementById("tableau-axe-x");
+		let tableauSVG = document.getElementById("tableau-svg");
+		let tableauLegende = document.getElementById("tableau-legende");
+
+		let scores_res = null;
+		try{
+			scores_res = await fetch(API+"/scores").then((e)=>{e.json();});
+		}catch (error){
+			lancerNotif(500, "Le serveur est injoignable.");
+			return;
+		}
+
+		for(let i = 0; i < 5; i++){
+			if(i >= scores_res.length){
+				break;
+			}
+		}
+	}
+
+	document.addEventListener("DOMContentLoaded", async ()=>{
+		await rechargerTableau();
+	})*/
+
+</script>
+</html>
