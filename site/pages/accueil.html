@@ -16,6 +16,48 @@
 			color: black
 		}
 
+		#terminaux-conteneur{
+			display: grid;
+			grid-template-columns: auto auto auto;
+			grid-auto-rows: 1fr;
+			gap: 1em;
+		}
+		@media (max-width: 768px){
+			#terminaux-conteneur {
+				font-size: 0.75em;
+			}
+
+		}
+
+		@media (max-width: 768px){
+			#terminalA {
+				margin-bottom: 450px;
+			}
+
+		}
+		@media (min-width: 768px){
+			#terminalA {
+				margin-bottom: 350px;
+			}
+		}
+		@media (min-width: 1000px){
+			#terminalA {
+				margin-bottom: 350px;
+			}
+		}
+
+		@media (max-width: 768px){
+			#terminalB > .terminal {
+				margin-right: 50px;
+			}
+
+		}
+		@media (min-width: 768px){
+			#terminalB > .terminal {
+				margin-right: 200px;
+			}
+		}
+
 		/*Tableau Objectifs*/
 		@media (max-width: 768px){
 			#tableau-objectifs{
@@ -125,6 +167,7 @@
 	</style>
 
 	<script src="/javascript/init-commun.js" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
+	<script src="/javascript/décompte.js?v=5" defer></script>
 	<script src="/javascript/imgLoader.js" defer></script>
 </head>
 
@@ -145,28 +188,54 @@
 	</header>
 	<article>
 		<div class="gap"></div>
-		<!--Terminal-->
-		<div class="terminal">
-			<header>
-				<h2>Défi du mois</h2>
-				<div class="boutons-terminal">
-					<div class="bouton-terminal" style="background-color: rgb(50, 187, 50);">+</div>
-					<div class="bouton-terminal" style="background-color: rgb(239, 213, 48);">-</div>
-					<div class="bouton-terminal" style="background-color: rgb(211, 57, 57);">x</div>
-				</div>
-			</header>
-			<div class="contenu-terminal">
-				<div style="display: grid; grid-template-columns: 66% 33%;">
-					<div>
-						<h3>Défi de Septembre</h3>
-						<image src="/images/defi_sept2026.webp" style="max-height: 30em; width: auto;"></image>
-						<p>Remportez le défi de ce mois-ci!</p>
-						<a class="bouton" href="/pages/activites.html#defi-du-mois">En savoir plus > </a>
+		<div id="terminaux-conteneur">
+			<!--Terminal-->
+			<div id="terminalA" style="display: flex; justify-content: right; grid-row: 1; grid-column: 1; z-index: 100; height: fit-content; width: 100%">
+				<div class="terminal" style="width: fit-content;">
+					<header>
+						<h2>Hackfest</h2>
+						<div class="boutons-terminal">
+							<div class="bouton-terminal" style="background-color: rgb(50, 187, 50);">+</div>
+							<div class="bouton-terminal" style="background-color: rgb(239, 213, 48);">-</div>
+							<div class="bouton-terminal" style="background-color: rgb(211, 57, 57);">x</div>
+						</div>
+					</header>
+					<div class="contenu-terminal">
+						<div style="display: flex; flex-direction: column; align-items: center;">
+							<h3 style="font-size: 2em; color: #e8416b;">Fin des inscriptions dans</br><decompte fin="Oct 27, 2026 23:55:00" texte-fin="MAINTENANT"></decompte>!</h3>
+							<image src="/images/HackFestPromo.webp" style="max-height: 30em; width: auto;"/>
+							<a class="bouton" href="/pages/Hackfest.html">En savoir plus > </a>
+						</div>
 					</div>
-					<div>
-						<h3>Gagnant de Juillet-Août:<br>🏆 Camilien Provencher! 🏆</h3>
-						<a class="bouton" href="/pages/defis.html">Consulter notre mur de gloire! > </a>
-						<a class="bouton" href="https://github.com/REI-UQODE/defisDuMois/tree/main/juilletAout2026/soumissions">Voir toutes les soumissions > </a>
+				</div>
+			</div>
+
+			<div id="terminalB" style="display: flex; justify-content: left; align-items: end; grid-row: 1; grid-column: 1; z-index: 0; height: 100%; width: 100%;">
+				<div class="terminal" style="width: fit-content;">
+					<header>
+						<h2 style="text-align: left;">Défi du mois</h2>
+						<div class="boutons-terminal">
+							<div class="bouton-terminal" style="background-color: rgb(50, 187, 50);">+</div>
+							<div class="bouton-terminal" style="background-color: rgb(239, 213, 48);">-</div>
+							<div class="bouton-terminal" style="background-color: rgb(211, 57, 57);">x</div>
+						</div>
+					</header>
+					<div class="contenu-terminal">
+						<div style="display: grid; grid-template-columns: 60% 40%;">
+							<div>
+								<h3>Défi de Septembre</h3>
+								<image src="/images/defi_sept2026.webp" style="max-height: 30em; width: auto;"></image>
+								<p>Remportez le défi de ce mois-ci!</p>
+								<a class="bouton" href="/pages/activites.html#defi-du-mois">En savoir plus > </a>
+							</div>
+							<div style="display: flex; flex-direction: column; justify-content: end;">
+								<div>
+									<h3>Gagnant de Juillet-Août:<br>🏆 Camilien Provencher! 🏆</h3>
+									<a class="bouton" style="width: fit-content;" href="/pages/defis.html">Consulter notre mur de gloire! > </a>
+									<a class="bouton" style="width: fit-content;" href="https://github.com/REI-UQODE/defisDuMois/tree/main/juilletAout2026/soumissions">Voir toutes les soumissions > </a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
