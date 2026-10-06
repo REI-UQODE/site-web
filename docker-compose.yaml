@@ -8,6 +8,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ./site:/usr/share/nginx/html
+      - ./.well-known:/var/www/.well-known
     networks:
       - web
     depends_on:
