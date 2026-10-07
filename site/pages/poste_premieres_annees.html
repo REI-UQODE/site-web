@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>REI | Représentant des Première Année</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/images/logoREI.png">
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<style>
+		/*Général*/
+		section {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+		}
+
+		h3 {
+			max-width: 100%;
+		}
+
+		@media (max-width: 768px) {
+			#desc-1 {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				align-items: center;
+			}
+			#desc-1 > * {
+				width: 100%;
+			}
+		}
+
+		@media (min-width: 768px) {
+			#desc-1 {
+				display: flex;
+				flex-direction: row;
+				width: 100%;
+				max-width: 100%;
+				align-items: start;
+			}	
+			#desc-1 > * {
+				width: 50%;
+			}
+		}
+
+		#desc-1 > div {
+			margin: 1em;
+		}
+
+		#desc-1 p {
+			text-align: justify;
+		}
+
+		@media (max-width: 768px) {
+			#desc-2 {
+				display: flex; 
+				flex-direction: column-reverse;
+				max-width: 100%;
+			}
+		}
+
+		@media (min-width: 768px) {
+			#desc-2 {
+				display: flex; 
+				flex-direction: row;
+				max-width: 100%;
+			}	
+
+		}
+
+		@media (max-width: 768px) {
+			#desc-3 {
+				display: flex; 
+				flex-direction: column;
+				max-width: 100%;
+			}
+		}
+
+		@media (min-width: 768px) {
+			#desc-3 {
+				display: flex; 
+				flex-direction: row;
+				max-width: 100%;
+			}	
+
+		}
+
+		@media (max-width: 768px) {
+			#desc-4 {
+				display: flex; 
+				flex-direction: column-reverse;
+				max-width: 100%;
+			}
+		}
+
+		@media (min-width: 768px) {
+			#desc-4 {
+				display: flex; 
+				flex-direction: row;
+				max-width: 100%;
+			}	
+
+		}
+	</style>
+
+	<script src="/javascript/init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
+</head>
+
+
+<body>
+	<!--Titre et Menu Principal-->
+	<div class="header" style="background-image: url('/images/csgames26-5.jpg');">
+		<nav></nav>
+		<div class="header-contenu">
+			<h1>Représentant des Première Année</h1>
+			<hr>
+			<div style="height: 10px"></div>
+			<div class="centreur">Viens représenter ta cohorte auprès de <b style="text-decoration: underline">ton</b> asso!</div>
+		</div>
+	</div>
+	
+	<!--Contenu-->
+	<article>
+		<div class="gap"></div>
+		<!--h2>Un nouveau poste au REI</h2>
+		<hr class="separateur"-->
+
+		<section>
+			<h3>Un nouveau poste au REI</h3>
+			<p>
+				Le REI (Regroupement des Étudiants en Informatique de l'UQO) cherche un étudiant en première année en informatique pour faire le lien entre sa cohorte et le comité exécutif.<br>
+				Il s'agit d'un poste non-votant qui vise à assurer la même représentation à tous au sein du conseil exécutif.<br>
+				C'est une occasion parfaite pour t'impliquer dans l'organisation de la vie étudiante de ton programme!
+			</p>
+
+			<div class="gap"></div>
+			<h3>Tes responsabilités</h3>
+			<ul>
+				<li>Annoncer et publiciser les évènements du REI dans tes cours et auprès de tes collègues</li>
+				<li>Porter la voix de tes collègues au comité exécutif</li>
+				<li>Participer aux rencontres du comité exécutif</li>
+			</ul>
+
+			<div class="gap"></div>
+			<h3>Éligibilité</h3>
+			<p>Tu dois être inscrit en première session du baccalauréat en informatique.</p>
+
+			<div class="gap"></div>
+			<h3>Comment poser sa candidature?</h3>
+			<p>
+				Si le poste t'intéresse, <strong>envoie-nous un courriel au <a href=mailto:rei@uqo.ca>rei@uqo.ca</a></strong> expliquant pourquoi le poste d'intéresse.<br>
+				À sa prochaine rencontre, le comité exécutif choisira la candidature qu'il juge la meilleure.
+			</p>
+			<p>
+				Même si tu n'es pas sélectionné ou si tu ne veux pas t'engager, tu peux toujours t'impliquer avec nous!<br>
+				N'hésite pas à venir nous voir au A-1214 à Lucien-Brault ou à nous contacter sur <a href=https://element.rei-uqode.ca>matrix</a> ou sur <a href=https://discord.gg/XNPFzumVzb>discord!</a><br>
+				L'<a href=/pages/uqode.html>UQODE</a> a également plusieurs <a href="/documents/Registre des Membres.pdf">postes vacants</a>.
+			</p>
+		</section>
+	</article>
+	
+	<!--Footer-->
+	<footer></footer>
+</body>
+</html>
