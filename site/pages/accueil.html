@@ -18,45 +18,13 @@
 
 		#terminaux-conteneur{
 			display: grid;
-			grid-template-columns: auto auto auto;
-			grid-auto-rows: 1fr;
-			gap: 1em;
-		}
-		@media (max-width: 768px){
-			#terminaux-conteneur {
-				font-size: 0.75em;
-			}
-
+			width: 100%;
 		}
 
-		@media (max-width: 768px){
-			#terminalA {
-				margin-bottom: 450px;
-			}
-
-		}
-		@media (min-width: 768px){
-			#terminalA {
-				margin-bottom: 350px;
-			}
-		}
-		@media (min-width: 1000px){
-			#terminalA {
-				margin-bottom: 350px;
-			}
-		}
-
-		@media (max-width: 768px){
-			#terminalB > .terminal {
-				margin-right: 50px;
-			}
-
-		}
-		@media (min-width: 768px){
-			#terminalB > .terminal {
-				margin-right: 200px;
-			}
-		}
+		@media (max-width: 580px ){#terminaux-conteneur{font-size: 0.4em;}}
+		@media (min-width: 580px ){#terminaux-conteneur{font-size: 0.5em;}}
+		@media (min-width: 780px ){#terminaux-conteneur{font-size: 0.75em;}}
+		@media (min-width: 1000px){#terminaux-conteneur{font-size: 1em;}}
 
 		/*Tableau Objectifs*/
 		@media (max-width: 768px){
@@ -190,7 +158,7 @@
 		<div class="gap"></div>
 		<div id="terminaux-conteneur">
 			<!--Terminal-->
-			<div id="terminalA" style="display: flex; justify-content: right; grid-row: 1; grid-column: 1; z-index: 100; height: fit-content; width: 100%">
+			<div id="terminalA" style="display: flex; justify-content: left; grid-row: 1; grid-column: 1; z-index: 100; height: fit-content; width: 100%">
 				<div class="terminal" style="width: fit-content;">
 					<header>
 						<h2>Hackfest</h2>
@@ -210,8 +178,8 @@
 				</div>
 			</div>
 
-			<div id="terminalB" style="display: flex; justify-content: left; align-items: end; grid-row: 1; grid-column: 1; z-index: 0; height: 100%; width: 100%;">
-				<div class="terminal" style="width: fit-content;">
+			<div id="terminalB" style="display: flex; justify-content: center; align-items: end; grid-row: 1; grid-column: 1; z-index: 0; height: 100%; width: 100%;">
+				<div class="terminal" style="width: fit-content; margin-right: 10em;">
 					<header>
 						<h2 style="text-align: left;">Défi du mois</h2>
 						<div class="boutons-terminal">
@@ -224,11 +192,11 @@
 						<div style="display: grid; grid-template-columns: 60% 40%;">
 							<div>
 								<h3>Défi de Septembre</h3>
-								<image src="/images/defi_sept2026.webp" style="max-height: 30em; width: auto;"></image>
+								<image id="image-defis" src="/images/defi_sept2026.webp" style="max-height: 30em; width: auto;"></image>
 								<p>Remportez le défi de ce mois-ci!</p>
 								<a class="bouton" href="/pages/activites.html#defi-du-mois">En savoir plus > </a>
 							</div>
-							<div style="display: flex; flex-direction: column; justify-content: end;">
+							<div id="texte-gagnant" style="display: flex; flex-direction: column; justify-content: end;">
 								<div>
 									<h3>Gagnant de Juillet-Août:<br>🏆 Camilien Provencher! 🏆</h3>
 									<a class="bouton" style="width: fit-content;" href="/pages/defis.html">Consulter notre mur de gloire! > </a>
@@ -239,6 +207,36 @@
 					</div>
 				</div>
 			</div>
+
+			<!--Ajustement de la disposition des terminaux-->
+			<script>
+				let terminauxConteneur = document.createElement("div");
+				let terminalA = document.createElement("div");
+				let terminalB = document.createElement("div");
+				let contenuTerminalB = document.createElement("div");
+				let texteGagnant = document.createElement("div");
+				let imageDefis = document.createElement("div");
+
+				function positionnerTerminaux(evenement){
+					hauteurTerminalA = terminauxConteneur.offsetHeight - (texteGagnant.getBoundingClientRect().y - terminauxConteneur.getBoundingClientRect().y) + parseFloat(getComputedStyle(terminauxConteneur)["font-size"])*2;
+					terminalA.parentElement.style.setProperty("margin-bottom",hauteurTerminalA+"px");
+
+					bordureDroiteImage = imageDefis.offsetWidth + imageDefis.getBoundingClientRect().x - terminauxConteneur.getBoundingClientRect().x + parseFloat(getComputedStyle(terminauxConteneur)["font-size"])*2;
+					bordureDroiteTerminal = terminalB.offsetWidth + terminalB.getBoundingClientRect().x - terminauxConteneur.getBoundingClientRect().x - terminalA.offsetWidth + parseFloat(getComputedStyle(terminauxConteneur)["font-size"])*5;
+					terminalA.style.setProperty("margin-left",Math.max(bordureDroiteImage, bordureDroiteTerminal) +"px");
+				}
+
+				window.addEventListener("resize",positionnerTerminaux);
+				document.addEventListener("DOMContentLoaded",(evenement)=>{
+					terminauxConteneur = document.getElementById("terminaux-conteneur");
+					terminalA = document.getElementById("terminalA").getElementsByClassName("terminal")[0];
+					terminalB = document.getElementById("terminalB").getElementsByClassName("terminal")[0];
+					texteGagnant = document.getElementById("texte-gagnant").getElementsByTagName("div")[0];
+					contenuTerminalB = terminalB.getElementsByClassName("contenu-terminal")[0];
+					imageDefis = document.getElementById("image-defis");
+					positionnerTerminaux(evenement);
+				});
+			</script>
 		</div>
 		<div class="gap"></div>
 		<h2>Nos Objectifs</h2>
