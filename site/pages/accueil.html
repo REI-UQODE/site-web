@@ -16,6 +16,27 @@
 			color: black
 		}
 
+		@keyframes terminal-recrute-rot {
+			0% {transform: rotate(0deg);}
+			40% {transform: rotate(0deg) scale(1);}
+			44% {transform: rotate(5deg) scale(1.05);}
+			48% {transform: rotate(-5deg) scale(1.075);}
+			50% {transform: rotate(0deg) scale(1.1);}
+			52% {transform: rotate(5deg) scale(1.075);}
+			56% {transform: rotate(-5deg) scale(1.05);}
+			60% {transform: rotate(0deg) scale(1);}
+			100% {transform: rotate(0deg);}
+		}
+
+		#terminal-recrute{
+			animation: terminal-recrute-rot 3s infinite alternate;
+		}
+
+		#terminal-recrute:hover{
+			transform: scale(1.05);
+			animation: none;
+		}
+
 		#terminaux-conteneur{
 			display: grid;
 			width: 100%;
@@ -141,6 +162,20 @@
 
 
 <body>
+
+	<div id="terminal-recrute" class="terminal" style="position:fixed; bottom:1em; right: 1em; width: 18em; font-size: 0.5em; z-index: 200;">
+		<header>
+			<!--h2>Hackfest</h2-->
+			<div class="boutons-terminal">
+				<div class="bouton-terminal" style="background-color: rgb(50, 187, 50); font-size: 2em; margin:0.1em">+</div>
+				<div class="bouton-terminal" style="background-color: rgb(239, 213, 48); font-size: 2em; margin:0.1em">-</div>
+				<div class="bouton-terminal" style="background-color: rgb(211, 57, 57); font-size: 4em; margin:0.1em" onclick="document.getElementById('terminal-recrute').style.setProperty('display','none')">x</div>
+			</div>
+		</header>
+		<div class="contenu-terminal" style="padding: 0.5em;">
+			<a href="poste_premieres_annees.html"><img src="/images/Promo_Representant_1er_annees.svg"/></a>
+		</div>
+	</div>
 	<!--Titre et Menu Principal-->
 	<header class="header" style="background-image: url('/images/Hackfest2025_groupe2.jpg');">
 		<!--Menu Principal-->
@@ -154,7 +189,7 @@
 			<h5 class="centreur" style="margin: 0"><a class="bouton" style="margin: 0" href="/documents/joindreMatrix.pdf">Ou consultez notre guide pour y créer un compte</a></h5>
 		</div>
 	</header>
-	<a style="display: block; background-color: darkred; color: white; font-weight: bold; padding: 15px; text-align: center; text-decoration: none;" href="/pages/poste_premieres_annees.html">
+	<a style="position: sticky; top: 0; display: block; background-color: darkred; color: white; font-weight: bold; padding: 15px; text-align: center; text-decoration: none; z-index: 150;" href="/pages/poste_premieres_annees.html">
 		Nouveau poste de représentant des première année!  ->
 	</a>
 	
@@ -162,8 +197,8 @@
 		<div class="gap"></div>
 		<div id="terminaux-conteneur">
 			<!--Terminal-->
-			<div id="terminalA" style="display: flex; justify-content: left; grid-row: 1; grid-column: 1; z-index: 100; height: fit-content; width: 100%">
-				<div class="terminal" style="width: fit-content;">
+			<div id="terminalA" style="display: flex; justify-content: left; grid-row: 1; grid-column: 1; z-index: 100; height: fit-content; width: 100%; pointer-events: none;">
+				<div class="terminal" style="width: fit-content; pointer-events: all;">
 					<header>
 						<h2>Hackfest</h2>
 						<div class="boutons-terminal">
@@ -238,7 +273,45 @@
 					texteGagnant = document.getElementById("texte-gagnant").getElementsByTagName("div")[0];
 					contenuTerminalB = terminalB.getElementsByClassName("contenu-terminal")[0];
 					imageDefis = document.getElementById("image-defis");
+
 					positionnerTerminaux(evenement);
+
+					terminalB.addEventListener("mouseenter",()=>{
+						let bondHauteur = terminalA.offsetHeight - (terminalB.getBoundingClientRect().y - terminalA.getBoundingClientRect().y) + parseFloat(getComputedStyle(terminauxConteneur)["font-size"])*5;
+						terminalA.animate(
+							[
+								{"position": "relative", "top": "0"},
+								{"top": -bondHauteur+"px"},
+								{"position": "relative", "top": "0"}
+							],
+							{
+								duration: 500,
+								easing: "ease-in-out"
+							}
+						);
+						setTimeout(()=>{
+							terminalA.parentElement.style.setProperty("z-index","0");
+							terminalB.parentElement.style.setProperty("z-index","100");
+						},250);
+					});
+					terminalB.addEventListener("mouseleave",()=>{
+						let bondHauteur = terminalA.offsetHeight - (terminalB.getBoundingClientRect().y - terminalA.getBoundingClientRect().y) + parseFloat(getComputedStyle(terminauxConteneur)["font-size"])*5;
+						terminalA.animate(
+							[
+								{"position": "relative", "top": "0"},
+								{"top": -bondHauteur+"px"},
+								{"position": "relative", "top": "0"}
+							],
+							{
+								duration: 500,
+								easing: "ease-in-out"
+							}
+						);
+						setTimeout(()=>{
+							terminalA.parentElement.style.setProperty("z-index","100");
+							terminalB.parentElement.style.setProperty("z-index","0");
+						},250);
+					});
 				});
 			</script>
 		</div>
