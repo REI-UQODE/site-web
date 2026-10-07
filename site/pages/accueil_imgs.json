@@ -21,13 +21,21 @@
 			[
 				{ "nom": "HackFest 2023", "fichier": "hackfest2023.jpeg" },
 				{ "nom": "HackFest 2023", "fichier": "hackfest23.jpeg" },
-				{ "nom": "HackFest 2023", "fichier": "hackfest23-2.jpeg" }
+				{ "nom": "HackFest 2023", "fichier": "hackfest23-2.jpeg" },
+				{ "nom": "HackFest 2025", "fichier": "Hackfest2025_1.jpg"},
+				{ "nom": "HackFest 2025", "fichier": "Hackfest2025_groupe2.jpg"},
+				{ "nom": "HackFest 2025", "fichier": "Hackfest2025_groupe4.jpg"}
 			]
 		},
 		{
 			"categorie": "uHack",
 			"images":
 			[
+				{ "nom": "uHack 2026", "fichier": "uhack26-3.jpg" },
+				{ "nom": "uHack 2026", "fichier": "uhack26-4.jpg" },
+				{ "nom": "uHack 2026", "fichier": "uhack26-5.jpg" },
+				{ "nom": "uHack 2026", "fichier": "uhack26-1.jpg" },
+				{ "nom": "uHack 2026", "fichier": "uhack26-2.jpg" },
 				{ "nom": "uHack 2024", "fichier": "uHack2024.jpg" },
 				{ "nom": "uHack 2024", "fichier": "uHack.jpg" },
 				{ "nom": "uHack 2024", "fichier": "uhack2.jpg" }
