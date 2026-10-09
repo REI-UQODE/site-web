@@ -1,0 +1,140 @@
+mastodon {
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin : 1em;
+    width: calc(100% - 2em);
+    border: 2px solid black;
+    border-radius: 3em;
+}
+
+mastodon > header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #AC4A7E;
+}
+
+mastodon > header > img {
+    margin: 1em;
+    max-width: 4em;
+    max-height: 4em;
+    border: 1px solid black;
+    border-radius: 2em;
+}
+
+mastodon > header > div > h3 {
+    font-size: 2em;
+    margin: 0;
+}
+
+mastodon > header > div > p {
+    margin: 0;
+}
+
+mastodon > header > div a {
+    color: white;
+}
+
+mastodon > header > div a:hover {
+    color: #7943B0;
+}
+
+mastodon > fil {
+    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1.5em;
+    height: 85vh;
+    margin: 0;
+    border-top: 2px solid black;
+    box-shadow: 0 0 0.5em #0005 inset;
+}
+
+mastodon[est_horizontal="true"] > fil {
+    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 85vh;
+}
+
+mastodon > fil > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 20em;
+    margin: 0.5em;
+    padding: 1em;
+    max-width: 30em;
+    min-width: 20em;
+    height: calc(100% - 4em);
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 2em;
+    box-shadow: 0 0 1em #0003;
+}
+
+mastodon[est_horizontal="true"] > fil > div {
+    flex: 0 0 25em;
+    max-width: 26em;
+    min-width: 26em;
+}
+
+mastodon .publication-img-conteneur{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    width : 100%;
+    /*border-radius: 1.8em;*/
+    height: fit-content;
+    max-height: 45%;
+    /*background-color: #100D13;*/
+}
+
+mastodon .publication-img-conteneur img{
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1.8em;
+    box-shadow: 0 0 0.5em #0003;
+}
+
+mastodon .publication-description {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 45%;
+    overflow-y: scroll;
+    margin-top: 1em;
+    padding: 0 1em;
+    box-shadow: 0 0 0.5em #0003 inset;
+    border-radius: 1em;
+}
+
+mastodon > fil > div > a {
+    display: flex !important;
+    align-items: center;
+    margin-top: 0.5em;
+    width: fit-content;
+    align-self: center;
+}
+
+mastodon > fil > div > a > img {
+    width: 1em;
+    margin: 0.3em;
+    padding: 0;
+}
+
+mastodon .publication-description p {
+    font-size: 0.85em;
+    text-align: justify;
+}
+
+mastodon .publication-date {
+    color: rgb(103, 103, 103);
+    margin: 0.5em 1.5em;
+}

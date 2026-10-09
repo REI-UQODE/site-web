@@ -62,6 +62,7 @@
 	</style>
 
 	<script src="/javascript/init-commun.js?v=5" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
+	<script src="/modules/mastodon/init.js" defer></script>
 </head>
 
 
@@ -216,12 +217,10 @@
 		<!--Événements Actuels-->
 		<div class="gap"></div>
 		<h2>Événements Actuels</h2>
-		<!--<h3>BBQ de la rentrée</h3>
-		<p>Nous aurons un kiosque à la journée d'accueil, le <b>BBQ de la rentrée</b> du 8 septembre, entre 11h et 14h! Venez nous voir!</p>
-		<p style="font-size: 8em; margin: 0; color: black; background-color: #0eabd3; padding: 0.1em; border-radius: 0.25em; box-shadow: 0 0 0.25em #0003;">var fun =</br>[🔥,🌭,🌽];</p>-->
 		<p><b>Inscrivez-vous aux prochaines activités du REI et de l'UQODE!</b></p>
 		<a class="bouton" href="https://linktr.ee/rei.uqode" style="font-size: 1.5em;">Inscrivez-vous à nos activités</a>
 		<a class="bouton" href="mailing.html">Inscrivez-vous aux courriels de l'UQODE</a>
+		<mastodon usr="@rei_uqode@defcon.social" est_horizontal="true"></mastodon>
 
 		<!--Calendrier-->
 		<div class="gap"></div>

@@ -153,10 +153,15 @@
 			@media (min-width: 768px)
 			{width: 25%;}
 		}
+
+		#actualites{
+			width: 100%;
+		}
 	</style>
 
 	<script src="/javascript/init-commun.js" type="module" defer></script> <!--Est exécuté après que la page ait été analysée, mais avant de télécharger les autres ressources.-->
 	<script src="/javascript/décompte.js?v=5" defer></script>
+	<script src="/modules/mastodon/init.js" defer></script>
 	<script src="/javascript/imgLoader.js" defer></script>
 </head>
 
@@ -173,7 +178,7 @@
 			</div>
 		</header>
 		<div class="contenu-terminal" style="padding: 0.5em;">
-			<a href="poste_premieres_annees.html"><img src="/images/Promo_Representant_1er_annees.svg"/></a>
+			<a href="poste_premieres_annees.html"><img src="/images/Promo_Representant_1er_annees.webp"/></a>
 		</div>
 	</div>
 	<!--Titre et Menu Principal-->
@@ -189,9 +194,9 @@
 			<h5 class="centreur" style="margin: 0"><a class="bouton" style="margin: 0" href="/documents/joindreMatrix.pdf">Ou consultez notre guide pour y créer un compte</a></h5>
 		</div>
 	</header>
-	<a style="position: sticky; top: 0; display: block; background-color: darkred; color: white; font-weight: bold; padding: 15px; text-align: center; text-decoration: none; z-index: 150;" href="/pages/poste_premieres_annees.html">
+	<!--a style="position: sticky; top: 0; display: block; background-color: darkred; color: white; font-weight: bold; padding: 15px; text-align: center; text-decoration: none; z-index: 150;" href="/pages/poste_premieres_annees.html">
 		Nouveau poste de représentant des première année!  ->
-	</a>
+	</a-->
 	
 	<article>
 		<div class="gap"></div>
@@ -429,6 +434,13 @@
 			<span class="spacer-mobile"></span>
 			<a class="bouton" style="margin-left: 20px;" href="https://defcon.social/@rei_uqode">Suivez-nous sur Mastodon</a>
 		</div>
+
+		<div class="gap"></div>
+		<h2>Actualités</h2>
+		<hr class="separateur">
+		<section id="actualites">
+			<mastodon usr="@rei_uqode@defcon.social" est_horizontal="true"/>
+		</section>
 		
 		
 		<!--Viewer pour les images supplémentaires:-->
