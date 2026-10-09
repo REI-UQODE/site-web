@@ -61,6 +61,16 @@ mastodon[est_horizontal="true"] > fil {
     height: 85vh;
 }
 
+mastodon > fil > .actualites-chargement {
+    width: 4em;
+    animation: chargement-animation 1.5s linear infinite;
+}
+
+@keyframes chargement-animation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+}
+
 mastodon > fil > div {
     display: flex;
     flex-direction: column;

@@ -42,10 +42,11 @@ class FilMastodon{
     }
 
     async insererFil(){        
+        this.#balise.innerHTML = await fetch("/modules/mastodon/conteneur.html").then((e)=>{return e.text();});
+
         let compte = await fetch("https://"+this.#domaine+"/api/v1/accounts/lookup?acct="+this.#usr_tag).then((e)=>{return e.json()});
         this.#usr_id = compte.id;
 
-        this.#balise.innerHTML = await fetch("/modules/mastodon/conteneur.html").then((e)=>{return e.text();});
         let header = this.#balise.getElementsByTagName("header")[0];
         header.innerHTML = 
             "<img src='"+compte.avatar+"' alt='"+compte.avatar_description+"'/>"+
@@ -57,6 +58,7 @@ class FilMastodon{
         let publications = await fetch("https://"+this.#domaine+"/api/v1/accounts/"+compte.id+"/statuses?exclude_replies=true&limit="+FilMastodon.#PUBS_CHARGER_LIMITE).then((e)=>{return e.json();});
 
         this.#fil_balise = this.#balise.getElementsByTagName("fil")[0];
+        this.#fil_balise.innerHTML = "";
         this.#fil_balise.addEventListener("scroll",(e)=>{this.executerDefilement(e)});
         for(let p of publications){
             this.ajouterPublication(this.#fil_balise,p);
