@@ -10,6 +10,7 @@ services:
       - ./site:/usr/share/nginx/html
       - ./.well-known:/var/www/.well-known
     networks:
+      - defi-oct2026
       - interne
     depends_on:
       - php
@@ -20,6 +21,7 @@ services:
     command: tunnel run
     env_file: .env
     networks:
+    - interne
     - web
 
   php:
@@ -37,6 +39,7 @@ networks:
     internal: true
   web:
     driver: bridge
+  defi-oct2026:
     ipam:
       config:
         - subnet: 172.30.10.0/24
