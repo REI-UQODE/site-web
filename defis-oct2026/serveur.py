@@ -517,7 +517,7 @@ if __name__ == "__main__":
         jeton_admin = base64.b64encode(random.randbytes(32)).decode("utf8").replace('/','_').replace('+','-').replace('=','#')
         print(f"Jeton Admin : {jeton_admin}")
     
-    serveurWeb = ThreadingHTTPServer(("0.0.0.0", 5000), defiServeur)
+    serveurWeb = ThreadingHTTPServer(("172.30.10.1", 5000), defiServeur)
 
     try:
         serveurWeb.serve_forever()
