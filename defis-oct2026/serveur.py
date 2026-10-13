@@ -1,5 +1,4 @@
 import base64
-import cgi
 import datetime
 import json
 import os
@@ -12,6 +11,8 @@ import sys
 import threading
 import zipfile
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+from multipart import MultipartFormdata
 
 """
 "hash":{
@@ -278,6 +279,7 @@ class defiServeur(BaseHTTPRequestHandler):
         self.send_error(404, "URL invalide.")
 
     def do_POST(self):
+        print(f"POST {self.path}")
         self.params = {}
         if '?' in self.path:
             url = self.path.split('?')
@@ -286,73 +288,86 @@ class defiServeur(BaseHTTPRequestHandler):
                 self.params[p.split('=')[0]] = p.split('=')[1]
 
         if self.path == "/soumission":
-            if "multipart/form-data" not in self.headers['Content-Type'].split(';'):
+            print("/soumission")
+            if not "Content-Type" in self.headers or "multipart/form-data" not in self.headers['Content-Type'].split(';'):
                 self.send_error(400, "Veuillez fournir un formulaire mulipart")
                 return
             
+            if not "Content-Length" in self.headers:
+                self.send_error(411, "'Content-Length' requis")
+                return
+
             try:
-                form = cgi.FieldStorage(fp=self.rfile, headers=self.headers, environ={"REQUEST_METHOD": "POST"})
-            except:
+                form_parts = MultipartFormdata(self.rfile, int(self.headers["Content-Length"]))
+
+                if "soumissionaire" not in form_parts:
+                    self.send_error(400, "Le 'soumissionaire' n'est pas spécifié")
+                    return
+                if "nom_bot" not in form_parts:
+                    self.send_error(400, "Le 'nom_bot' n'est pas spécifié")
+                    return
+                if "hash" not in form_parts:
+                    self.send_error(400, "Le 'hash' n'est pas spécifié")
+                    return
+                if "zip" not in form_parts:
+                    self.send_error(400, "Le 'zip' n'est pas spécifié")
+                    return
+
+                form = {
+                    "soumissionaire" : form_parts["soumissionaire"].lire(octets=128, décoder="utf8"),
+                    "nom_bot" : form_parts["nom_bot"].lire(octets=128, décoder="utf8"),
+                    "code_source" : form_parts["code_source"].lire(octets=128, décoder="utf8") if "code_source" in form_parts else "",
+                    "hash" : form_parts["hash"].lire(octets=128, décoder="utf8"),
+                    "zip" : {
+                        "filename" : form_parts["zip"]["Content-Disposition"].get("filename"),
+                        "lire" : form_parts["zip"].lire
+                    }
+                }
+            except Exception as e:
+                print(e)
                 self.send_error(400, "Le formulaire multipart n'a pas pus être lus")
                 return
 
-            if "soumissionaire" not in form:
-                self.send_error(400, "Le 'soumissionaire' n'est pas spécifié")
-                return
-            if not isinstance(form["soumissionaire"].value, str):
-                self.send_error(400, "Le 'soumissionaire' n'est pas un string")
-                return
-            if len(form["soumissionaire"].value) > 64:
+            if len(form["soumissionaire"]) > 64:
                 self.send_error(400, "Le 'hash' ne peut pas avoir une longueur supérieure à 64")
                 return
-            if "nom_bot" not in form:
-                self.send_error(400, "Le 'nom_bot' n'est pas spécifié")
-                return
-            if not isinstance(form["nom_bot"].value, str):
-                self.send_error(400, "Le 'nom_bot' n'est pas un string")
-                return
-            if len(form["nom_bot"].value) > 64:
+            if len(form["nom_bot"]) > 64:
                 self.send_error(400, "Le 'nom_bot' ne peut pas avoir une longueur supérieure à 64")
                 return
-            if len(form["code_source"].value) > 512:
+            if len(form["code_source"]) > 512:
                 self.send_error(400, "Le 'code_source' ne peut pas avoir une longueur supérieure à 512")
                 return
-            if "hash" not in form:
-                self.send_error(400, "Le 'hash' n'est pas spécifié")
-                return
-            if not isinstance(form["hash"].value, str):
-                self.send_error(400, "Le 'hash' n'est pas un string")
-                return
-            if re.match(r"[^a-zA-Z0-9_\-#]", form["hash"].value):
+            if re.match(r"[^a-zA-Z0-9_\-#]", form["hash"]):
                 self.send_error(400, "Le 'hash' ne peut contenir que des lettes, des chiffres et un de '_', '-', '#'")
                 return
-            if len(form["hash"].value) > 64:
+            if len(form["hash"]) > 64:
                 self.send_error(400, "Le 'hash' ne peut pas avoir une longueur supérieure à 64")
                 return
-            if "zip" not in form:
-                self.send_error(400, "Le 'zip' n'est pas spécifié")
-                return
-            if not form["zip"].filename:
+            if not form["zip"]["filename"]:
                 self.send_error(400, "Le 'zip' n'est pas un fichier")
                 return
-            if not form["zip"].filename.endswith(".zip"):
+            if not form["zip"]["filename"].endswith(".zip"):
                 self.send_error(400, "Le 'zip' doit être un fichier .zip")
                 return
-            if form["hash"].value in soumissions:
+            if form["hash"] in soumissions:
                 self.send_error(400, f"Le défi 'hash:({form["hash"]}) existe déjà'")
                 return
 
-            rep_base = "./" + base64.b64encode(form["soumissionaire"].value.encode("utf8")).decode("utf8").replace('/','_')
+            rep_base = "./" + base64.b64encode(form["soumissionaire"].encode("utf8")).decode("utf8").replace('/','_')
             rep = rep_base
             if not os.path.exists(rep):
                 os.makedirs(rep)
-            rep += '/' + form["hash"].value
+            rep += '/' + form["hash"]
             os.makedirs(rep)
 
             try:
-                with open(rep + '/' + form["zip"].filename, "wb") as f:
-                    f.write(form["zip"].file.read())
-                rep_zip = rep + '/' + form["zip"].filename
+                with open(rep + '/' + form["zip"]["filename"], "wb") as f:
+                    tampon : bytes = form["zip"]["lire"](octets=256)
+                    while len(tampon) != 0:
+                        f.write(tampon)
+                        tampon = form["zip"]["lire"](octets=256)
+                rep_zip = rep + '/' + form["zip"]["filename"]
+                form_parts.détruire() # Efface les fichiers caches ouverts
             except:
                 self.send_error(500, "Impossible d'enregistrer le fichier.")
                 return
@@ -371,7 +386,7 @@ class defiServeur(BaseHTTPRequestHandler):
             zipfile.ZipFile(rep_zip).extractall(rep)
 
             try:
-                res = subprocess.run(["docker","run","--rm","-v",f"{rep}:/app","--networking","none","defis-oct2026"], check=False, capture_output=True, text=True).stdout
+                res = subprocess.run(["docker","run","--rm","-v",f"{rep}:/app","--network","none","defis-oct2026"], check=False, capture_output=True, text=True).stdout
             except:
                 shutil.rmtree(rep)
                 self.send_error(500, "Le programme a rencontré une erreur.")
@@ -392,21 +407,21 @@ class defiServeur(BaseHTTPRequestHandler):
             
             date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             soumission = {
-                "soumissionaire":form["soumissionaire"].value,
-                "nom_bot":form["nom_bot"].value,
-                "code_source":form["code_source"].value,
-                "hash": form["hash"].value,
+                "soumissionaire":form["soumissionaire"],
+                "nom_bot":form["nom_bot"],
+                "code_source":form["code_source"],
+                "hash": form["hash"],
                 "date": date,
                 "rep": rep,
                 "score": score
             }
-            soumissions[form["hash"].value] = soumission
+            soumissions[form["hash"]] = soumission
             soumissions_ordonnees.append(soumission)
 
-            if form["soumissionaire"].value not in scores:
-                scores[form["soumissionaire"].value] = [{"date":date, "score":score}]
-            if score > scores[form["soumissionaire"].value][-1]["score"]:
-                scores[form["soumissionaire"].value].append(score)
+            if form["soumissionaire"] not in scores:
+                scores[form["soumissionaire"]] = [{"date":date, "score":score}]
+            if score > scores[form["soumissionaire"]][-1]["score"]:
+                scores[form["soumissionaire"]].append(score)
 
             fichier = json.dumps({"score":score}).encode("utf8")
 
