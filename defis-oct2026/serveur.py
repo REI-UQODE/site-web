@@ -32,6 +32,12 @@ soumissions_ordonnees = []
 scores = {}
 jeton_admin : str
 
+def hash_enc(a : str) -> str:
+    return base64.b64encode(a.encode("utf8")).decode("utf8").replace('/','_')
+
+def hash_dec(a : str) -> str:
+    return base64.b64decode(a.replace('_','/').encode("utf8")).decode("utf8")
+
 class defiServeur(BaseHTTPRequestHandler):
     def send_error(self, code : int, message : str|None = None, explain : str|None = None):
         message_json = {}
@@ -116,6 +122,7 @@ class defiServeur(BaseHTTPRequestHandler):
     def do_PATCH(self):
         global jeton_admin
 
+        print(self.path)
         self.params = {}
         if '?' in self.path:
             url = self.path.split('?')
@@ -123,7 +130,7 @@ class defiServeur(BaseHTTPRequestHandler):
             for p in url[1].split('&'):
                 self.params[p.split('=')[0]] = p.split('=')[1]
         
-        if re.match(r"^/effacer/soumission/[a-zA-Z0-9_\-#]+$", self.path):
+        if re.match(r"^/effacer/soumission/[a-zA-Z0-9_\-;]+$", self.path):
             if "Authorization" not in self.headers:
                 self.send_error(401, "Veuillez vous authentifier.")
                 return
@@ -137,8 +144,9 @@ class defiServeur(BaseHTTPRequestHandler):
                 return
             
             shutil.rmtree(soumissions[hash]["rep"])
-            if len(os.listdir("./" + soumissions[hash]["soumissionaire"].replace(' ','_'))) == 0:
-                os.rmdir("./" + soumissions[hash]["soumissionaire"].replace(' ','_'))
+            soum_hash = hash_enc(soumissions[hash]["soumissionaire"])
+            if len(os.listdir("./" + soum_hash)) == 0:
+                os.rmdir("./" + soum_hash)
             soumissions_ordonnees.remove(soumissions.pop(hash))
             threading.Thread(target=defiServeur.recalculer_scores).start() # Pas thread-safe
 
@@ -177,8 +185,9 @@ class defiServeur(BaseHTTPRequestHandler):
                 if h not in soumissions:
                     continue
                 shutil.rmtree(soumissions[h]["rep"])
-                if len(os.listdir("./" + soumissions[h]["soumissionaire"].replace(' ','_'))) == 0:
-                    os.rmdir("./" + soumissions[h]["soumissionaire"].replace(' ','_'))
+                soum_hash = hash_enc(soumissions[h]["soumissionaire"])
+                if len(os.listdir("./" + soum_hash)) == 0:
+                    os.rmdir("./" + soum_hash)
                 soumissions_ordonnees.remove(soumissions.pop(h))
                 hashs_retires.append(h)
             threading.Thread(target=defiServeur.recalculer_scores).start() # Pas thread-safe
@@ -194,7 +203,7 @@ class defiServeur(BaseHTTPRequestHandler):
             self.wfile.write(reponse)
             return
         
-        if re.match(r"^/effacer/soumissionaire/[a-zA-Z0-9\-_#]+$", self.path):
+        if re.match(r"^/effacer/soumissionaire/[a-zA-Z0-9\-_;]+$", self.path):
             if "Authorization" not in self.headers:
                 self.send_error(401, "Veuillez vous authentifier.")
                 return
@@ -202,16 +211,17 @@ class defiServeur(BaseHTTPRequestHandler):
                 self.send_error(403, "Vous n'êtes pas autorisé à accéder à cette ressource.")
                 return
             
-            soumissionaire = base64.b64decode(self.path.split('/')[-1].replace('_','/').replace('-','+').replace('#','=').encode("utf8")).decode("utf8")
+            print(self.path)
+            soumissionaire = base64.b64decode(self.path.split('/')[-1].replace('_','/').replace('-','+').replace(';','=').encode("utf8")).decode("utf8")
             hashs_retires = []
-            for i in range(len(soumissions.items())):
+            for i in range(len(soumissions_ordonnees)):
                 if soumissions_ordonnees[i]["soumissionaire"] == soumissionaire:
                     hashs_retires.append(i)
-                if os.path.exists("./" + soumissionaire.replace(' ','_')):
-                    shutil.rmtree("./" + soumissionaire.replace(' ','_'))
-            for i in range(len(hashs_retires)):
-                hashs_retires[i] = soumissions_ordonnees[hashs_retires[i]]["hash"]
-                soumissions_ordonnees.remove(i)
+                soum_hash = hash_enc(soumissionaire)
+                if os.path.exists("./" + soum_hash):
+                    shutil.rmtree("./" + soum_hash)
+            for i in reversed(range(len(hashs_retires))):
+                hashs_retires[i] = soumissions_ordonnees.pop(hashs_retires[i])["hash"]
                 soumissions.pop(hashs_retires[i])
             
             if len(hashs_retires) == 0:
@@ -255,15 +265,14 @@ class defiServeur(BaseHTTPRequestHandler):
                 return
             
             hashs_retires = []
-            for s in message:
-                for i in range(len(soumissions_ordonnees)):
+            for i in range(len(soumissions_ordonnees)):
+                for s in message:
                     if soumissions_ordonnees[i]["soumissionaire"] == s:
                         hashs_retires.append(i)
-                if os.path.exists("./" + s.replace(' ','_')):
-                    shutil.rmtree("./" + s.replace(' ','_'))
-            for i in range(len(hashs_retires)):
-                hashs_retires[i] = soumissions_ordonnees[hashs_retires[i]]["hash"]
-                soumissions_ordonnees.pop(i)
+                if os.path.exists("./" + hash_enc(s)):
+                    shutil.rmtree("./" + hash_enc(s))
+            for i in reversed(range(len(hashs_retires))):
+                hashs_retires[i] = soumissions_ordonnees.pop(hashs_retires[i])["hash"]
                 soumissions.pop(hashs_retires[i])
             threading.Thread(target=defiServeur.recalculer_scores).start() # Pas thread-safe
 
@@ -279,7 +288,6 @@ class defiServeur(BaseHTTPRequestHandler):
         self.send_error(404, "URL invalide.")
 
     def do_POST(self):
-        print(f"POST {self.path}")
         self.params = {}
         if '?' in self.path:
             url = self.path.split('?')
@@ -288,7 +296,6 @@ class defiServeur(BaseHTTPRequestHandler):
                 self.params[p.split('=')[0]] = p.split('=')[1]
 
         if self.path == "/soumission":
-            print("/soumission")
             if not "Content-Type" in self.headers or "multipart/form-data" not in self.headers['Content-Type'].split(';'):
                 self.send_error(400, "Veuillez fournir un formulaire mulipart")
                 return
@@ -337,8 +344,8 @@ class defiServeur(BaseHTTPRequestHandler):
             if len(form["code_source"]) > 512:
                 self.send_error(400, "Le 'code_source' ne peut pas avoir une longueur supérieure à 512")
                 return
-            if re.match(r"[^a-zA-Z0-9_\-#]", form["hash"]):
-                self.send_error(400, "Le 'hash' ne peut contenir que des lettes, des chiffres et un de '_', '-', '#'")
+            if re.match(r"[^a-zA-Z0-9_\-;]", form["hash"]):
+                self.send_error(400, "Le 'hash' ne peut contenir que des lettes, des chiffres et un de '_', '-', ';'")
                 return
             if len(form["hash"]) > 64:
                 self.send_error(400, "Le 'hash' ne peut pas avoir une longueur supérieure à 64")
@@ -353,7 +360,7 @@ class defiServeur(BaseHTTPRequestHandler):
                 self.send_error(400, f"Le défi 'hash:({form["hash"]}) existe déjà'")
                 return
 
-            rep_base = "./" + base64.b64encode(form["soumissionaire"].encode("utf8")).decode("utf8").replace('/','_')
+            rep_base = "./" + hash_enc(form["soumissionaire"])
             rep = rep_base
             if not os.path.exists(rep):
                 os.makedirs(rep)
@@ -442,7 +449,7 @@ class defiServeur(BaseHTTPRequestHandler):
             for p in url[1].split('&'):
                 self.params[p.split('=')[0]] = p.split('=')[1]
         
-        if re.match(r"^/soumission/[a-zA-Z0-9_\-#]{1,64}$", self.path):
+        if re.match(r"^/soumission/[a-zA-Z0-9_\-;]{1,64}$", self.path):
             hash = self.path.split('/')[-1]
 
             if hash not in soumissions:
@@ -478,8 +485,8 @@ class defiServeur(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(fichier)
             return
-        elif re.match(r"^/score/[a-zA-Z0-9_\-#]{1,64}$", self.path):
-            soumissionaire = base64.b64decode(self.path.split('/')[-1].replace('_','/').replace('-','+').replace('#','=').encode("utf8")).decode("utf8")
+        elif re.match(r"^/score/[a-zA-Z0-9_\-;]{1,64}$", self.path):
+            soumissionaire = base64.b64decode(self.path.split('/')[-1].replace('_','/').replace('-','+').replace(';','=').encode("utf8")).decode("utf8")
             if soumissionaire not in scores:
                 self.send_error(404, "Le soumissionaire n'existe pas")
                 return
@@ -514,7 +521,7 @@ if __name__ == "__main__":
             soumissions = donnees["soumissions"]
             scores = donnees["scores"]
     else:
-        jeton_admin = base64.b64encode(random.randbytes(32)).decode("utf8").replace('/','_').replace('+','-').replace('=','#')
+        jeton_admin = base64.b64encode(random.randbytes(32)).decode("utf8").replace('/','_').replace('+','-').replace('=',';')
         print(f"Jeton Admin : {jeton_admin}")
     
     serveurWeb = ThreadingHTTPServer(("172.30.10.1", 5000), defiServeur)
