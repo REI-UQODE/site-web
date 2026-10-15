@@ -75,6 +75,27 @@
 			color: #666;
 		}
 
+		#soumissions-conteneur {
+			display: flex; 
+			width: 100%; 
+		}
+		@media (max-width: 640px){#soumissions-conteneur{flex-direction: column-reverse;}}
+		@media (min-width: 640px){#soumissions-conteneur{flex-direction: row;}}
+
+		#tableau-soumissions {
+			display: flex; 
+			flex: 1 0 50%; 
+			flex-direction: column; 
+		}
+		@media (max-width: 640px){#tableau-soumissions{justify-content: center;}}
+		@media (min-width: 640px){#tableau-soumissions{align-items: center;}}
+
+		@media(max-width: 640px){
+			#tableau-soumissions > #soumissions {
+				margin:0
+			}
+		}
+
 		.notif{
 			overflow: hidden;
 			width: 100%;
@@ -125,13 +146,13 @@
 
 <body>
 	<!--Titre et Menu Principal-->
-	<header class="header" style="background-image: url('/images/Hackfest2025_groupe2.jpg');">
+	<header class="header" style="background-image: url('/images/atelierUQODE.jpg');">
 		<!--Menu Principal-->
 		<nav></nav>
 		<div class="header-contenu">
 			<h1>PREMIER</h1>
 			<hr>
-			<p>Défi d'octobre 2026</p>
+			<p>Défi d'octobre-novembre 2026</p>
 			<div style="height: 10px"></div>
 		</div>
 	</header>
@@ -148,15 +169,15 @@
 				</div>
 			</div>
 		</div -->
-		<div style="display: grid; grid-template-columns: 50% 50%; width: 100%;">
-			<div style="display: flex; flex-direction: column; align-items: center;">
+		<div id="soumissions-conteneur">
+			<div id="tableau-soumissions">
 				<h3 style="text-align: center;">Soumissions</h3>
 				<table id="soumissions">
 					<tr><th>Date</th><th>Nom</th><th>Bot</th><th>Code Source</th><th>Score</th></tr>
 					<tr><td colspan='5' style='font-weight:bold; padding: 1em;'>Aucune soumission jusqu'à présent...</td</tr>
 				</table>
 			</div>
-			<div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+			<div style="display: flex; flex: 0 1 50%; flex-direction: column; align-items: center; min-width: 10%;">
 				<h3 style="text-align: center;">Soumettre</h3>
 				<form id="soumettre-form" style="max-width: 30em; width: 100%;">
 					<label for="soumettre-form-nom">Votre Nom : </label>
