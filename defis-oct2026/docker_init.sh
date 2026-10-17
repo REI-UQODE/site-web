@@ -1,3 +1,3 @@
 #!/bin/sh
 chmod -R +x /app
-timeout 1s /app/lancer
+timeout -k 1s 1s /app/lancer

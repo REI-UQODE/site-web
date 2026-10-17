@@ -9,6 +9,7 @@ import signal
 import subprocess
 import sys
 import threading
+import time
 import zipfile
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
@@ -393,7 +394,10 @@ class defiServeur(BaseHTTPRequestHandler):
             zipfile.ZipFile(rep_zip).extractall(rep)
 
             try:
-                res = subprocess.run(["docker","run","--rm","-v",f"{rep}:/app","--network","none","defis-oct2026"], check=False, capture_output=True, text=True).stdout
+                proc = subprocess.Popen(["docker","run","--rm","-v",f"{rep}:/app","--network","none","defis-oct2026"], stdout=subprocess.PIPE)
+                time.sleep(1)
+                proc.kill()
+                res = proc.stdout.read()
             except:
                 shutil.rmtree(rep)
                 self.send_error(500, "Le programme a rencontré une erreur.")
