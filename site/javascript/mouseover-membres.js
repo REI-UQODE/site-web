@@ -19,6 +19,10 @@ function montrerUsager (nom, service)
 						hoverbox = document.getElementById('hoverbox-Richard');
 						hoverbox.innerHTML = "@minato061215:rei-uqode.ca";
 						break;
+					case 'Gustave':
+						hoverbox = document.getElementById('hoverbox-Gustave');
+						hoverbox.innerHTML = "@gustave:rei-uqode.ca";
+						break;
 				}
 			}
 			
