@@ -94,14 +94,46 @@ class FilMastodon{
         
         let imagesConteneur = document.createElement("div");
         imagesConteneur.classList.add("publication-img-conteneur");
+        let imagesCadre;
         for(let img of pub.media_attachments){
-            if(!img.type == "image"){
-                continue;
+            switch(img.type){
+                case "image":
+                    imagesCadre = document.createElement("div");
+                    imagesConteneur.appendChild(imagesCadre);
+                    let image = document.createElement("img");
+                    image.src = img.url;
+                    image.alt = img.description;
+                    imagesCadre.appendChild(image);
+                    break;
+                case "gifv":
+                    imagesCadre = document.createElement("div");
+                    imagesConteneur.appendChild(imagesCadre);
+                    let gifv = document.createElement("video");
+                    gifv.src = img.url;
+                    gifv.autoplay = true;
+                    gifv.controls = false;
+                    gifv.loop = true;
+                    gifv.muted = true;
+                    gifv.poster = img.preview_url;
+                    gifv.setAttribute("aria-label",img.description);
+                    imagesCadre.appendChild(gifv);
+                    break;
+                case "video":
+                    imagesCadre = document.createElement("div");
+                    imagesConteneur.appendChild(imagesCadre);
+                    let video = document.createElement("video");
+                    video.src = img.url;
+                    video.autoplay = false;
+                    video.controls = true;
+                    video.loop = false;
+                    video.muted = true;
+                    video.poster = img.preview_url;
+                    video.setAttribute("aria-label",img.description);
+                    imagesCadre.appendChild(gifv);
+                    break;
+                default:
+                    continue;
             }
-            let image = document.createElement("img");
-            image.src = img.url;
-            image.alt = img.description;
-            imagesConteneur.appendChild(image);
         }
         pubEl.appendChild(imagesConteneur);
         pubEl.innerHTML += "<a class='bouton' href='"+pub.url+"'>Ouvrir sur <img src='/images/mastodon-logo-white.svg'/> &gt;</a><div class='publication-description'>"+pub.content+"</div><p class='publication-date'><i>"+new Date(Date.parse(pub.created_at)).toLocaleString("fr-CA")+"</i></p>";
