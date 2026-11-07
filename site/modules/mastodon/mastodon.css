@@ -86,7 +86,7 @@ mastodon > fil > div {
 }
 
 mastodon[est_horizontal="true"] > fil > div {
-    flex: 0 0 25em;
+    flex: 0 0 26em;
     max-width: 26em;
     min-width: 26em;
 }
@@ -95,7 +95,7 @@ mastodon .publication-img-conteneur{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     overflow: hidden;
     width : 100%;
     /*border-radius: 1.8em;*/
@@ -104,13 +104,24 @@ mastodon .publication-img-conteneur{
     /*background-color: #100D13;*/
 }
 
-mastodon .publication-img-conteneur img{
+mastodon .publication-img-conteneur > div {
+    display: flex;
+    justify-content: center;
+    flex: 1 0 50%;
+    max-width: 100%;
+    min-width: 50%;
+    max-height: 100%;
+    min-height: 50%;
+}
+
+mastodon .publication-img-conteneur > div > img, 
+mastodon .publication-img-conteneur > div > video{
     display: block;
     width: auto;
     height: auto;
     max-width: 100%;
     max-height: 100%;
-    border-radius: 1.8em;
+    border-radius: 1em;
     box-shadow: 0 0 0.5em #0003;
 }
 
