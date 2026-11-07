@@ -94,6 +94,7 @@ else
 <body>
 	<!--Titre et Menu Principal-->
 	<div class="header" style="background-image: url('/images/UQODE_AtelierPython_Automne2024.jpg');">
+		<a style="background-color: #550505; padding: 15px; font-size: 20px; color: white; text-decoration: none" href=https://uctf.rei-uqode.ca/inscription>Les inscriptions à l'&lt;/UCTF&gt; sont ouvertes!&nbsp;&nbsp;-&gt;</a>
 		<nav class="menuPrincipal"></nav>
 		<div class="header-contenu">
 			<?php
